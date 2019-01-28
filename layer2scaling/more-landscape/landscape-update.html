@@ -1,0 +1,514 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Layer 2 Scaling Survey (part 2) - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../preface/introduction.html">Introduction</a></li><li><a href="../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../layer2scaling/more-landscape/landscape-update.html" class="active"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#layer-2-scaling-survey-part-2" id="layer-2-scaling-survey-part-2"><h1>Layer 2 Scaling Survey (part 2)</h1></a>
+<p>This report provides a survey of TumbleBit , Counterparty, 2-Way Pegged Secondary Block Chains, Lumino, Scriptless scripts and Directed Acyclic Graph (DAG) Derivative Protocols as layer 2 scaling alternatives, building on <a href="../layer2scaling-landscape/layer2scaling-survey.html">Layer 2 Scaling Survey (part 1)</a>.</p>
+<a class="header" href="#layer-2-scaling-current-initiatives-updated" id="layer-2-scaling-current-initiatives-updated"><h2>Layer 2 scaling current initiatives (updated)</h2></a>
+<a class="header" href="#1-tumblebit" id="1-tumblebit"><h3>#1 TumbleBit</h3></a>
+<a class="header" href="#what-is-it" id="what-is-it"><h4>What is it?</h4></a>
+<p>The TumbleBit protocol was invented at the Boston University. It is a unidirectional, unlinkable payment hub that is fully compatible with the Bitcoin protocol. TumbleBit allows parties to make fast, anonymous, off-chain payments through an untrusted intermediary called the Tumbler. No-one, not even the Tumbler, can tell which payer paid which payee during a TumbleBit epoch (<em>i.e. time period of significance</em>). Two modes of operation are supported; a classic mixing/tumbling/washing mode or as a fully fledged payment hub. TumbleBit consists of two interleaved fair-exchange protocols - <em>RSA-Puzzle-Solver Protocol</em> and <em>Puzzle-Promise Protocol</em> - that relies on the  Rivest–Shamir–Adleman (RSA) cryptosystem's blinding properties to prevent bad acting from either users or Tumblers and to ensure anonymity. TumbleBit also supports anonymizing through Tor to ensure that the Tumbler server can operate as a hidden service. (<a href="http://cs-people.bu.edu/heilman/tumblebit/">[1]</a>, <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a>, <a href="https://eprint.iacr.org/2016/056.pdf">[8]</a>, <a href="https://www.youtube.com/watch?v=8BLWUUPfh2Q&amp;feature=youtu.be&amp;t=1h3m10s">[9]</a>, <a href="https://bitcoinmagazine.com/articles/better-bitcoin-privacy-scalability-developers-are-making-tumblebit-reality">[10]</a>)</p>
+<p><img src="./sources/TumbleBitOverview.PNG" alt="TumbleBitOverview" /></p>
+<p>TumbleBit combines off-chain cryptographic computations with standard on-chain Bitcoin scripting functionalities to realize smart contracts (<a href="https://en.bitcoin.it/wiki/Contract">[11]</a>) that is not dependent on Segwit. The most important Bitcoin functionality used here are hashing conditions, signing conditions, conditional execution, 2-of-2 multi signatures and timelocking. <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<a class="header" href="#who-does-it" id="who-does-it"><h4>Who does it?</h4></a>
+<p>The Boston University provided a proof-of-concept and reference implementation alongside the white paper <a href="https://github.com/BUSEC/TumbleBit">[4]</a>. NTumbleBit <a href="https://github.com/nTumbleBit/nTumbleBit">[5]</a> is being developed as a C# production implementation of the TumbleBit protocol that is currently being deployed by Stratis with their Breeze implementation (<a href="https://stratisplatform.com/2017/07/17/breeze-tumblebit-server-experimental-release">[6]</a>, <a href="https://stratisplatform.com/2017/09/20/breeze-wallet-with-breeze-privacy-protocol-dev-update/">[7]</a>), currently at alpha/experimental release level in testnet.</p>
+<p><em>&quot;NTumbleBit will be a cross-platform framework, server and client for the TumbleBit payment scheme. TumbleBit is separated into two modes, tumbler mode and payment hub mode. The tumbler mode improves transaction fungibility and offers risk free unlinkable transactions. Payment hub mode is a way of making off-chain payments possible without requiring implementations like Segwit or the Lightning Network.&quot;</em> <a href="https://medium.com/@Stratisplatform/anonymous-transactions-coming-to-stratis-fced3f5abc2e">[3]</a></p>
+<a class="header" href="#strengths" id="strengths"><h4>Strengths</h4></a>
+<p><u>Anonymity properties</u> - TumbleBit provides unlinkability without the need to trust the Tumbler service (i.e. untrusted intermediary). <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<p><u>Denial of Service (DoS) and Sybil protection</u> - &quot;<em>TumbleBit uses transaction fees to resist DoS and Sybil attacks.</em>&quot; <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<p><u>Balance</u> - &quot;<em>The system should not be exploited to print new money or steal money, even when parties collude.</em>&quot;  <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<p><u>As a classic tumbler</u> - TumbleBit can also be used as a classic Bitcoin tumbler. <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<p><u>Bitcoin compatibility</u> - TumbleBit is fully compatible with the Bitcoin protocol. <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<p><u>Scale ability</u> - Each TumbleBit user only need to interact with the Tumbler and the corresponding transaction party; this lack of coordination between all TumbleBit users makes scale ability possible for the tumbler mode. <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<p><u>Batch processing</u> - TumbleBit  supports one-to-one, many-to-one, one-to-many and many-to-many transactions in payment hub mode. <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<p><u>Masternode compatibility</u> - The TumbleBit protocol can be fully implemented as a service in a Masternode. &quot;<em>The Breeze Wallet is now fully capable of providing enhanced privacy to bitcoin transactions through a secure connection. Utilizing Breeze Servers that are pre registered on the network using a secure, trustless registration mechanism that is resistant to manipulation and censorship.</em>&quot; (<a href="https://stratisplatform.com/2017/07/17/breeze-tumblebit-server-experimental-release">[6]</a>, <a href="https://stratisplatform.com/2017/09/20/breeze-wallet-with-breeze-privacy-protocol-dev-update">[7]</a>, <a href="https://stratisplatform.com/2017/08/10/bitcoin-privacy-tumblebit-integrated-into-breeze">[12]</a>)</p>
+<p><u>Nearly production ready</u> - The NTumbleBit and Breeze implementations have gained testnet status.</p>
+<a class="header" href="#weaknesses" id="weaknesses"><h4>Weaknesses</h4></a>
+<p><u>Privacy not 100% proven</u> - Payees have better privacy than the payers, and theoretically collusion involving payees and the Tumbler can exist to discover the identity of the payer. <a href="https://www.bitcoinmarketinsider.com/tumblebit-wallet-reaches-one-step-forward">[13]</a></p>
+<p><u>Tumbler service not distributed</u> - More work needs to be done to ensure persistent transaction state in case a Tumbler server goes down.</p>
+<p><u>Equal denominations required</u> - The TumbleBit protocol can only support a common denominator unit value. <a href="https://eprint.iacr.org/2016/575.pdf">[2]</a></p>
+<a class="header" href="#opportunities-for-tari" id="opportunities-for-tari"><h4>Opportunities for Tari</h4></a>
+<p>Has benefits to Tari as a trustless Masternode matching/batch processing engine with strong privacy features.</p>
+<a class="header" href="#threats-for-tari" id="threats-for-tari"><h4>Threats for Tari</h4></a>
+<p>None</p>
+<a class="header" href="#2-counterparty" id="2-counterparty"><h3>#2 Counterparty</h3></a>
+<a class="header" href="#what-is-it-1" id="what-is-it-1"><h4>What is it?</h4></a>
+<p>Counterparty is NOT a block chain. Counterparty is a token protocol released in January 2014 that operates on Bitcoin. It has a fully functional Decentralized Exchange (DEX), as well as several hardcoded smart contracts defined that include contracts for difference and binary options (&quot;bets&quot;). To operate, Counterparty utilizes &quot;embedded consensus&quot;, which means that a Counterparty transaction is created and embedded into a Bitcoin transaction, using encoding such as 1-of-3 multi-signature (multisig), Pay to Script Hash (P2SH) or Pay To Public Key Hash (P2PKH). Counterparty nodes, i.e. nodes that run both <code>bitcoind</code> and the <code>counterparty-server</code> applications, will receive Bitcoin transactions as normal (from <code>bitcoind</code>), and then <code>counterparty-server</code> will scan each, and decode and parse any embedded Counterparty transactions it finds. In effect, Counterparty is a ledger within the larger Bitcoin ledger, and the functioning of embedded consensus can be thought of similar to the fitting of one Russian stacking doll inside another.  <a href="https://github.com/CounterpartyXCP/Documentation/blob/master/Basics/FAQ-SmartContracts.md">([30]</a>, <a href="https://medium.com/@droplister/counterparty-development-101-2f4d9b0c8df3">[31]</a>, <a href="https://counterparty.io">[32]</a>)</p>
+<p>Embedded consensus also means that the nodes maintain identical ledgers without using a separate peer-to-peer network, solely using the Bitcoin block chain for all communication (i.e. timestamping, transaction ordering and transaction propagation). Unlike Bitcoin, which has the concept of both a soft fork and a hard fork, a change to the protocol or &quot;consensus&quot; code of Counterparty always has the potential to create a hard fork. In practice, this means that each Counterparty node must run the same version of <code>counterparty-server</code> (or at least the same minor version, e.g. the &quot;3&quot; in 2.3.0) so that the protocol code matches up across all nodes. (<a href="https://counterparty.io/docs/faq/">[56]</a>, <a href="https://counterparty.io/docs/protocol_specification/">[57]</a>)</p>
+<p>Unlike Bitcoin's UTXO model, the Counterparty token protocol utilizes an accounts system where each Bitcoin address is an account, and Counterparty credit and debit transactions for a specific token type affect account balances of that token for that given address. The decentralized exchange allows for low-friction exchanging of different tokens between addresses, utilizing the concept of &quot;orders&quot;, which are individual transactions made by Counterparty clients, and &quot;order matches&quot;, which the Counterparty protocol itself will generate as it parses new orders which overlap existing active orders in the system. It is the Counterparty protocol code itself which manages the escrow of tokens when an order is created, the exchange of tokens between two addresses that have overlapping orders, and the release of those assets from escrow post-exchange.</p>
+<p>Counterparty uses its own token, XCP, which was created through a &quot;proof of burn&quot;  process during January 2014 <a href="https://counterparty.io/news/why-proof-of-burn/">[58]</a>. In that month, over 2,000 bitcoins were destroyed by various individuals sending them to an unspendable address on the Bitcoin network (<code>1CounterpartyXXXXXXXXXXXXXXXUWLpVr</code>), which caused the Counterparty protocol to award the sending address with a corresponding amount of XCP. XCP is used for payment of asset creation fees, collateral for contracts for difference/binary options, and often used as a base token in decentralized exchange transactions (largely due to the complexities of using BTC in such trades).</p>
+<p><img src="./sources/CounterpartyStack.png" alt="CounterpartyStack" /></p>
+<p>Support for the Ethereum Virtual Machine (EVM) was implemented, but never included on the mainnet version (<a href="https://github.com/CounterpartyXCP/Documentation/blob/master/Basics/FAQ-SmartContracts.md">[30]</a>. With the Counterparty EVM implementation, all published Counterparty smart contracts “live” at Bitcoin addresses that start with a <code>C</code>. Counterparty is used to broadcast an <code>execute</code> transaction to call a specific function or method in the smart contract code. Once an execution transaction is confirmed by a Bitcoin miner, the Counterparty federated nodes will receive the request and execute that method. The contract state is modified as the smart contract code executes and stored in the Counterparty database. <a href="https://counterparty.io/docs/faq/">[56]</a></p>
+<p>General consensus has it that a <em>federated network</em> is a <em>distributed network of centralized networks</em>. The Ripple blockchain implements a Federated Byzantine Agreement (FBA) consensus mechanism. Federated sidechains implements a security protocol using a trusted federation of mutually distrusting functionaries/notaries. Counterparty utilizes a &quot;full stack&quot; packaging system for its components and all dependencies called the &quot;federated node&quot; system,  but this meaning refers to federated in the general definition (i.e. &quot;set up as a single centralized unit within which each state or division keeps some internal autonomy&quot;). (<a href="http://networkcultures.org/unlikeus/resources/articles/what-is-a-federated-network">[54]</a>, <a href="https://towardsdatascience.com/federated-byzantine-agreement-24ec57bf36e0">[55]</a>, <a href="https://blockstream.com/technology/sidechains.pdf">[28]</a>)</p>
+<a class="header" href="#who-uses-it" id="who-uses-it"><h4>Who uses it?</h4></a>
+<p>The most notable projects built on top of Counterparty are <a href="https://www.ageofchains.com">Age of Chains</a>, <a href="http://spacepirate.io">Age of Rust</a>, <a href="https://www.augmentorsgame.com/">Augmentors</a>, <a href="http://authparty.io/">Authparty</a>, <a href="https://bitcorns.com/">Bitcorns</a>, <a href="http://blockfreight.com/">Blockfreight™</a>, <a href="http://www.blocksafefoundation.com">Blocksafe</a>, <a href="http://btcpaymarket.com">BTCpaymarket.com</a>, <a href="http://coindaddy.io">CoinDaddy</a>, <a href="https://coval.readme.io">COVAL</a>, <a href="http://foldingcoin.net/">FoldingCoin</a>, <a href="https://www.footballcoin.io/">FootballCoin</a>, <a href="http://getgems.org/#/">GetGems</a>, <a href="https://indiesquare.me/">IndieBoard</a>, <a href="https://letstalkbitcoin.com/">LTBCoin - Letstalkbitcoin.com</a>, <a href="https://mafiawars.io/">Mafia Wars</a>, <a href="https://nvo.io/">NVO</a>, <a href="https://proofofvisit.com/">Proof of Visit</a>, <a href="http://rarepepe.party">Rarepepe.party</a>, <a href="http://mandelduck.com/sarutobiisland/">SaruTobi Island</a>, <a href="http://www.spellsofgenesis.com">Spells of Genesis</a>, <a href="https://mandelduck.com/#portfolio">Takara</a>, <a href="https://www.thescarabexperiment.org/">The Scarab Experiment</a>, <a href="https://token.fm/">Token.FM</a>, <a href="http://tokenly.com/">Tokenly</a>, <a href="https://topcoin.com/">TopCoin</a> and <a href="https://XCPDEX.COM">XCP DEX</a>. <a href="https://counterparty.io">[32]</a></p>
+<p>In the past, projects like <a href="https://storj.io/">Storj</a> and <a href="https://counterparty.io/news/swarm-crowdfunding/">SWARM</a> also built on Counterparty.</p>
+<p>COVAL is being developed with a primary purpose of moving value using “off-chain” methods. They use their own set of node runners to manage various &quot;off-chain&quot; distributed ledgers and ledger assigned wallets to implement an extended transaction value system, whereby tokens as well as containers of tokens can be securely transacted. Scaling within the COVAL eco system is thus achievable because they are not only reliant on the Counterparty federated nodes to execute smart contracts. <a href="https://coval.readme.io/docs">[33]</a></p>
+<a class="header" href="#strengths-1" id="strengths-1"><h4>Strengths</h4></a>
+<ul>
+<li>Counterparty provides a simple way to add &quot;layer 2&quot; functionality (i.e. hard coded smart contracts) to an already existing blockchain implementation that supports basic data embedding</li>
+<li>Counterparty's embedded consensus model utilizes &quot;permissionless innovation&quot;, meaning that even the Bitcoin core developers could not stop the use of the protocol layer without seriously crippling the network.</li>
+</ul>
+<a class="header" href="#weaknesses-1" id="weaknesses-1"><h4>Weaknesses</h4></a>
+<ul>
+<li>Embedded consensus requires lockstep upgrades from network nodes to avoid forks.</li>
+<li>Embedded consensus imposes limitations on the ability of the secondary layer to interact with the primary layer's token. Counterparty was not able to manipulate BTC balances or otherwise utilize BTC directly.</li>
+<li>With embedded consensus, nodes maintain identical ledgers without using a peer-to-peer network. One could make the claim that this hampers the flexibility of the protocol, and it limits the speed of the protocol to the speed of the underlying blockchain.</li>
+</ul>
+<a class="header" href="#opportunities-for-tari-1" id="opportunities-for-tari-1"><h4>Opportunities for Tari</h4></a>
+<ul>
+<li>Nodes can implement improved consensus models like Federated Byzantine Agreement <a href="https://towardsdatascience.com/federated-byzantine-agreement-24ec57bf36e0">[55]</a></li>
+<li>See '<em>Scriptless scripts</em>'</li>
+</ul>
+<a class="header" href="#threats-for-tari-1" id="threats-for-tari-1"><h4>Threats for Tari</h4></a>
+<p>None</p>
+<a class="header" href="#3-2-way-pegged-secondary-block-chains-sidechains-drivechains-federated-pegs" id="3-2-way-pegged-secondary-block-chains-sidechains-drivechains-federated-pegs"><h3>#3 2-Way Pegged Secondary Block Chains (<em>Sidechains, Drivechains, Federated Pegs</em>)</h3></a>
+<a class="header" href="#what-is-it-2" id="what-is-it-2"><h4>What is it?</h4></a>
+<p>A 2-way peg (2WP) allows the &quot;transfer&quot; of BTC from the main Bitcoin block chain to a secondary block chain and vice-versa at a fixed rate by making use of an appropriate security protocol. The &quot;transfer&quot; actually involves BTC to be locked on the main Bitcoin block chain and unlocked/made available on the secondary block chain. The 2WP promise is concluded when an equivalent amount of tokens on the secondary block chain are locked (in the secondary block chain) so that the original bitcoins can be unlocked. (<a href="https://www.rsk.co/blog/sidechains-drivechains-and-rsk-2-way-peg-design">[22]</a>, <a href="https://blockstream.com/technology/sidechains.pdf">[28]</a>)</p>
+<p><em><u>Sidechain:</u> When the security protocol is implemented using Simplified Payment Verification (SPV) proofs - block chain transaction verification without downloading the entire block chain - the secondary block chain are referred to as a Sidechain.</em> <a href="https://www.rsk.co/blog/sidechains-drivechains-and-rsk-2-way-peg-design">[22]</a></p>
+<p><em><u>Drivechain:</u> When the security protocol is implemented by giving custody of the BTC to miners - where miners vote when to unlock BTC and where to send them - the secondary block chain are referred to as a Drivechain. In this scheme the miners will sign the block header using a Dynamic Membership Multi-party Signature (DMMS).</em> (<a href="https://www.rsk.co/blog/sidechains-drivechains-and-rsk-2-way-peg-design">[22]</a>, <a href="https://blockstream.com/technology/sidechains.pdf">[28]</a>)</p>
+<p><em><u>Federated Peg/Sidechain:</u> When the security protocol is implemented by having a trusted federation of mutually distrusting functionaries/notaries - the secondary block chain are referred to as a Federated Peg/Sidechain. In this scheme the DMMS is replaced with a traditional multi-signature scheme.</em> (<a href="https://www.rsk.co/blog/sidechains-drivechains-and-rsk-2-way-peg-design">[22]</a>, <a href="https://blockstream.com/technology/sidechains.pdf">[28]</a>)</p>
+<p><em><u>Hybrid Sidechain-Drivechain-Federated Peg:</u> When the security protocol is implemented by SPV proofs going to the secondary block chain and dynamic mixture of miner DMMS and functionaries/notaries multi-signatures going back to the main Bitcoin block chain  - the secondary block chain are referred to as a Hybrid Sidechain-Drivechain-Federated Peg.</em> (<a href="https://www.rsk.co/blog/sidechains-drivechains-and-rsk-2-way-peg-design">[22]</a>, <a href="https://blockstream.com/technology/sidechains.pdf">[28]</a>, <a href="https://blockstream.com/strong-federations.pdf">[29]</a>)</p>
+<p>Example of a 2WP Bitcoin secondary block chain using a Hybrid Sidechain-Drivechain-Federated Peg security protocol below <a href="https://www.rsk.co/blog/sidechains-drivechains-and-rsk-2-way-peg-design">[22]</a>:</p>
+<p><img src="./sources/RSK_HybridSideDriveChain.png" alt="RSK_HybridSideDriveChain" /></p>
+<p>The locking of BTC on the main Bitcoin block chain is done by using a P2SH transaction where BTC can be sent to a script hash instead of a public key hash. To unlock the BTC in the P2SH transaction, the recipient must provide a script matching the script hash and data which makes the script evaluate to true. <a href="https://en.bitcoin.it/wiki/Pay_to_script_hash">[23]</a></p>
+<a class="header" href="#who-does-it-1" id="who-does-it-1"><h4>Who does it?</h4></a>
+<p>RSK (<em>formerly Rootstock</em>) is a 2WP Bitcoin secondary block chain using a hybrid sidechain-drivechain security protocol. RSK is scale-able up to 100 transactions per second (Tx/s) and provides a second layer scaling solution for Bitcoin as it can relieve on-chain Bitcoin transactions. (<a href="https://www.ethnews.com/a-survey-of-second-layer-solutions-for-blockchain-scaling-part-1">[14]</a>,  <a href="https://lunyr.com/article/Second-Layer_Scaling">[15]</a>, <a href="https://www.rsk.co">[16]</a>)</p>
+<p>Hivemind (formerly Truthcoin) is implementing a Peer-to-Peer Oracle Protocol which absorbs accurate data into a block chain so that Bitcoin users can speculate in Prediction Markets. <a href="http://bitcoinhivemind.com">[24]</a></p>
+<p>Blockstream is implementing a Federated Sidechain called Liquid, with the functionaries/notaries being made up of participating exchanges and Bitcoin businesses. <a href="https://blockstream.com/strong-federations.pdf">[29]</a></p>
+<p><img src="./sources/Blockstream-Federated-Sidechain.PNG" alt="Blockstream-Federated-Sidechain" /></p>
+<a class="header" href="#strengths-2" id="strengths-2"><h4>Strengths</h4></a>
+<ul>
+<li><u>Permissionless Innovation:</u> Anyone can create a new block chain project that uses the underlying strengths of the main Bitcoin block chain using real BTC as the currency <a href="http://www.drivechain.info">[20]</a></li>
+<li><u>New Features:</u> Sidechains/Drivecahains can be used to test or implement new features without risk to the main Bitcoin block chain or without having to change its protocol, like Schnorr signatures and zero-knowledge proofs. (<a href="http://www.drivechain.info">[20]</a>, <a href="http://drivechains.org/what-are-drivechains/what-does-it-enable">[25]</a>)</li>
+<li><u>Chains-as-a-Service (CaaS) :</u> It is possible to create a CaaS with data storage 2WP secondary block chains. <a href="http://drivechains.org/what-are-drivechains/what-does-it-enable">[25]</a></li>
+<li><u>Smart Contracts:</u> 2WP secondary block chains make it easier to implement smart contracts. <a href="http://drivechains.org/what-are-drivechains/what-does-it-enable">[25]</a></li>
+<li><u>Scalability:</u> 2WP secondary block chains can support larger block sizes and more transactions per second, thus scaling the Bitcoin main block chain. <a href="http://drivechains.org/what-are-drivechains/what-does-it-enable">[25]</a></li>
+</ul>
+<a class="header" href="#weaknesses-2" id="weaknesses-2"><h4>Weaknesses</h4></a>
+<ul>
+<li><u>Security:</u> Transferring BTC back into the main Bitcoin block chain is not secure enough and can be manipulated because Bitcoin does not support SPV from 2WP secondary block chains. <a href="http://www.truthcoin.info/blog/drivechain">[21]</a></li>
+<li><u>51% attacks:</u> 2WP secondary block chains are hugely dependent on merged mining. As such, mining power centralization and 51% attacks are a real threat, as demonstrated for Namecoin and Huntercoin (See <a href="https://github.com/tari-labs/tari-university/blob/master/merged-mining/merged-mining-scene/MergedMiningIntroduction.md">Merged Mining Introduction</a>).</li>
+<li>The DMMS provided by mining is not very secure for small systems, while the trust of the federation/notaries is riskier for large systems. <a href="https://blockstream.com/technology/sidechains.pdf">[28]</a></li>
+</ul>
+<a class="header" href="#opportunities-for-tari-2" id="opportunities-for-tari-2"><h4>Opportunities for Tari</h4></a>
+<p>None, if enough functionality will be built into the main Tari block chain.</p>
+<a class="header" href="#threats-for-tari-2" id="threats-for-tari-2"><h4>Threats for Tari</h4></a>
+<p>None</p>
+<a class="header" href="#4-lumino" id="4-lumino"><h3>#4 Lumino</h3></a>
+<a class="header" href="#what-is-it-3" id="what-is-it-3"><h4>What is it?</h4></a>
+<p>Lumino Transaction Compression Protocol (LTCP) is a technique for transaction compression that allows processing a higher volume of transactions but storing much less information. The Lumino network is a lightning-like extension of the RSK platform that uses LTCP. Delta (difference) compression of selected fields of transactions from the same owner are done by using aggregate signing of previous transactions so previous signatures can be disposed. <a href="https://uploads.strikinglycdn.com/files/ec5278f8-218c-407a-af3c-ab71a910246d/LuminoTransactionCompressionProtocolLTCP.pdf">[17]</a></p>
+<p>Each transaction contains a set of persistent fields called the Persistent Transaction Information (PTI) and a compound record of user transaction data called the SigRec. A Lumino block stores two Merkle trees - one containing all PTIs and the other all transaction IDs (hash of the signed SigRec). This second Merkle tree is conceptually similar to the Segwit witness tree, thus forming the witness part. Docking is the process where SicRec and signature data can be pruned from the block chain if valid linked PTI information exist. <a href="https://uploads.strikinglycdn.com/files/ec5278f8-218c-407a-af3c-ab71a910246d/LuminoTransactionCompressionProtocolLTCP.pdf">[17]</a></p>
+<p><img src="./sources/LuminoDataPruning.PNG" alt="LuminoDataPruning" /></p>
+<a class="header" href="#who-does-it-2" id="who-does-it-2"><h4>Who does it?</h4></a>
+<p>RSK, which has been newly launched on main net in January 2018. The Lumino Network must still be launched in test net. (<a href="https://cryptonewsmonitor.com/2017/11/11/bitcoin-based-ethereum-rival-rsk-set-to-launch-next-month">[18]</a>, <a href="%5B18%5D">[19]</a>)</p>
+<a class="header" href="#strengths-3" id="strengths-3"><h4>Strengths</h4></a>
+<ul>
+<li>The Lumino Network promises high efficiency in pruning the RSK block chain</li>
+</ul>
+<a class="header" href="#weaknesses-3" id="weaknesses-3"><h4>Weaknesses</h4></a>
+<ul>
+<li>The Lumino Network has not been released yet</li>
+<li>Details about how the Lumino Network will handle payment channels were not decisive in the white paper <a href="https://uploads.strikinglycdn.com/files/ec5278f8-218c-407a-af3c-ab71a910246d/LuminoTransactionCompressionProtocolLTCP.pdf">[17]</a></li>
+</ul>
+<a class="header" href="#opportunities-for-tari-3" id="opportunities-for-tari-3"><h4>Opportunities for Tari</h4></a>
+<p>LTCP pruning may be beneficial to Tari</p>
+<a class="header" href="#threats-for-tari-3" id="threats-for-tari-3"><h4>Threats for Tari</h4></a>
+<p>None</p>
+<a class="header" href="#5-scriptless-scripts" id="5-scriptless-scripts"><h3>#5 Scriptless scripts</h3></a>
+<a class="header" href="#what-is-it-4" id="what-is-it-4"><h4>What is it?</h4></a>
+<p><em>Scriptless Scripts</em> was coined and invented by mathematician Andrew Poelstra whereby scripting functionality is offered without actual scripts on the block chain to implement smart contracts. Currently it can only work on the Mimblewimble block chain and makes use of a specific Schnorr signature scheme <a href="https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki">[38]</a> that allows for signature aggregation, mathematically combining several signatures into a single signature, without having to prove Knowledge of Secret Keys (KOSK). This is known as the <em>plain public-key model</em> where the only requirement is that each potential signer has a public key. The KOSK scheme requires that users prove knowledge (or possession) of the secret key during public key registration with a certification authority, and is one way to generically prevent rogue-key attacks. (<a href="https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html">[35]</a>, <a href="https://eprint.iacr.org/2018/068.pdf">[36]</a>)</p>
+<p>Signature aggregation properties sought here are (<a href="https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html">[35]</a>, <a href="https://eprint.iacr.org/2018/068.pdf">[36]</a>):</p>
+<ul>
+<li>Must be provably secure in the <em>plain public-key model</em>;</li>
+<li>Must satisfy the normal Schnorr equation, whereby the resulting signature can be written as a function of a combination of the public keys;</li>
+<li>Must allow for Interactive Aggregate Signatures (IAS) where the signers are required to cooperate;</li>
+<li>Must allow for Non-interactive Aggregate Signatures (NAS) where the aggregation can be done by anyone;</li>
+<li>Must allow each signer to sign the same message;</li>
+<li>Must allow each signer to sign their own message.</li>
+</ul>
+<p>This is different to a normal multi-signature scheme where one message is signed by all.</p>
+<p>Let's say Alice and Bob each needs to provide half a Schnorr signature for a transaction whereby Alice promises to reveal a secret to Bob in exchange for 1 crypto coin. Alice can calculate the difference between her half Schnorr signature and the Schnorr signature of the secret (adaptor signature) and hand it over to Bob. Bob then has the ability to verify the correctness of the adaptor signature without knowing the original signatures. Bob can then provide his half Schnorr signature to Alice so she can broadcast the full Schnorr signature to claim the crypto coin. By broadcasting the full Schnorr signature Bob has access to Alice's half Schnorr signature and he can then calculate the Schnorr signature of the secret because he already knows the adaptor signature, thereby claiming his prize. This is also known as Zero-Knowledge Contingent payments. (<a href="https://bitcoinmagazine.com/articles/scriptless-scripts-how-bitcoin-can-support-smart-contracts-without-smart-contracts">[34]</a>, <a href="https://download.wpsoftware.net/bitcoin/wizardry/mw-slides/2017-03-mit-bitcoin-expo/slides.pdf">[37]</a>)</p>
+<a class="header" href="#who-does-it-3" id="who-does-it-3"><h4>Who does it?</h4></a>
+<p><a href="https://grin-tech.org/">grin-tech.org</a></p>
+<p>Mimblewimble is being sited by Andrew Poelstra as being the ultimate <em>Scriptless Script</em>. <a href="https://download.wpsoftware.net/bitcoin/wizardry/mw-slides/2017-03-mit-bitcoin-expo/slides.pdf">[37]</a></p>
+<p><img src="./sources/Mimblewimble.PNG" alt="Mimblewimble" /></p>
+<a class="header" href="#strengths-4" id="strengths-4"><h4>Strengths</h4></a>
+<ul>
+<li><u>Data savings:</u> Signature aggregation provides data compression on the block chain</li>
+<li><u>Privacy:</u> Nothing about the <em>Scriptless Script</em> smart contract, other than the settlement transaction,  is ever recorded on the block chain. No one will ever know that an underlying smart contract was executed.</li>
+<li><u>Multiplicity:</u> Multiple digital assets can be transferred between two parties in a single settlement transaction.</li>
+<li><u>Implicit scalability:</u> Scalability on the block chain is achieved by virtue of compressing multiple transactions into a single settlement transaction. Transactions are only broadcasted to the block chain once all preconditions are met.</li>
+</ul>
+<a class="header" href="#weaknesses-4" id="weaknesses-4"><h4>Weaknesses</h4></a>
+<p>In a recent work Maxwell et al. (<a href="https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html">[35]</a>, <a href="https://eprint.iacr.org/2018/068.pdf">[36]</a>) showed that a naive implementation of Schnorr multi-signatures that satisfies key aggregation is not secure, and that the Bellare and Neven (BN) Schnorr signature scheme loses the key aggregation property in order to gain security in the plain public-key model. They proposed a new Schnorr-based multi-signature scheme with key aggregation called MuSig, which is provably secure in the <em>plain public-key model</em>. It has the same key and signature size as standard Schnorr signatures. The joint signature can be verified exactly the same as a standard Schnorr signature with respect to a single “aggregated” public-key, which can be computed from the individual public keys of the signers. Note that the case of interactive signature aggregation where each signer signs their own message must still be proven by a complete security analysis.</p>
+<a class="header" href="#opportunities-for-tari-4" id="opportunities-for-tari-4"><h4>Opportunities for Tari</h4></a>
+<p>Tari plans to implement the Mimblewimble block chain and should implement the <em>Scriptless Script</em>s together with the MuSig Schnorr signature scheme.</p>
+<p>However, this in itself will not provide the Layer 2 scaling performance that will be required. Big Neon, the initial business application to be built on top of the Tari block chain, requires to &quot;facilitate 500 tickets in 4 minutes&quot;, that is ~2 spectators allowed access every second, with negligible latency.</p>
+<p>The Mimblewimble <em>Scriptless Script</em>s could be combined with a federated node (or specialized masternode), similar to that being developed by Counterparty. The secrets that are revealed by virtue of the MuSig Schnorr signatures can instantiate normal smart contracts inside the federated node, with the final consolidated state update being written back to the block chain after the event.</p>
+<a class="header" href="#threats-for-tari-4" id="threats-for-tari-4"><h4>Threats for Tari</h4></a>
+<p>None</p>
+<a class="header" href="#6-directed-acyclic-graph-dag-derivative-protocols-greedy-heaviest-observed-sub-tree-ghost-braiding-jute-spectre" id="6-directed-acyclic-graph-dag-derivative-protocols-greedy-heaviest-observed-sub-tree-ghost-braiding-jute-spectre"><h3>#6 Directed Acyclic Graph (DAG) Derivative Protocols: Greedy Heaviest Observed Sub-Tree (GHOST), Braiding, Jute, SPECTRE</h3></a>
+<a class="header" href="#what-is-it-5" id="what-is-it-5"><h4>What is it?</h4></a>
+<p>In mathematics and computer science, a Directed Acyclic Graph (DAG) is a finite directed graph with no directed cycles. A directed graph is acyclic if and only if it has a topological ordering, that is for every directed edge <em>uv</em> from vertex <em>u</em> to vertex <em>v</em>, <em>u</em> comes before <em>v</em> in the ordering (age). <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">[42]</a></p>
+<p><img src="./sources/DAG.PNG" alt="DAG" /></p>
+<p>DAGs in block chain were first proposed as the GHOST protocol (<a href="https://eprint.iacr.org/2013/881.pdf">[44]</a>, <a href="http://fc15.ifca.ai/preproceedings/paper_101.pdf">[45]</a>), a version of which is implemented in Ethereum as the Ethash PoW algorithm (based on Dagger-Hashimoto). Then Braiding (<a href="https://scalingbitcoin.org/hongkong2015/presentations/DAY2/2_breaking_the_chain_1_mcelrath.pdf">[40]</a>,  <a href="https://rawgit.com/mcelrath/braidcoin/master/Braid%2BExamples.html">[41]</a>), Jute <a href="https://scalingbitcoin.org/milan2016/presentations/D2%20-%209%20-%20David%20Vorick.pdf">[43]</a>, SPECTRE <a href="http://www.cs.huji.ac.il/%7Eyoni_sompo/pubs/16/SPECTRE_complete.pdf">[46]</a> and PHANTOM <a href="https://docs.wixstatic.com/ugd/242600_92372943016c47ecb2e94b2fc07876d6.pdf">[52]</a> was presented. The principle of DAG in block chain is to present a way to include traditional off-chain blocks into the ledger, which is governed by mathematical rules. A parent that is simultaneously an ancestor of another parent is disallowed</p>
+<p><img src="./sources/DAGTopologicalOrdering.PNG" alt="DAGTopologicalOrdering" /></p>
+<p>The main problems to be solved by the DAG derivative protocols are <strong>(a)</strong> inclusion of orphaned blocks (decrease the negative effect of slow propagation) and <strong>(b)</strong> mitigation against selfish mining attacks. The underlying concept is still in the research and exploration phase. <a href="https://bitcoinmagazine.com/articles/if-there-is-an-answer-to-selfish-mining-braiding-could-be-it-1482876153">[39]</a></p>
+<p><img src="./sources/GHOST.PNG" alt="GHOST" /></p>
+<p>In most DAG derivative protocols, blocks containing conflicting transactions (<em>i.e. conflicting blocks</em>) are not orphaned. A subsequent block is built on top of both of the conflicting blocks, but the conflicting transactions themselves are thrown out while processing the chain. SPECTRE, for one, provides a scheme whereby blocks vote to decide which transactions are robustly accepted, robustly rejected or stay in an indefinite “pending” state in case of conflicts. Both conflicting blocks become part of the shared history, and both conflicting blocks earn their respective miners a block reward. (<a href="https://bitcoinmagazine.com/articles/if-there-is-an-answer-to-selfish-mining-braiding-could-be-it-1482876153">[39]</a>, <a href="https://medium.com/@avivzohar/the-spectre-protocol-7dbbebb707b5">[50]</a>, <a href="https://eprint.iacr.org/2016/1159.pdf">[51]</a>)</p>
+<p><em><u>Note:</u> Braiding requires that parents and siblings may not contain conflicting transactions.</em></p>
+<p><img src="./sources/SPECTRE.PNG" alt="SPECTRE" /></p>
+<p>Inclusive (DAG derivative) protocols that integrate the contents of traditional off-chain blocks into the ledger results in incentives for behavior changes by the nodes that lead to an increased throughput, and a better payoff for weak miners. <a href="http://fc15.ifca.ai/preproceedings/paper_101.pdf">[45]</a></p>
+<p><img src="./sources/InclusiveProtocolDAG.PNG" alt="InclusiveProtocolDAG" /></p>
+<p>DAG derivative protocols are not Layer 2 Scaling solutions, but offer significant scaling of the primary block chain.</p>
+<a class="header" href="#who-does-it-4" id="who-does-it-4"><h4>Who does it?</h4></a>
+<ul>
+<li>The School of Engineering and Computer Science, The Hebrew University of Jerusalem (<a href="https://eprint.iacr.org/2013/881.pdf">[44]</a>, <a href="http://fc15.ifca.ai/preproceedings/paper_101.pdf">[45]</a>, <a href="http://www.cs.huji.ac.il/%7Eyoni_sompo/pubs/16/SPECTRE_complete.pdf">[46]</a>, <a href="https://medium.com/@avivzohar/the-spectre-protocol-7dbbebb707b5">[50]</a>, <a href="https://eprint.iacr.org/2016/1159.pdf">[51]</a>)
+<ul>
+<li>GHOST, SPECTRE, PHANTOM</li>
+</ul>
+</li>
+<li>DAGlabs <a href="https://www.daglabs.com/">[53]</a>  (<em><u>Note:</u> This is the commercial development chapter.)</em>
+<ul>
+<li>SPECTRE, PHANTOM
+<ul>
+<li>SPECTRE provides high throughput and fast confirmation times. Its DAG structure represents an abstract vote regarding the order between each pair of blocks, but this pairwise ordering may not be extendable to a full linear ordering due to possible Condorcet cycles.</li>
+<li>PHANTOM provides a linear ordering over the blocks of the DAG and can support consensus regarding any general computation (smart contracts), which SPECTRE cannot. In order for a computation or contract to be processed correctly and consistently, the full order of events in the ledger is required, particularly the order of inputs to the contract. However, PHANTOM’s confirmation times are mush slower than those in SPECTRE.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ethereum as the Ethash PoW algorithm that has been adapted from GHOST</li>
+<li><a href="http://bob.mcelrath.org/resume/">Dr. Bob McElrath</a> (<a href="https://scalingbitcoin.org/hongkong2015/presentations/DAY2/2_breaking_the_chain_1_mcelrath.pdf">[40]</a>, <a href="https://rawgit.com/mcelrath/braidcoin/master/Braid%2BExamples.html">[41]</a>)
+<ul>
+<li>Brading</li>
+</ul>
+</li>
+<li>David Vorick <a href="https://scalingbitcoin.org/milan2016/presentations/D2%20-%209%20-%20David%20Vorick.pdf">[43]</a>
+<ul>
+<li>Jute</li>
+</ul>
+</li>
+<li>Crypto currencies:
+<ul>
+<li>IOTA <a href="https://www.iota.org/">[47]</a></li>
+<li>Nano <a href="https://nano.org/en">[48]</a></li>
+<li>Byteball <a href="https://byteball.org/">[49]</a></li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#strengths-5" id="strengths-5"><h4>Strengths</h4></a>
+<ul>
+<li><u>Layer 1 scaling:</u> Increased transaction throughput on the main block chain</li>
+<li><u>Fairness:</u> Better payoff for weak miners</li>
+<li><u>Decentralization mitigation:</u> Weaker miners also get profits</li>
+<li><u>Transaction confirmation times:</u> Confirmation times of several seconds (SPECTRE)</li>
+<li><u>Smart contracts:</u> Support smart contracts (PHANTOM)</li>
+</ul>
+<a class="header" href="#weaknesses-5" id="weaknesses-5"><h4>Weaknesses</h4></a>
+<ul>
+<li>
+<p>Still not proven 100%, development continuing.</p>
+</li>
+<li>
+<p>The DAG derivative protocols differ on important aspects like miner payment schemes, security models, support for smart contracts, confirmation times, etc. Thus, all DAG derivative protocols are not created equal, beware!</p>
+</li>
+</ul>
+<a class="header" href="#opportunities-for-tari-5" id="opportunities-for-tari-5"><h4>Opportunities for Tari</h4></a>
+<p>Opportunities exist for Tari in applying the basic DAG principles to make a 51% attack harder by virtue of fairness and miner decentralization resistance. Choosing the correct DAG derivative protocol can also significantly improve Layer 1 scaling.</p>
+<a class="header" href="#threats-for-tari-5" id="threats-for-tari-5"><h4>Threats for Tari</h4></a>
+<p>None</p>
+<a class="header" href="#observations" id="observations"><h2>Observations</h2></a>
+<ul>
+<li>Although not all technologies covered here are Layer 2 Scaling solutions, the strengths should be considered as building blocks for the Tari protocol.</li>
+</ul>
+<a class="header" href="#references" id="references"><h2>References</h2></a>
+<p>[1] TumbleBit: An Untrusted Bitcoin-Compatible Anonymous Payment Hub, http://cs-people.bu.edu/heilman/tumblebit, Date accessed: 2018-07-12.</p>
+<p>[2] TumbleBit: An Untrusted Bitcoin-Compatible Anonymous Payment Hub, Heilman E. et. el., https://eprint.iacr.org/2016/575.pdf, Date accessed: 2018-07-08.</p>
+<p>[3] Anonymous Transactions Coming to Stratis, <a href="https://medium.com/@Stratisplatform/anonymous-transactions-coming-to-stratis-fced3f5abc2e">https://medium.com/@Stratisplatform/anonymous-transactions-coming-to-stratis-fced3f5abc2e</a>, Date accessed: 2018-07-08.</p>
+<p>[4] TumbleBit Proof of Concept GitHub Repository, https://github.com/BUSEC/TumbleBit, Date accessed: 2018-07-08.</p>
+<p>[5] NTumbleBit GitHub Repository, https://github.com/nTumbleBit/nTumbleBit, Date accessed: 2018-07-12.</p>
+<p>[6] Breeze Tumblebit Server Experimental Release, https://stratisplatform.com/2017/07/17/breeze-tumblebit-server-experimental-release, Date accessed: 2018-07-12.</p>
+<p>[7] Breeze Wallet with Breeze Privacy Protocol (Dev. Update), https://stratisplatform.com/2017/09/20/breeze-wallet-with-breeze-privacy-protocol-dev-update, Date accessed: 2018-07-12.</p>
+<p>[8] Blindly Signed Contracts - Anonymous On-chain and Off-chain Bitcoin Transactions, Heilman E. et. el., https://eprint.iacr.org/2016/056.pdf, Date accessed: 2018-07-12.</p>
+<p>[9] Conference: Scaling Bitcoin 2016 Milan, TumbleBit: An Untrusted Bitcoin-Compatible Anonymous Payment Hub - Ethan Heilman &amp; Leen AlShenibr - 08 October 2016, https://www.youtube.com/watch?v=8BLWUUPfh2Q&amp;feature=youtu.be&amp;t=1h3m10s, Date accessed: 2018-07-13.</p>
+<p>[10] Better Bitcoin Privacy, Scalability: Developers Making TumbleBit a Reality, https://bitcoinmagazine.com/articles/better-bitcoin-privacy-scalability-developers-are-making-tumblebit-reality, Date accessed: 2018-07-13.</p>
+<p>[11] Bitcoinwiki: Contract, https://en.bitcoin.it/wiki/Contract, Date accessed: 2018-07-13.</p>
+<p>[12] Bitcoin Privacy is a Breeze: TumbleBit Successfully Integrated Into Breeze, https://stratisplatform.com/2017/08/10/bitcoin-privacy-tumblebit-integrated-into-breeze, Date accessed: 2018-07-13.</p>
+<p>[13] TumbleBit Wallet Reaches One Step Forward, https://www.bitcoinmarketinsider.com/tumblebit-wallet-reaches-one-step-forward, Date accessed: 2018-07-13.</p>
+<p>[14] A Survey Of Second Layer Solutions For Blockchain Scaling  Part 1, https://www.ethnews.com/a-survey-of-second-layer-solutions-for-blockchain-scaling-part-1, https://www.ethnews.com/a-survey-of-second-layer-solutions-for-blockchain-scaling-part-1, Date accessed: 2018-07-16.</p>
+<p>[15] Second-Layer Scaling, https://lunyr.com/article/Second-Layer_Scaling, Date accessed: 2018-07-16.</p>
+<p>[16] RSK website, https://www.rsk.co, Date accessed: 2018-07-16.</p>
+<p>[17] Lumino Transaction Compression Protocol (LTCP), Lerner S. D., https://uploads.strikinglycdn.com/files/ec5278f8-218c-407a-af3c-ab71a910246d/LuminoTransactionCompressionProtocolLTCP.pdf, Date accessed: 2018-07-16.</p>
+<p>[18] Bitcoin-Based Ethereum Rival RSK Set to Launch Next Month, https://cryptonewsmonitor.com/2017/11/11/bitcoin-based-ethereum-rival-rsk-set-to-launch-next-month, Date accessed: 2018-07-16.</p>
+<p>[19] RSK Blog website, https://media.rsk.co/, Date accessed: 2018-07-16.</p>
+<p>[20] Drivechain: Enabling Bitcoin Sidechain, http://www.drivechain.info, Date accessed: 2018-07-17.</p>
+<p>[21] Drivechain - The Simple Two Way Peg, http://www.truthcoin.info/blog/drivechain, Date accessed: 2018-07-17.</p>
+<p>[22] Sidechains, Drivechains, and RSK 2-Way peg Design, https://www.rsk.co/blog/sidechains-drivechains-and-rsk-2-way-peg-design or https://uploads.strikinglycdn.com/files/27311e59-0832-49b5-ab0e-2b0a73899561/Drivechains_Sidechains_and_Hybrid_2-way_peg_Designs_R9.pdf, Date accessed: 2018-07-18.</p>
+<p>[23] Pay to script hash, https://en.bitcoin.it/wiki/Pay_to_script_hash, Date accessed: 2018-07-18.</p>
+<p>[24] Hivemind website, http://bitcoinhivemind.com, Date accessed: 2018-07-18.</p>
+<p>[25] Drivechains: What do they enable? Cloud 3.0 Services Smart Contracts and Scalability, http://drivechains.org/what-are-drivechains/what-does-it-enable, Date accessed: 2018-07-19.</p>
+<p>[26] Bloq’s Paul Sztorc on the 4 Main Benefits of Sidechains, https://bitcoinmagazine.com/articles/bloq-s-paul-sztorc-on-the-main-benefits-of-sidechains-1463417446, Date accessed: 2018-07-19.</p>
+<p>[27] Blockstream website, https://blockstream.com/technology, Date accessed: 2018-07-19.</p>
+<p>[28] Enabling Blockchain Innovations with Pegged Sidechains, Back A. et al., 2014-10-22, https://blockstream.com/technology/sidechains.pdf, Date accessed: 2018-07-19.</p>
+<p>[29] Strong Federations: An Interoperable Blockchain Solution to Centralized Third Party Risks, Dilley J. et al., https://blockstream.com/strong-federations.pdf, Date accessed: 2018-07-19.</p>
+<p>[30] CounterpartyXCP/Documentation/Smart Contracts/EVM FAQ, https://github.com/CounterpartyXCP/Documentation/blob/master/Basics/FAQ-SmartContracts.md, Date accessed: 2018-07-23.</p>
+<p>[31] Counterparty Development 101, <a href="https://medium.com/@droplister/counterparty-development-101-2f4d9b0c8df3">[https://medium.com/@droplister/counterparty-development-101-2f4d9b0c8df3]</a>, Date accessed: 2018-07-23.</p>
+<p>[32]  Counterparty website, https://counterparty.io, Date accessed: 2018-07-24.</p>
+<p>[33] COVAL website, https://coval.readme.io/docs, Date accessed: 2018-07-24.</p>
+<p>[34] Scriptless Scripts: How Bitcoin Can Support Smart Contracts Without Smart Contracts, https://bitcoinmagazine.com/articles/scriptless-scripts-how-bitcoin-can-support-smart-contracts-without-smart-contracts, Date accessed: 2018-07-24.</p>
+<p>[35] Key Aggregation for Schnorr Signatures, https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html, Date accessed: 2018-07-24.</p>
+<p>[36] Simple Schnorr Multi-Signatures with Applications to Bitcoin, Maxwell G. et al., 20 May 2018, https://eprint.iacr.org/2018/068.pdf, Date accessed: 2018-07-24.</p>
+<p>[37] Scriptless Scripts, Poelstra A., 4 March 2017  https://download.wpsoftware.net/bitcoin/wizardry/mw-slides/2017-03-mit-bitcoin-expo/slides.pdf, Date accessed: 2018-07-24.</p>
+<p>[38] bip-schnorr.mediawiki, https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawiki, Date accessed: 2018-07-26.</p>
+<p>[39] If There Is an Answer to Selfish Mining, Braiding Could Be It, https://bitcoinmagazine.com/articles/if-there-is-an-answer-to-selfish-mining-braiding-could-be-it-1482876153, Date accessed: 2018-07-27.</p>
+<p>[40] Braiding the Blockchain, McElrath B., Scaling Bitcoin, Hong Kong, 7 Dec 2015,  https://scalingbitcoin.org/hongkong2015/presentations/DAY2/2_breaking_the_chain_1_mcelrath.pdf, Date accessed: 2018-07-27.</p>
+<p>[41] Braid Examples, https://rawgit.com/mcelrath/braidcoin/master/Braid%2BExamples.html, Date accessed: 2018-07-27.</p>
+<p>[42] Directed acyclic graph, https://en.wikipedia.org/wiki/Directed_acyclic_graph, Date accessed: 2018-07-30.</p>
+<p>[43] Braiding Techniques to Improve Security and Scaling, https://scalingbitcoin.org/milan2016/presentations/D2%20-%209%20-%20David%20Vorick.pdf, Date accessed: 2018-07-30.</p>
+<p>[44] GHOST: Secure High-Rate Transaction Processing in Bitcoin, Sompolinsky Y et al., https://eprint.iacr.org/2013/881.pdf, Date accessed: 2018-07-30.</p>
+<p>[45] Inclusive Block Chain Protocols, Lewenberg Y et al., http://fc15.ifca.ai/preproceedings/paper_101.pdf, Date accessed: 2018-07-30.</p>
+<p>[46] SPECTRE: A Fast and Scalable Cryptocurrency Protocol, Sompolinsky Y et al., http://www.cs.huji.ac.il/~yoni_sompo/pubs/16/SPECTRE_complete.pdf, Date accessed: 2018-07-30.</p>
+<p>[47] IOTA website, https://www.iota.org/, Date accessed: 2018-07-30.</p>
+<p>[48] NANO, https://nano.org/en, Date accessed: 2018-07-30.</p>
+<p>[49] Byteball, https://byteball.org/, Date accessed: 2018-07-30.</p>
+<p>[50] SPECTRE: Serialization of Proof-of-Work Events, Confirming Transactions via Recursive Elections, <a href="https://medium.com/@avivzohar/the-spectre-protocol-7dbbebb707b5">[https://medium.com/@avivzohar/the-spectre-protocol-7dbbebb707b5]</a>, Date accessed: 2018-07-30.</p>
+<p>[51] SPECTRE: Serialization of Proof-of-work Events: Confirming Transactions via Recursive Elections, Sompolinsky  Y et al., https://eprint.iacr.org/2016/1159.pdf, Date accessed: 2018-07-30.</p>
+<p>[52] PHANTOM: A Scalable BlockDAG protocol, Sompolinsky Y. et. al., https://docs.wixstatic.com/ugd/242600_92372943016c47ecb2e94b2fc07876d6.pdf, Date accessed: 2018-07-30.</p>
+<p>[53] DAGLabs website, https://www.daglabs.com, Date accessed: 2018-07-30.</p>
+<p>[54] Beyond distributed and decentralized: what is a federated network?, http://networkcultures.org/unlikeus/resources/articles/what-is-a-federated-network, Date accessed: 2018-08-13.</p>
+<p>[55] Federated Byzantine Agreement, https://towardsdatascience.com/federated-byzantine-agreement-24ec57bf36e0, Date accessed: 2018-08-13.</p>
+<p>[56] Counterparty Documentation: Frequently Asked Questions, https://counterparty.io/docs/faq, Date accessed: 2018-09-14.</p>
+<p>[57] Counterparty Documentation: Protocol Specification, https://counterparty.io/docs/protocol_specification, Date accessed: 2018-09-14.</p>
+<p>[58] Counterparty News:  Why Proof-of-Burn, March 23, 2014 , https://counterparty.io/news/why-proof-of-burn, Date accessed: 2018-09-14.</p>
+<a class="header" href="#contributors" id="contributors"><h2>Contributors</h2></a>
+<ul>
+<li><a href="https://github.com/hansieodendaal">https://github.com/hansieodendaal</a></li>
+<li><a href="https://github.com/ksloven">https://github.com/ksloven</a></li>
+<li><a href="https://github.com/robby-dermody">https://github.com/robby-dermody</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../layer2scaling/executive-summary/sources/PITCHME.link.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

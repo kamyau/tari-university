@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Merged Mining Introduction - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../preface/introduction.html">Introduction</a></li><li><a href="../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../layer2scaling/more-landscape/landscape-update.html"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html" class="active"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#merged-mining-introduction" id="merged-mining-introduction"><h1>Merged Mining Introduction</h1></a>
+<a class="header" href="#what-is-merged-mining" id="what-is-merged-mining"><h2>What is merged mining?</h2></a>
+<p>Merged mining is the act of using work done on another block chain (the Parent) on one or more Auxiliary block chains and to accept it as valid on its own chain, using Auxiliary Proof-of-Work (AuxPoW), which is the relationship between two block chains for one to trust the other's work as their own. The Parent block chain does not need to be aware of the AuxPoW logic as blocks submitted to it are still valid blocks. <a href="https://en.bitcoin.it/wiki/Merged_mining_specification">[1]</a></p>
+<p>As an example the structure of merged mined blocks in Namecoin and Bitcoin is shown below. <a href="http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2315652">[25]</a></p>
+<p><img src="./sources/MergedMiningIntro01.png" alt="MergedMiningIntro01" /></p>
+<p>A transaction set for both block chains are assembled. The hash of the AuxPoW block header is then inserted in the 'free' bytes region (coinbase field) of the coinbase transaction and submitted to the Parent block chain's Proof-of-Work (PoW). If the merge miner solves the block at the difficulty level of either or both block chains the respective block(s) are re-assembled with the completed PoW and submitted to the correct block chain. In case of the Auxiliary block chain the Parent's block hash, Merkle tree branch and coinbase transaction are inserted in the Auxiliary block's AuxPoW header. This is to prove that enough work was done on the Parent block chain that meets the difficulty level of the Auxiliary block chain. (<a href="https://en.bitcoin.it/wiki/Merged_mining_specification">[1]</a>, <a href="https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work">[2]</a>, <a href="http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2315652">[25]</a>)</p>
+<p>The propagation of Parent and Auxiliary blocks are totally independent and only governed by each chain's difficulty level. As an example the diagram below shows how this can play out in practice with Namecoin and Bitcoin when the Parent difficulty (D<sub>BTC</sub>) is larger than the Auxiliary difficulty (D<sub>NMC</sub>) . Note that <em>BTC block 2'</em> did not become part of the Parent block chain propagation.</p>
+<p><img src="./sources/MergedMiningIntro02.png" alt="MergedMiningIntro02" /></p>
+<a class="header" href="#merged-mining-with-multiple-auxiliary-chains" id="merged-mining-with-multiple-auxiliary-chains"><h2>Merged mining with multiple Auxiliary chains</h2></a>
+<p>A miner can use a single Parent to perform merged mining on multiple Auxiliary block chains. The Merkle tree root of a Merkle tree that contains the block hashes of the Auxiliary blocks as leaves must then be inserted in the Parent's coinbase field as shown below. To prevent double spending attacks each Auxiliary block chain must specify a unique ID that can be used to derive the leave of the Merkle tree where the respective block hash must be located. <a href="http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2315652">[25]</a></p>
+<p><img src="./sources/MergedMiningIntro03.png" alt="MergedMiningIntro03" /></p>
+<a class="header" href="#merged-mining-interesting-facts-case-studies" id="merged-mining-interesting-facts-case-studies"><h2>Merged mining interesting facts, case studies</h2></a>
+<a class="header" href="#namecoin-307-with-bitcoin-1" id="namecoin-307-with-bitcoin-1"><h3>Namecoin (#307) with Bitcoin (#1)</h3></a>
+<ul>
+<li>Namecoin, the first fork of Bitcoin, introduced merged mining with Bitcoin <a href="https://en.bitcoin.it/wiki/Merged_mining_specification">[1]</a> from block 19,200 onwards <a href="https://github.com/namecoin/wiki/blob/master/Merged-Mining.mediawiki">[3]</a>. Namecoin current block height is &gt;400,500 (@ 2018/05/28) <a href="https://bchain.info/NMC">[4]</a>.</li>
+<li>Over the 5 day period of 23-27/05/2018 only 226 out of 752 blocks posted transaction values over and above the block reward of 25 NMC, with an average transaction value of 159.231 NMC including the block reward. <a href="https://bchain.info/NMC">[4]</a></li>
+<li>Slush Pool merged mining Namecoin with Bitcoin rewards all miners with BTC equivalent to NMC via external exchange service. <a href="https://slushpool.com/help/first-aid/faq-merged-mining">[5]</a></li>
+<li>P2pool, Multipool, Slush Pool, Eligius and F2pool are cited as top Namecoin merged mining pools. <a href="https://www.prooworld.com/namecoin/best-namecoin-mining-pools">[6]</a></li>
+</ul>
+<table><thead><tr><th> @ 2018-05-30          </th><th> Bitcoin <a href="https://bitinfocharts.com">[16]</a> </th><th> Namecoin <a href="https://bitinfocharts.com">[16]</a> </th><th> Ratio   </th></tr></thead><tbody>
+<tr><td> Block time target (s) </td><td> 600                                       </td><td> 600                                        </td><td> 100.00% </td></tr>
+<tr><td> Hashrate (Ehash/s)    </td><td> 31.705                                    </td><td> 21.814                                     </td><td> 68.80%  </td></tr>
+<tr><td> Blocks count          </td><td> 525064                                    </td><td> 400794                                     </td><td> 76.33%  </td></tr>
+</tbody></table>
+<a class="header" href="#dogecoin-37-with-litecoin-6" id="dogecoin-37-with-litecoin-6"><h3>Dogecoin (#37) with Litecoin (#6)</h3></a>
+<ul>
+<li>Dogecoin introduced merged mining with Litecoin <a href="https://www.reddit.com/r/dogecoin/comments/22niq9/merged_mining_amafaq">[8]</a> from block 371,337 onwards <a href="https://www.reddit.com/r/dogecoin/comments/2fyxg1/the_forkening_is_happening_at_900am_est_a_couple">[9]</a>. Dogecoin current block height is &gt;2,240,000 (@ 2018/05/29) <a href="https://dogechain.info">[10]</a>.</li>
+<li>Many in the Dogecoin user community believe merged mining with Litecoin saved Dogecoin from a 51% attack. <a href="https://www.reddit.com/r/dogecoin/comments/22niq9/merged_mining_amafaq">[8]</a></li>
+</ul>
+<table><thead><tr><th> @ 2018-05-30          </th><th> Litecoin <a href="https://bitinfocharts.com">[16]</a> </th><th> Dogecoin <a href="https://bitinfocharts.com">[16]</a> </th><th> Ratio   </th></tr></thead><tbody>
+<tr><td> Block time target (s) </td><td> 150                                        </td><td> 60                                         </td><td> 40.00%  </td></tr>
+<tr><td> Hashrate (Thash/s)    </td><td> 311.188                                    </td><td> 235.552                                    </td><td> 75.69%  </td></tr>
+<tr><td> Blocks count          </td><td> 1430517                                    </td><td> 2241120                                    </td><td> 156.67% </td></tr>
+</tbody></table>
+<a class="header" href="#huntercoin-779-with-bitcoin-1-or-litecoin-6" id="huntercoin-779-with-bitcoin-1-or-litecoin-6"><h3>Huntercoin (#779) with Bitcoin (#1) or Litecoin (#6)</h3></a>
+<ul>
+<li>Huntercoin was released as a live experimental test to see how blockchain technology could handle full on game worlds. <a href="http://huntercoin.org/">[22]</a></li>
+<li>Huntercoin was originally designed to be supported for only 1 year, but development and support will continue. <a href="http://huntercoin.org/">[22]</a></li>
+<li>Players are awarded coins for gaming, thus world's first human mineable cryptocurrency.</li>
+<li>Coin distribution: 10 coins per block, 9 for the game world and 1 for the miners. <a href="http://huntercoin.org/">[22]</a></li>
+</ul>
+<table><thead><tr><th> @ 2018-06-01                      </th><th> Huntercoin     </th></tr></thead><tbody>
+<tr><td> Block time target (s)             </td><td> 120            </td></tr>
+<tr><td> Block chain size (GB)             </td><td> 17             </td></tr>
+<tr><td> Pruned block chain size (GB)      </td><td> 0.5            </td></tr>
+<tr><td> Blocks count                      </td><td> 2291060        </td></tr>
+<tr><td> PoW Algorithm (for merged mining) </td><td> SHA256, Scrypt </td></tr>
+</tbody></table>
+<a class="header" href="#myriad-510-with-bitcoin-1-or-litecoin-6" id="myriad-510-with-bitcoin-1-or-litecoin-6"><h3>Myriad (#510) with Bitcoin (#1) or Litecoin (#6)</h3></a>
+<ul>
+<li>Myriad is the first currency to support 5 PoW algorithms and claims their multi PoW algorithm approach offers exceptional 51% resistance. <a href="http://myriadcoin.org/">[23]</a></li>
+<li>Myriad introduced merged mining from block 1,402,791 onwards. <a href="https://eprint.iacr.org/2017/791.pdf">[24]</a></li>
+</ul>
+<table><thead><tr><th> @ 2018-06-01                      </th><th> Myriad                       </th></tr></thead><tbody>
+<tr><td> Block time target (s)             </td><td> 60                           </td></tr>
+<tr><td> Block chain size (GB)             </td><td> 2.095                        </td></tr>
+<tr><td> Blocks count                      </td><td> 2442829                      </td></tr>
+<tr><td> PoW Algorithm (for merged mining) </td><td> SHA256d, Scrypt              </td></tr>
+<tr><td> PoW Algorithm (others)            </td><td> Myr-Groestl, Skein, Yescrypt </td></tr>
+</tbody></table>
+<ul>
+<li>
+<p>Some solved multi-PoW block examples below:</p>
+<ul>
+<li><img src="./sources/Myriad-1.png" alt="Myriad-1" /></li>
+<li><img src="./sources/Myriad-2.png" alt="Myriad-2" /></li>
+<li><img src="./sources/Myriad-3.png" alt="Myriad-3" /></li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#monero-12--digitalnote-166--fantomcoin-1068" id="monero-12--digitalnote-166--fantomcoin-1068"><h3>Monero (#12) / DigitalNote (#166) + FantomCoin (#1068)</h3></a>
+<ul>
+<li>
+<p>FantamCoin was the 1st CryptoNote based coin to develop merged mining with Monero, but was abandoned until DigitalNote developers became interested in merged mining with Monero and revived FantamCoin in the October 2016 (<a href="https://minergate.com/blog/merged-mining-with-monero">[17]</a>, <a href="https://bitcointalk.org/index.php?topic=1082745.msg16615346#msg16615346">[18]</a>, <a href="https://github.com/xdn-project">[19]</a>).</p>
+</li>
+<li>
+<pre><code class="language-text">FantamCoin Release notes 2.0.0
+- Fantomcoin 2.0 by XDN-project, major FCN update to the latest
+  cryptonotefoundation codebase 
+- New FCN+XMR merged merged mining 
+- Default block size - 100Kb
+
+DigitalNote Release notes 4.0.0-beta
+- EmPoWering XDN network security with merged mining with any CryptoNote 
+  cryptocurrency
+- Second step to the PoA with the new type of PoW merged mining blocks
+</code></pre>
+</li>
+<li>
+<p>DigitalNote and FantomCoin merged mining with Monero are now stuck with the recent CryptoNight based Monero forks like Monero Classic and Monero Original after Monero's recent hard fork to CryptoNight v7. (See Attack Vectors)</p>
+</li>
+</ul>
+<table><thead><tr><th> @ 2018-05-31          </th><th> Monero <a href="https://bitinfocharts.com">[16]</a> </th><th> DigitalNote <a href="https://bitinfocharts.com">[16]</a> </th><th> Ratio   </th></tr></thead><tbody>
+<tr><td> Block time target (s) </td><td> 120                                      </td><td> 240                                           </td><td> 200.00% </td></tr>
+<tr><td> Hashrate (Mhash/s)    </td><td> 410.804                                  </td><td> 13.86                                         </td><td> 3.37%   </td></tr>
+<tr><td> Blocks count          </td><td> 1583869                                  </td><td> 660075                                        </td><td> 41.67%  </td></tr>
+</tbody></table>
+<table><thead><tr><th> @ 2018-05-31          </th><th> Monero <a href="https://bitinfocharts.com">[16]</a> </th><th> FantomCoin <a href="https://bitinfocharts.com">[16]</a> </th><th> Ratio   </th></tr></thead><tbody>
+<tr><td> Block time target (s) </td><td> 120                                      </td><td> 60                                           </td><td> 50.00%  </td></tr>
+<tr><td> Hashrate (Mhash/s)    </td><td> 410.804                                  </td><td> 19.29                                        </td><td> 4.70%   </td></tr>
+<tr><td> Blocks count          </td><td> 1583869                                  </td><td> 2126079                                      </td><td> 134.23% </td></tr>
+</tbody></table>
+<a class="header" href="#some-stats" id="some-stats"><h3>Some stats</h3></a>
+<ul>
+<li>
+<p>Merge-mined blocks in some cryptocurrencies at 2017/06/18 <a href="https://eprint.iacr.org/2017/791.pdf">[24]</a>:</p>
+<p><img src="./sources/MergedMiningStats-1.png" alt="MergedMiningStats-1" /></p>
+</li>
+</ul>
+<a class="header" href="#observations" id="observations"><h3>Observations</h3></a>
+<ul>
+<li>The Auxiliary block chain's target block times can be smaller, equal or larger than the Parent block chain.</li>
+<li>The Auxiliary block chain's hash rate is generally smaller but in the same order of magnitude as that of the Parent block chain.</li>
+<li>A multi PoW algorithm approach may further enhance 51% resistance.</li>
+</ul>
+<a class="header" href="#attack-vectors" id="attack-vectors"><h2>Attack Vectors</h2></a>
+<ul>
+<li>
+<a class="header" href="#51-attacks" id="51-attacks"><h3>51% attacks</h3></a>
+<ul>
+<li>51% attacks are real and relevant today. Bitcoin Gold (rank #28 @ 2018/05/29) and Verge (rank #33 @ 2018/05/29) suffered recent attacks with double spend transactions following. (<a href="https://www.ccn.com/bitcoin-gold-hit-by-double-spend-attack-exchanges-lose-millions">[11]</a>, <a href="https://www.ccn.com/privacy-coin-verge-succumbs-to-51-attack-again">[12]</a>)</li>
+<li>In a conservative analysis, successful attacks on PoW cryptocurrencies are more likely when dishonest entities control more than 25% of the total mining power. <a href="https://eprint.iacr.org/2017/791.pdf">[24]</a></li>
+<li>Tari tokens are envisaged to be merged mined with Monero <a href="https://www.tari.com">[13]</a>, as such the Monero block chain security is important to the Tari block chain.</li>
+<li>Monero recently (2018-04-06) introduced a hard fork with upgraded PoW algorithm CryptoNight v7 at block height 1546000 to maintain their Application Specific Integrated Circuit (ASIC) resistance and hence guard against 51% attacks. The Monero team proposes changes to their PoW every scheduled fork (i.e. every 6 months) going forward. (<a href="https://www.ccn.com/monero-hard-forks-to-maintain-asic-resistance-but-classic-hopes-to-spoil-the-party">[14]</a>, <a href="https://getmonero.org/2018/02/11/pow-change-and-key-reuse.html">[15]</a>)</li>
+<li>An interesting question arises what needs to happen to the Tari block chain if the Monero block chain is hard forked. Since the CryptoNight v7 hard fork the network hash rate for Monero hovers around ~500 MH/s, whereas in the two months immediately prior it was ~1,000 MH/s <a href="https://chainradar.com/xmr/chart">[20]</a>. Thus 50% of the hash power can be ascribed to ASICS and botnet miners.</li>
+<li><img src="./sources/MoneroHashRate.png" alt="MoneroHashRate" /></li>
+<li>NiceHash statistics for CryptoNight v7 <a href="https://www.nicehash.com/algorithm/cryptonightv7">[21]</a> shows a lag of 2 days for ~ 100,600 miners to get up to speed with providing the new hashing power after the Monero hard fork.</li>
+<li><img src="./sources/CryptoNight-v7.png" alt="CryptoNight-v7" /></li>
+<li>The Tari block chain will have to fork together with or just after a scheduled Monero fork. The Tari block chain will be vulnerable to ASIC miners until it has been forked.</li>
+</ul>
+</li>
+<li>
+<a class="header" href="#double-proof" id="double-proof"><h3>Double proof</h3></a>
+<ul>
+<li>A miner could cheat the PoW system by putting more than one Auxiliary block header into one Parent block <a href="https://en.bitcoin.it/wiki/Alternative_chain#Protecting_against_double_proof">[7]</a>.</li>
+<li>Multiple Auxiliary blocks can be competing for the same PoW, and could subject your Auxiliary block chain to nothing-at-stake attacks if the chain is forked, maliciously or by accident, with consequent attempts to reverse transactions. (<a href="https://en.bitcoin.it/wiki/Alternative_chain#Protecting_against_double_proof">[7]</a>, <a href="https://github.com/ethereum/wiki/wiki/Problems">[26]</a>)</li>
+<li>More than one Auxiliary block chain will be merged mined with Monero.</li>
+</ul>
+</li>
+<li>
+<a class="header" href="#analysis-of-mining-power-centralisation-issues-a-hrefhttpseprintiacrorg2017791pdf24a-a-hrefhttprepositumtuwienacatobvutwhsdownloadpdf231565225a" id="analysis-of-mining-power-centralisation-issues-a-hrefhttpseprintiacrorg2017791pdf24a-a-hrefhttprepositumtuwienacatobvutwhsdownloadpdf231565225a"><h3>Analysis of Mining Power Centralisation Issues (<a href="https://eprint.iacr.org/2017/791.pdf">[24]</a>, <a href="http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2315652">[25]</a>)</h3></a>
+<ul>
+<li>In Namecoin F2Pool reached and maintained a majority of the mining power for prolonged periods.</li>
+<li>Litecoin has experienced slight centralisation since mid-2014, among others caused by Clevermining and F2Pool.</li>
+<li>In Dogecoin F2Pool was responsible for generating more than 33% of the blocks per day for significant periods, even exceeding the 50% threshold around the end of 2016.</li>
+<li>Huntercoin was instantly dominated by F2Pool and remained in this state until mid-2016.</li>
+<li>Myriadcoin appears to have experienced only a moderate impact.  Multi-merge-mined blockchains allow for more than one parent cryptocurrency and have a greater chance to acquire a higher difficulty per PoW algorithm, in comparison to the respective parent blockchain.</li>
+<li>Distribution of overall percentage of days below/above the centralization indicator thresholds at 2017/06/18:
+<img src="./sources/MergedMiningStats-2.png" alt="MergedMiningStats-2" /></li>
+</ul>
+</li>
+<li>
+<a class="header" href="#introduction-of-new-attack-vectors-a-hrefhttpseprintiacrorg2017791pdf24a-a-hrefhttprepositumtuwienacatobvutwhsdownloadpdf231565225a" id="introduction-of-new-attack-vectors-a-hrefhttpseprintiacrorg2017791pdf24a-a-hrefhttprepositumtuwienacatobvutwhsdownloadpdf231565225a"><h3>Introduction of New Attack Vectors (<a href="https://eprint.iacr.org/2017/791.pdf">[24]</a>, <a href="http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2315652">[25]</a>)</h3></a>
+<ul>
+<li>Miners can generate blocks for the merge-mined child blockchains at almost no additional cost, enabling attacks without risking financial losses.</li>
+<li>Merged mining as an attack vector works both ways as parent cryptocurrencies cannot easily prevent being mergemined by auxiliary block chains.</li>
+<li>Merged mining can increase the hash rate of auxiliary blockchains, but it is not conclusively successful as a bootstrapping technique.</li>
+<li>Empirical evidence suggests that only a small number of mining pools is involved in merged mining and those enjoy block shares beyond the desired security and decentralization goals.</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#references" id="references"><h2>References</h2></a>
+<p>[1] Merged mining specification, https://en.bitcoin.it/wiki/Merged_mining_specification, Accessed: 2018-05-28.</p>
+<p>[2] How does merged mining work?, https://bitcoin.stackexchange.com/questions/273/how-does-merged-mining-work, Accessed: 2018-05-28.</p>
+<p>[3] Merged-Mining.mediawiki, https://github.com/namecoin/wiki/blob/master/Merged-Mining.mediawiki, Accessed: 2018-05-28.</p>
+<p>[4] Bchain.info - Blockchain Explorer (NMC), https://bchain.info/NMC, Accessed: 2018-05-28.</p>
+<p>[5] SlushPool merged mining, https://slushpool.com/help/first-aid/faq-merged-mining, Accessed: 2018-05-28.</p>
+<p>[6] 5 Best Namecoin Mining Pools of 2018 (Comparison), https://www.prooworld.com/namecoin/best-namecoin-mining-pools, Accessed: 2018-05-28.</p>
+<p>[7] Alternative chain, https://en.bitcoin.it/wiki/Alternative_chain#Protecting_against_double_proof, Accessed: 2018-05-28.</p>
+<p>[8] Merged Mining AMA/FAQ, https://www.reddit.com/r/dogecoin/comments/22niq9/merged_mining_amafaq, Accessed: 2018-05-29.</p>
+<p>[9] The Forkening is happening at ~9:00AM EST, https://www.reddit.com/r/dogecoin/comments/2fyxg1/the_forkening_is_happening_at_900am_est_a_couple, Accessed: 2018-05-29.</p>
+<p>[10] Dogecoin blockchain explorer, https://dogechain.info,  Accessed: 2018-05-29.</p>
+<p>[11] Bitcoin Gold Hit by Double Spend Attack, Exchanges Lose Millions, https://www.ccn.com/bitcoin-gold-hit-by-double-spend-attack-exchanges-lose-millions,  Accessed: 2018-05-29.</p>
+<p>[12] Privacy Coin Verge Succumbs to 51% Attack [Again], https://www.ccn.com/privacy-coin-verge-succumbs-to-51-attack-again, Accessed: 2018-05-29.</p>
+<p>[13] Tari official website, https://www.tari.com, Accessed: 2018-05-29.</p>
+<p>[14] Monero Hard Forks to Maintain ASIC Resistance, But ‘Classic’ Hopes to Spoil the Party, https://www.ccn.com/monero-hard-forks-to-maintain-asic-resistance-but-classic-hopes-to-spoil-the-party, Accessed: 2018-05-29.</p>
+<p>[15] PoW change and key reuse, https://getmonero.org/2018/02/11/pow-change-and-key-reuse.html, Accessed: 2018-05-29.</p>
+<p>[16] BitInfoCharts, https://bitinfocharts.com, Accessed: 2018-05-30.</p>
+<p>[17] Merged mining with Monero, https://minergate.com/blog/merged-mining-with-monero, Accessed: 2018-05-30.</p>
+<p>[18] ANN DigitalNote |XDN| - ICCO Announce - NEWS, https://bitcointalk.org/index.php?topic=1082745.msg16615346#msg16615346, Accessed: 2018-05-31.</p>
+<p>[19] DigitalNote xdn-project, https://github.com/xdn-project, Accessed: 2018-05-31.</p>
+<p>[20] Monero charts, https://chainradar.com/xmr/chart, Accessed: 2018-05-31.</p>
+<p>[21] Nicehash statistics for CryptoNight v7, https://www.nicehash.com/algorithm/cryptonightv7, Accessed: 2018-05-31.</p>
+<p>[22] Huntercoin: A Blockchain based Game World, http://huntercoin.org, Accessed: 2018-06-01.</p>
+<p>[23] Myriad: A Coin For Everyone, http://myriadcoin.org, Accessed: 2018-06-01.</p>
+<p>[24] Merged Mining: Curse or Cure?,  https://eprint.iacr.org/2017/791.pdf, Judmayer et. al., Data Privacy Management, Cryptocurrencies and block chain Technology: ESORICS 2017 International Workshops, DPM 2017 and CBT 2017, Oslo, Norway, September 14-15, 2017, Proceedings (pp.316-333).</p>
+<p>[25] Merged Mining: Analysis of Effects and Implications,  http://repositum.tuwien.ac.at/obvutwhs/download/pdf/2315652, Zamyatin Alexei, MSc Thesis, Faculty of Informatics at the Technische Universität Wien.</p>
+<p>[26] Problems - Consensus - 8. Proof of Stake, https://github.com/ethereum/wiki/wiki/Problems, Accessed: 2018-06-05.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../merged-mining/merged-mining.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../digital-assets/digital-assets.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../merged-mining/merged-mining.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../digital-assets/digital-assets.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>BFT Consensus Mechanisms - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../../preface/introduction.html">Introduction</a></li><li><a href="../../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html" class="active"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../../layer2scaling/more-landscape/landscape-update.html"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#bft-consensus-mechanisms" id="bft-consensus-mechanisms"><h1>BFT Consensus Mechanisms</h1></a>
+<iframe width=750 height=600 src="https://gitpitch.com/tari-labs/tari-university/master?p=/src/consensus-mechanisms/BFT-consensusmechanisms#/"></iframe>
+<a class="header" href="#having-trouble-viewing-this-presentation" id="having-trouble-viewing-this-presentation"><h3>Having trouble viewing this presentation?</h3></a>
+<p>View it in a <a href="https://gitpitch.com/tari-labs/tari-university/master?p=/src/consensus-mechanisms/BFT-consensusmechanisms#/">separate window</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../../consensus-mechanisms/consensus-mechanisms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../../consensus-mechanisms/consensus-mechanisms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

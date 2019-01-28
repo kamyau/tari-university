@@ -1,0 +1,592 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Layer 2 Scaling Survey (part 1) - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../preface/introduction.html">Introduction</a></li><li><a href="../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html" class="active"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../layer2scaling/more-landscape/landscape-update.html"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#layer-2-scaling-survey" id="layer-2-scaling-survey"><h1>Layer 2 Scaling Survey</h1></a>
+<a class="header" href="#what-is-layer-2-scaling" id="what-is-layer-2-scaling"><h2>What is Layer 2 scaling?</h2></a>
+<p>In the block chain and cryptocurrency world, transaction processing scaling is a tough problem to solve. This is limited by the average block creation time, the block size limit and number of newer blocks needed to confirm a transaction (confirmation time). These factors make '<em>over the counter</em>' type transactions similar to Master Card or Visa nearly impossible if done on the main block chain (on-chain).</p>
+<p><img src="./sources/waiting.png" alt="waiting" /></p>
+<p>Let's postulate that block chain and cryptocurrency &quot;takes over the world&quot; and are responsible for all global non-cash transactions performed, i.e. 433.1 billion in 2014-2015 <a href="https://www.worldpaymentsreport.com/download">[25]</a>. This means 13,734 transactions per second (tx/s) on average! <em>(To put this into perspective, VisaNet currently processes 160 billion transactions per year <a href="https://usa.visa.com/visa-everywhere/innovation/contactless-payments-around-the-globe.html">[26]</a> and is capable of handling more than 65,000 transaction messages per second <a href="https://usa.visa.com/dam/VCOM/download/corporate/media/visanet-technology/visa-net-fact-sheet.pdf">[27]</a>.)</em> This means that if all of those were simple single-input-single-output non-cash transactions and performed on...</p>
+<ul>
+<li>
+<p>Segwit enabled Bitcoin 'like' block chains that can theoretically handle ~21.31 tx/s, we would need ~644 parallel versions and with a segwit transaction size of 190 bytes <a href="https://bitcoin.stackexchange.com/questions/59408/with-100-segwit-transactions-what-would-be-the-max-number-of-transaction-confi">[28]</a> the combined block chain growth would be <em>~210 GB per day</em>!</p>
+</li>
+<li>
+<p>Ethereum 'like' block chains, and taking current gas prices into account Ethereum can theoretically process ~25.4 tx/s, then ~541 parallel versions would be needed and with a transaction size of 109 bytes (<a href="https://bitsonblocks.net/2016/10/02/a-gentle-introduction-to-ethereum/">[29]</a>, <a href="https://ethereum.stackexchange.com/questions/30175/what-is-the-size-bytes-of-a-simple-ethereum-transaction-versus-a-bitcoin-trans?rq=1">[30]</a>) the combined block chain growth would be <em>~120 GB per day</em>!</p>
+</li>
+</ul>
+<p>This is why we need a proper scaling solution that would not bloat the block chain.</p>
+<p>The Open Systems Interconnection (OSI) model defines 7 layers for communication functions of a computing system. Layer 1 refers to the physical layer and Layer 2 to the data link layer. Layer 1 is never concerned with functions of Layer 2 and up, it just delivers transmission and reception of raw data. In turn Layer 2 only knows about Layer 1 and defines the protocols that deliver node-to-node data transfer. <a href="https://en.wikipedia.org/wiki/OSI_model/">[1]</a></p>
+<p><img src="./sources/OSI_Model.png" alt="OSI_Model" /></p>
+<p>Analogous to the OSI layers for communication, in block chain technology decentralized Layer 2 protocols, also commonly referred to as Layer 2 scaling, refers to transaction throughput scaling solutions. Decentralized Layer 2 protocols run on top of the main block chain (off-chain), while preserving the attributes of the main block chain (e.g. crypto economic consensus). Instead of each transaction only the resultant of a number of transactions are embedded on-chain. [[2]](https://cloudblogs.microsoft.com/enterprisemobility/2018/02/12/decentralized-digital-identities-and-block chain-the-future-as-we-see-it)</p>
+<p><img src="./sources/layer2scaling.png" alt="layer2scaling" /></p>
+<p>Also:</p>
+<ul>
+<li>Does every transaction need every parent block chain node in the world to verify it?</li>
+<li>Would I be willing to have (temporary) lower security guarantees for most of my day-to-day transactions if I could get them validated (whatever we take that to mean) near-instantly?</li>
+</ul>
+<p>If you can answer 'no' and 'yes', then you're looking for a Layer 2 scaling solution.</p>
+<a class="header" href="#how-will-this-be-applicable-to-tari" id="how-will-this-be-applicable-to-tari"><h2>How will this be applicable to Tari?</h2></a>
+<p>Tari is a high-throughput protocol that will need to handle real world transaction volumes. For example, Big Neon, the initial business application to be built on top of the Tari block chain requires high volume transactions in a short time, especially when tickets sales open and when tickets will be redeemed at an event. Imagine filling an 85,000 seat stadium with 72 entrance queues on match days. Serialized real world scanning boils down to ~500 tickets in 4 minutes, or ~2 spectators allowed access per second per queue.</p>
+<p>This will be impossible to do with parent block chain scaling solutions.</p>
+<a class="header" href="#layer-2-scaling-current-initiatives" id="layer-2-scaling-current-initiatives"><h2>Layer 2 scaling current initiatives</h2></a>
+<a class="header" href="#1-micropayment-channels" id="1-micropayment-channels"><h3>#1 Micropayment Channels</h3></a>
+<a class="header" href="#what-is-it" id="what-is-it"><h4>What is it?</h4></a>
+<p>A Micropayment Channel is a class of techniques designed to allow users to make multiple Bitcoin transactions without committing all of the transactions to the Bitcoin block chain. In a typical payment channel, only two transactions are added to the block chain but an unlimited or nearly unlimited number of payments can be made between the participants. <a href="https://en.bitcoin.it/wiki/Payment_channels">[11]</a></p>
+<p>Several channel designs have been proposed or implemented over the years- these include:</p>
+<ul>
+<li>Nakamoto high-frequency transactions</li>
+<li>Spillman-style payment channels</li>
+<li>CLTV-style payment channels</li>
+<li>Poon-Dryja payment channels</li>
+<li>Decker-Wattenhofer duplex payment channels</li>
+<li>Decker-Russell-Osuntokun eltoo Channels</li>
+<li>Hashed Time-Locked Contracts (HTLCs)</li>
+</ul>
+<p>With specific focus on Hashed Time-Locked Contracts:
+A technique that can allow payments to be securely routed across multiple payment channels. HTlCs are integral to the design of more advanced payment channels such as those used by the <a href="https://gitpitch.com/tari-labs/tari-university/master?p=LightningNetworkForDummies#/">Lightning Network</a>.</p>
+<p>The Lightning Network is a second layer payment protocol that operates on top of a block chain. It enables instant transactions between participating nodes. It features a peer-to-peer system for making micro payments of digital cryptocurrency through a network of bidirectional payment channels without delegating custody of funds and minimising trust of third parties. <a href="https://en.wikipedia.org/wiki/Lightning_Network">[12]</a></p>
+<p>Normal use of the Lightning Network consists of opening a payment channel by committing a funding transaction to the relevant block chain, followed by making any number of Lightning transactions that update the tentative distribution of the channel's funds without broadcasting to the block chain, optionally followed by closing the payment channel by broadcasting the final version of the transaction to distribute the channel's funds.</p>
+<p><img src="./sources/bitcoin-lightning-network-basic.png" alt="lightningnetwork" /></p>
+<a class="header" href="#who-does-it" id="who-does-it"><h4>Who does it?</h4></a>
+<p>Lightning is spreading across the cryptocurrency landscape. It was originally designed for Bitcoin, however Litecoin, Zcash, Ethereum and Ripple are just a few of the many cryptocurrencies planning to implement or test some form of the network. <a href="https://www.coindesk.com/bitcoin-isnt-crypto-adding-lightning-tech-now/">[13]</a></p>
+<a class="header" href="#strengths" id="strengths"><h4>Strengths</h4></a>
+<ul>
+<li>It is one of the leading solutions that has been presented to scale Bitcoin, which does not require a change to the underlying protocol;</li>
+<li>Transactions are processed instantly, the account balances of the nodes are updated and the money is immediately accessible to the new owner;</li>
+<li>Transaction fees are a fraction of the transaction cost. <a href="https://cryptoverze.com/what-is-bitcoin-lightning-network/">[14]</a></li>
+</ul>
+<a class="header" href="#weaknesses" id="weaknesses"><h4>Weaknesses</h4></a>
+<ul>
+<li>It is not suitable for making bulk payment, as the intermediate nodes in the multichannel payment network may not be loaded with money to move the funds along;</li>
+<li>Recipients cannot receive money unless their node is connected and online at the time of the transaction;</li>
+<li>Currently channels are only bilateral</li>
+</ul>
+<a class="header" href="#opportunities-for-tari" id="opportunities-for-tari"><h4>Opportunities for Tari</h4></a>
+<p>Less than expected as Tari's ticketing use case requires many fast transactions with many parties, not many fast transactions with a single party. Non-fungible assets must be &quot;broadcasted&quot;, but state channels are private between 2 parties.</p>
+<a class="header" href="#threats-to-tari" id="threats-to-tari"><h4>Threats to Tari</h4></a>
+<p>None.</p>
+<a class="header" href="#2-state-channels" id="2-state-channels"><h3>#2 State Channels</h3></a>
+<a class="header" href="#what-is-it-1" id="what-is-it-1"><h4>What is it?</h4></a>
+<p>State channels are the more general form of micropayment channels — they can be used not only for payments, but for any arbitrary “state update” on a block chain — like changes inside a smart contract. <a href="https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4">[17]</a></p>
+<p>State channels allow multiple transactions to be made within off-chain agreements with very fast processing and the final settlement on-chain. It keeps the operation mode of block chain protocol but changes the way it is used so as to deal with the challenge of scalability.</p>
+<p>Any change of state within a state channel requires explicit cryptographic consent from all parties designated as “interested” in that part of the state. <a href="https://l4.ventures/papers/statechannels.pdf">[20]</a></p>
+<a class="header" href="#who-does-it-1" id="who-does-it-1"><h4>Who does it?</h4></a>
+<p><u>On Ethereum:</u></p>
+<ul>
+<li>Raiden Network (<a href="https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4">[17]</a>, <a href="https://raiden.network/">[21]</a>, <a href="https://raiden.network/101.html">[22]</a>)
+<ul>
+<li>Research state channel technology, define protocols and develop reference implementations;</li>
+<li>Works with any ERC20 compatible token.</li>
+<li>State updates between two parties are done via digitally signed and hash-locked transfers as the consensus mechanism, called balance proofs, which are also secured by a time-out. These can be settled on the Ethereum block chain at any time. Raiden Network uses HTLCs in exactly the same manner as the Lightning Network.</li>
+</ul>
+</li>
+</ul>
+<p><img src="./sources/Raiden.PNG" alt="Raiden" /></p>
+<ul>
+<li>Counterfactual (<a href="https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4">[17]</a>, <a href="https://l4.ventures/papers/statechannels.pdf">[20]</a>, <a href="https://medium.com/statechannels/counterfactual-generalized-state-channels-on-ethereum-d38a36d25fc6">[32]</a>)
+<ul>
+<li>A generalized framework for native state channels integration in Ethereum-based decentralized applications;</li>
+<li>A generalized state channel generalized framework is one where state is deposited once and then be used by any application or set of applications afterwards;</li>
+<li>Counterfactual instantiation means to instantiate a contract without actually deploying it on-chain and is achieved by making users sign and share commitments to the multisig wallet;</li>
+<li>When a contract is counterfactually instantiated, all parties in the channel act as though it has been deployed, even though it has not;</li>
+<li>A global registry is introduced, an on-chain contract that maps unique deterministic addresses for any counterfactual contract to actual on-chain deployed addresses. The hashing function used to produce the deterministic address can be any function that takes into account the bytecode, its owner (i.e. the multi-signature wallet address), and a unique identifier;</li>
+<li>A typical Counterfactual state-channel is composed of counterfactually instantiated objects.</li>
+</ul>
+</li>
+</ul>
+<p><img src="./sources/Counterfactual.PNG" alt="Counterfactual" /></p>
+<ul>
+<li>Funfair (<a href="https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4">[17]</a>, <a href="https://funfair.io/state-channels-in-disguise">[24]</a>, <a href="https://funfair.io/wp-content/uploads/FunFair-Technical-White-Paper.pdf">[33]</a>)
+<ul>
+<li>Decentralized slot machine gambling platform, but still using centralized server based random number generation;</li>
+<li>Instantiates normal 'Raiden like' state channel (called <em>fate channel</em>) between the player and the casino, final states submitted to block chain after betting game is concluded;</li>
+<li>Investigating use of threshold cryptography like Boneh–Lynn–Shacham (BLS) signature schemes to enable truly secure random number generation by a group of participants.</li>
+</ul>
+</li>
+</ul>
+<p><u>On NEO:</u></p>
+<ul>
+<li>Trinity ([[3]](https://www.investinblock chain.com/trinity-protocol), <a href="https://trinity.tech">[18]</a>, <a href="https://trinity.tech/file/WhitePaperDraft1.pdf">[19]</a>)
+<ul>
+<li>Trinity is an open-source network protocol based on NEP-5 smart contracts;</li>
+<li>Trinity for NEO is the same as the Raiden Network for Ethereum;</li>
+<li>Trinity uses the same consensus mechanism as the Raiden network;</li>
+<li>A new token, TNC, is introduced to fund the Trinity network, but NEO, NEP-5 and TNC tokens are supported.</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#strengths-1" id="strengths-1"><h4>Strengths</h4></a>
+<ul>
+<li>Allows payments and changes to smart contracts;</li>
+<li>State channels have strong privacy properties, everything is happening “inside” a channel between participants;</li>
+<li>State channels have instant finality, as soon as both parties sign a state update, it can be considered final.</li>
+</ul>
+<a class="header" href="#weaknesses-1" id="weaknesses-1"><h4>Weaknesses</h4></a>
+<ul>
+<li>State channels rely on availability, both parties must be on-line</li>
+</ul>
+<a class="header" href="#opportunities-for-tari-1" id="opportunities-for-tari-1"><h4>Opportunities for Tari</h4></a>
+<p>Less than expected as Tari's ticketing use case requires many fast transactions with many parties, not many fast transactions with a single party. Non-fungible assets must be &quot;broadcasted&quot;, but state channels are private between 2 parties.</p>
+<a class="header" href="#threats-for-tari" id="threats-for-tari"><h4>Threats for Tari</h4></a>
+<p>None.</p>
+<a class="header" href="#3-off-chain-matching-engines" id="3-off-chain-matching-engines"><h3>#3 Off-chain matching engines</h3></a>
+<a class="header" href="#what-is-it-2" id="what-is-it-2"><h4>What is it?</h4></a>
+<p>Orders are matched off-chain in matching engine and fulfilled on-chain, allows complex orders, support cross-chain transfers, maintains public record of orders and a deterministic specification of behaviour. Makes use of token representation smart contract, that converts global assets into smart contract tokens and vice versa. <a href="https://neonexchange.org/pdfs/whitepaper_v2.pdf">[5]</a></p>
+<a class="header" href="#who-does-it-2" id="who-does-it-2"><h4>Who does it?</h4></a>
+<ul>
+<li>
+<p>Neon Exchange (NEX) ( <a href="https://neonexchange.org/pdfs/whitepaper_v2.pdf">[5]</a>, <a href="https://neonexchange.org/">[36]</a>)</p>
+<ul>
+<li>A NEO decentralized application (dApp) with tokens;</li>
+<li>Initial support planned for NEO, ETH, NEP5, and ERC20 tokens;</li>
+<li>Cross-chain support planned for trading BTC, LTC, and RPX on NEX;</li>
+<li>The NEX off-chain matching engine will be scalable, distributed, fault-tolerant, function continuously and without downtime;</li>
+<li>Consensus is achieved using cryptographically signed requests, publicly specified deterministic off-chain matching engine algorithm, public ledgers of transactions and reward for foul play. The trade method of the exchange smart contract will only accept orders signed by a private key held by the matching engine;</li>
+<li>The matching engine matches the orders and submits them to the respective block chain smart contract for execution;</li>
+<li>A single invocation transaction on NEO can contain many smart contract calls; batch commit of matched orders in one on-chain transaction possible.</li>
+</ul>
+<p><img src="./sources/NEX-matching-engine.png" alt="NEX-matching-engine" /></p>
+</li>
+<li>
+<p>0x (<a href="https://0xproject.com/">[34]</a>, <a href="https://0xproject.com/pdfs/0x_white_paper.pdf">[35]</a>)</p>
+<ul>
+<li>An Ethereum ERC20 based smart contract token (ZRX)</li>
+<li>Provides an open source protocol to exchange ERC20 compliant tokens on the Ethereum block chain using off-chain matching engines in the form of dApps (<em>Relayers</em>) that facilitate transactions between <em>Makers</em> and <em>Takers</em>;</li>
+<li>Off-chain order relay + on-chain settlement;</li>
+<li><em>Maker</em> chooses <em>Relayer</em>, specifies token exchange rate, expiration time, fees to satisfy <em>Relayer’s</em> fee schedule and signs order with private key;</li>
+<li>Consensus are governed with the publically available DEX smart contract; addresses, token balances, token exchange, fees, signatures, order status and final transfer.</li>
+</ul>
+<p><img src="./sources/0xSequence.png" alt="0xSequence" /></p>
+</li>
+</ul>
+<a class="header" href="#strengths-2" id="strengths-2"><h4>Strengths</h4></a>
+<ul>
+<li>Performance {<em>NEX</em>, <em>0x</em>}:
+<ul>
+<li>Off-chain request/order;</li>
+<li>Off-chain matching.</li>
+</ul>
+</li>
+<li>NEX specific:
+<ul>
+<li>Batched on-chain commits;</li>
+<li>Cross-chain transfers;</li>
+<li>Support of national currencies;</li>
+<li>Public JavaScript Object Notation (JSON) Application Programmers Interface (API) &amp; web extension API for third-party applications to trade tokens;</li>
+<li>Development environment: <strong><em>Elixir on top of Erlang</em></strong> to enable scalable, distributed, and fault-tolerant matching engine;</li>
+<li>Cure53 full security audit on web extension, NEX tokens will be regulated as registered European securities.</li>
+</ul>
+</li>
+<li>0x specific:
+<ul>
+<li>Open source protocol to enable creation of independent off-chain dApp matching engines (<em>Relayers</em>);</li>
+<li>Totally transparent matching of orders with no single point of control:
+<ul>
+<li>Maker's order only enters a Relayer's order book if fee schedule is adhered to;</li>
+<li>Exchange can only happen if a Taker is willing to accept.</li>
+</ul>
+</li>
+<li>Consensus and settlement governed by the publically available DEX smart contract.</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#weaknesses-2" id="weaknesses-2"><h4>Weaknesses</h4></a>
+<ul>
+<li>Still in development.</li>
+<li>NEX specific:
+<ul>
+<li>A certain level of trust is required, similar to a traditional exchange;</li>
+<li>Closed liquidity pool.</li>
+</ul>
+</li>
+<li>0x specific:
+<ul>
+<li>A trusted Token Registry will be required to verify ERC20 token addresses and exchange rates;</li>
+<li>Front running transactions and transaction collisions possible, more development needed (<a href="https://blog.0xproject.com/front-running-griefing-and-the-perils-of-virtual-settlement-part-1-8554ab283e97">[37]</a>,  <a href="https://blog.0xproject.com/front-running-griefing-and-the-perils-of-virtual-settlement-part-2-921b00109e21">[38]</a>);</li>
+<li>Batch processing ability unknown.</li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#opportunities-for-tari-2" id="opportunities-for-tari-2"><h4>Opportunities for Tari</h4></a>
+<ul>
+<li>Matching engines in general have opportunity for Tari; the specific scheme to be investigated further</li>
+</ul>
+<a class="header" href="#threats-for-tari-1" id="threats-for-tari-1"><h4>Threats for Tari</h4></a>
+<ul>
+<li>None.</li>
+</ul>
+<a class="header" href="#4-masternodes" id="4-masternodes"><h3>#4 Masternodes</h3></a>
+<a class="header" href="#what-is-it-3" id="what-is-it-3"><h4>What is it?</h4></a>
+<p>A masternode is a server on a decentralized network. It is utilized to complete unique functions in ways ordinary mining nodes cannot, for example features like direct send, instant transactions and private transactions. Because of their increased capabilities, masternodes typically require an investment in order to run. Masternode operators are incentivized and are rewarded by earning portions of block rewards in the cryptocurrency they are facilitating. Masternodes will get the standard return on their stakes, but will also be entitled to a portion of the transaction fees, allowing for a greater ROI. (<a href="https://cointelegraph.com/news/the-rise-of-masternodes-might-soon-be-followed-by-the-creation-of-servicenodes">[8]</a>, <a href="https://cointelegraph.com/news/the-rise-of-masternodes-might-soon-be-followed-by-the-creation-of-servicenodes">[10]</a>)</p>
+<p><u>Dash Example</u> <a href="https://res.tuoluocaijing.cn/20180517155941-ojog.pdf">[31]</a>
+Dash was the first cryptocurrency to implement the masternode model into its protocol. Under what Dash calls its proof of service algorithm, a second tier network of masternodes exists alongside a first tier network of miners to achieve distributed consensus on the block chain. This two tiered system ensures that proof of service and proof of work perform symbiotic maintenance of Dash’s network. Dash masternodes also enable a decentralized governance system that allows node operators to vote on important developments within the block chain. A masternode for Dash requires a stake of 1,000 DASH and share an equally 45% of block rewards with the miners. The other 10% goes to the block chain’s treasury fund, and operators are in charge of voting on proposals for how these funds will be allocated to improve the network.</p>
+<p><em>Dash Deterministic Ordering</em></p>
+<p>A special deterministic algorithm is used to create a pseudo-random ordering of the masternodes. By using the hash from the proof-of-work for each block, security of this functionality is provided by the mining network.</p>
+<p><em>Dash Trustless Quorums</em></p>
+<p>The Dash masternode network is trustless where no single entity can control the outcome. N pseudo random masternodes (Quorum A) are selected from the total pool to act as an oracle for N pseudo random masternodes (Quorum B) that are selected to perform the actual task. Quorum A are the closest nodes mathematically to the current block hash, while Quorum B are the furthest. This process is repeated for each new block in the block chain.</p>
+<p><em>Dash Proof of Service</em></p>
+<p>Bad actors could also run masternodes. To reduce the possibility of bad acting, nodes must ping the rest of the network to ensure they remain active. All masternode verification is done randomly via the Quorum system by the masternode network itself, approximately 1% of the network verified each block. This results in the entire masternode network being verified about six times per day. Six consecutive violations result in the deactivation of a masternode.</p>
+<a class="header" href="#who-does-it-a-hrefhttpsblockonomicommasternode-guide9a" id="who-does-it-a-hrefhttpsblockonomicommasternode-guide9a"><h4>Who does it? <a href="https://blockonomi.com/masternode-guide/">[9]</a></h4></a>
+<ul>
+<li>Block, Bata, Crown, Chaincoin, Dash, Diamond, ION, Monetary Unit, Neutron, PIVX, Vcash, XtraBytes</li>
+</ul>
+<a class="header" href="#strengths-3" id="strengths-3"><h4>Strengths</h4></a>
+<ul>
+<li>
+<p>Masternodes help to sustain and take care of the ecosystem and can protect block chains from network attacks;</p>
+</li>
+<li>
+<p>Masternodes can perform decentralized governance of miners by having the power to reject or orphan blocks if required (<a href="https://coincentral.com/what-are-masternodes-an-introduction-and-guide/">[23]</a>, <a href="http://dashmasternode.org/what-is-a-masternode">[31]</a>)</p>
+</li>
+<li>
+<p>Masternodes can support decentralized exchanges by overseeing transactions and offering fiat currency gateways;</p>
+</li>
+<li>
+<p>Masternodes can be used to facilitate smart contracts, like instant transactions, anonymous transactions and decentralized payment processor;</p>
+</li>
+<li>
+<p>Masternode can facilitate a decentralized marketplace like the block chain equivalent of peer-run commerce sites like eBay; <a href="https://coincentral.com/what-are-masternodes-an-introduction-and-guide/">[23]</a> </p>
+</li>
+<li>
+<p>Masternodes compensates for Proof of Work’s limitations; it avoids mining centralization and consumes less energy; <a href="https://coincentral.com/what-are-masternodes-an-introduction-and-guide/">[23]</a></p>
+</li>
+<li>
+<p>Masternodes promise enhanced stability and network loyalty, as larger dividends and high initial investment costs make it less likely that operators will abandon their position in the network.  <a href="https://coincentral.com/what-are-masternodes-an-introduction-and-guide/">[23]</a></p>
+</li>
+</ul>
+<a class="header" href="#weaknesses-3" id="weaknesses-3"><h4>Weaknesses</h4></a>
+<ul>
+<li>Maintaining masternodes can be a long and arduous.</li>
+<li>ROI is not guaranteed and is inconsistent. In some applications Masternodes only gets rewarded if they mine a block and if they are randomly chosen to get paid.</li>
+<li>In general a masternode's IP address is publicized and thus open to attacks.</li>
+</ul>
+<a class="header" href="#opportunities-for-tari-3" id="opportunities-for-tari-3"><h4>Opportunities for Tari</h4></a>
+<p>Masternodes does not have a specific standard or protocol, many different implementations exist. If the Tari protocol employs Masternodes they can be used to facilitate smart contracts off-chain and to enhance the security of the primary block chain.</p>
+<p>Increases incentives for people to be involved with Tari.</p>
+<a class="header" href="#threats-to-tari-1" id="threats-to-tari-1"><h4>Threats to Tari</h4></a>
+<p>None</p>
+<a class="header" href="#5-plasma" id="5-plasma"><h3>#5 Plasma</h3></a>
+<a class="header" href="#what-is-it-4" id="what-is-it-4"><h4>What is it?</h4></a>
+<p>Plasma block chains are a chain within a block chain, with state transitions enforced by bonded (time to exit) fraud proofs (block header hashes) submitted on the root chain. It enables management of a tiered block chain without a full persistent record of the ledger on the root block chain and without giving custodial trust to any 3rd party. The fraud proofs enforce an interactive protocol of rapid fund withdrawals in case of foul play like block withholding, in cases where bad actors in a lower level tier want to commit blocks to the root chain without broadcasting it to the higher level tiers. <a href="http://plasma.io/plasma.pdf">[4]</a></p>
+<p><img src="./sources/Plasma-example-01.png" alt="Plasma-example-01" /></p>
+<p>Plasma is a framework for incentivized and enforced execution of smart contracts, scalable to a significant amount of state updates per second, enabling the root block chain to be able to represent a significant amount of dApps, each employing its own block chain in a tree format. <a href="http://plasma.io/plasma.pdf">[4]</a></p>
+<p>Plasma relies on two key parts, namely reframing all block chain computations into a set of MapReduce functions, and an optional method to do Proof-of-Stake token bonding on top of existing block chains (enforced in an on-chain smart contract). Nakamoto Consensus incentives discourage block withholding or other Byzantine behavior. If a chain is Byzantine, it has the option of going to any of its parents (including the root block chain) to continue operation or exit with the current committed state. <a href="http://plasma.io/plasma.pdf">[4]</a></p>
+<p><img src="./sources/Plasma-example.png" alt="Plasma example" /></p>
+<p>MapReduce is a programming model and an associated implementation for processing and generating large data sets. Users specify a map function that processes a key/value pair to generate a set of intermediate key/value pairs, and a reduce function that merges all intermediate values associated with the same intermediate key. <a href="https://storage.googleapis.com/pub-tools-public-publication-data/pdf/16cb30b4b92fd4989b8619a61752a2387c6dd474.pdf">[39]</a> The Plasma MapReduce  includes commitments on data to computation as input in the map phase and includes a merkleized proof of state transition in the reduce step when returning the result.  <a href="http://plasma.io/plasma.pdf">[4]</a></p>
+<a class="header" href="#who-does-it-3" id="who-does-it-3"><h4>Who does it?</h4></a>
+<p>Loom Network, using Delegated Proof of Stake (DPoS) consensus and validation, enabling scalable Application Specific Side Chains (DAppChains), running on top of Ethereum. (<a href="http://plasma.io/plasma.pdf">[4]</a>, <a href="https://medium.com/loom-network/everything-you-need-to-know-about-loom-network-all-in-one-place-updated-regularly-64742bd839fe">[16]</a>)</p>
+<p>OMG Network (OmiseGO), using Proof of Stake (PoS) consensus and validation, a Plasma block chain scaling solution for finance running on top of Ethereum. (<a href="https://cdn.omise.co/omg/whitepaper.pdf">[6]</a>, <a href="https://omisego.network/">[15]</a>)</p>
+<a class="header" href="#strengths-4" id="strengths-4"><h4>Strengths</h4></a>
+<ul>
+<li>Not all participants need to be online to update state;</li>
+<li>Participants do not need a record of entry on the parent block chain to enable their participation in a Plasma block chain;</li>
+<li>Minimal data needed on the parent block chain to confirm transactions when constructing Plasma block chains in a tree format;</li>
+<li>Private block chain networks can be constructed, enforced by the root block chain. Transactions may occur on a local private block chain and have financial activity bonded by a public parent block chain;</li>
+<li>Rapid exit strategies in case of foul play.</li>
+</ul>
+<a class="header" href="#weaknesses-4" id="weaknesses-4"><h4>Weaknesses</h4></a>
+<p>Must still be proven on other networks apart from Ethereum.</p>
+<a class="header" href="#opportunities-for-tari-4" id="opportunities-for-tari-4"><h4>Opportunities for Tari</h4></a>
+<ul>
+<li>Has opportunities for Tari as a L2 scaling solution.</li>
+<li><em>Possibility to create a Tari ticketing Plasma dAppChain running of Monero without creating a Tari specific root block chain?</em> [<strong>Note:</strong> This will make the Tari block chain dependent on another block chain.]</li>
+</ul>
+<a class="header" href="#threats-for-tari-2" id="threats-for-tari-2"><h4>Threats for Tari</h4></a>
+<p>The Loom Network's Software Development Kit (SDK) makes it extremely easy for anyone to create a new Plasma block chain. In less than a year a number of successful and diverse dAppChains have launched. <em>The next one can easily be for ticket sales...</em></p>
+<a class="header" href="#6-truebit" id="6-truebit"><h3>#6 TrueBit</h3></a>
+<a class="header" href="#what-is-it-5" id="what-is-it-5"><h4>What is it?</h4></a>
+<p>TrueBit is a protocol that provides security and scalability by enabling trustless smart contracts to perform and offloading complex computation. This makes it different from state channels and Plasma, which are more useful for increasing the total transaction throughput of the Ethereum block chain. TrueBit relies on solvers (akin to miners), who have to stake their deposits in a smart contract, solve computation and if correct get their deposit back. If the computation is incorrect, the solver looses their deposit. TrueBit uses an economic mechanism called the “verification game” where an incentive is created for other parties, called <em>challengers,</em> to check the solvers’ work. (<a href="https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4">[17]</a>, <a href="http://people.cs.uchicago.edu/%7Eteutsch/papers/truebit.pdf">[41]</a>, <a href="https://truebit.io">[44]</a>)</p>
+<p><img src="./sources/TrueBit_Diagram.PNG" alt="TrueBit_Diagram" /></p>
+<a class="header" href="#who-does-it-4" id="who-does-it-4"><h4>Who does it?</h4></a>
+<p>Golem cites TrueBit as a verification mechanism for their forthcoming outsourced computation network LivePeer, a video streaming platform. ( <a href="https://golem.network/crowdfunding/Golemwhitepaper.pdf">[40]</a>, <a href="https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532">[42]</a>, <a href="https://golem.network">[43]</a>)</p>
+<a class="header" href="#strengths-5" id="strengths-5"><h4>Strengths</h4></a>
+<ul>
+<li>Outsourced computation - anyone in the world can post a computational task, and anyone else can receive a reward for completing it. <a href="http://people.cs.uchicago.edu/%7Eteutsch/papers/truebit.pdf">[41]</a></li>
+<li>Scalable - by decoupling verification for miners into a separate protocol, TrueBit can achieve high transaction throughput without facing a Verifier’s Dilemma. <a href="http://people.cs.uchicago.edu/%7Eteutsch/papers/truebit.pdf">[41]</a></li>
+</ul>
+<a class="header" href="#weaknesses-5" id="weaknesses-5"><h4>Weaknesses</h4></a>
+<p>TrueBit is yet to be fully tested.</p>
+<a class="header" href="#opportunities-for-tari-5" id="opportunities-for-tari-5"><h4>Opportunities for Tari</h4></a>
+<p>Nothing at the moment as Tari wouldn't be doing heavy/complex computation, at least not in the short term.</p>
+<a class="header" href="#threats-for-tari-3" id="threats-for-tari-3"><h4>Threats for Tari</h4></a>
+<p>None</p>
+<a class="header" href="#observations" id="observations"><h2>Observations</h2></a>
+<ul>
+<li>Further investigation into the more promising layer 2 scaling solutions and technologies is required to verify alignment, applicability and use-ability.</li>
+<li>An overview of Counterparty, Rootstock, Drivechains and Scriptless scripts must still be added.</li>
+</ul>
+<a class="header" href="#references" id="references"><h2>References</h2></a>
+<p>[1] OSI mode, https://en.wikipedia.org/wiki/OSI_model, Date accessed: 2018-06-07.</p>
+<p>[2] Decentralized Digital Identities and block chain – The Future as We See It, https://cloudblogs.microsoft.com/enterprisemobility/2018/02/12/decentralized-digital-identities-and-block chain-the-future-as-we-see-it, Date accessed: 2018-06-07.</p>
+<p>[3] Trinity Protocol: The Scaling Solution of the Future?, https://www.investinblock chain.com/trinity-protocol, Date accessed: 2018-06-08.</p>
+<p>[4] Plasma: Scalable Autonomous Smart Contracts, Poon J and Buterin V, http://plasma.io/plasma.pdf, Date accessed: 2018-06-14.</p>
+<p>[5] NEX: A High Performance Decentralized Trade and Payment Platform, https://neonexchange.org/pdfs/whitepaper_v2.pdf, Date accessed: 2018-06-11.</p>
+<p>[6] OmiseGO: Decentralized Exchange and Payments Platform, Poon J et. al., https://cdn.omise.co/omg/whitepaper.pdf, Date accessed: 2018-06-14.</p>
+<p>[8] The Rise of Masternodes Might Soon be Followed by the Creation of Servicenodes, https://cointelegraph.com/news/the-rise-of-masternodes-might-soon-be-followed-by-the-creation-of-servicenodes, Date accessed: 2018-06-13.</p>
+<p>[9] What are Masternodes?- Beginner's Guide, https://blockonomi.com/masternode-guide/, Date accessed: 2018-06-14.</p>
+<p>[10] What the Heck is a DASH Masternode and How Do I get One, https://medium.com/dash-for-newbies/what-the-heck-is-a-dash-masternode-and-how-do-i-get-one-56e24121417e, Date accessed: 2018-06-14.</p>
+<p>[11] Payment channels, https://en.bitcoin.it/wiki/Payment_channels , Date accessed: 2018-06-14.</p>
+<p>[12] Lightning Network, https://en.wikipedia.org/wiki/Lightning_Network, Date accessed: 2018-06-14.</p>
+<p>[13] Bitcoin Isn't the Only Crypto Adding Lightning Tech Now, https://www.coindesk.com/bitcoin-isnt-crypto-adding-lightning-tech-now/, Date accessed: 2018-06-14.</p>
+<p>[14] What is Bitcoin Lighning Network? And How Does it Work?, https://cryptoverze.com/what-is-bitcoin-lightning-network/, Date accessed: 2018-06-14.</p>
+<p>[15] OmiseGO, https://omisego.network/, Date accessed: 2018-06-14.</p>
+<p>[16] Everything You Need to Know About Loom Network, All In One Place (Updated Regularly), https://medium.com/loom-network/everything-you-need-to-know-about-loom-network-all-in-one-place-updated-regularly-64742bd839fe, Date accessed: 2018-06-14.</p>
+<p>[17] Making Sense of Ethereum’s Layer 2 Scaling Solutions: State Channels, Plasma, and Truebit, https://medium.com/l4-media/making-sense-of-ethereums-layer-2-scaling-solutions-state-channels-plasma-and-truebit-22cb40dcc2f4, Date accessed: 2018-06-14.</p>
+<p>[18] Trinity: Universal Off-chain Scaling Solution, https://trinity.tech, Date accessed: 2018-06-14.</p>
+<p>[19] Trinity White Paper: An Off--chain Scaling Solution for Neo, https://trinity.tech/file/WhitePaperDraft1.pdf, Date accessed: 2018-06-14.</p>
+<p>[20] Counterfactual: Generalized State Channels, Coleman J et. al., https://counterfactual.com/statechannels &amp; https://l4.ventures/papers/statechannels.pdf, Date accessed: 2018-06-15.</p>
+<p>[21] The Raiden Network, https://raiden.network/, Date accessed: 2018-06-15.</p>
+<p>[22] What is the Raiden Network?, https://raiden.network/101.html, Date accessed: 2018-06-15.</p>
+<p>[23] What are Masternodes?  An Introduction and Guide, https://coincentral.com/what-are-masternodes-an-introduction-and-guide/, Date accessed: 2018-06-15.</p>
+<p>[24] State Channels in disguise?, https://funfair.io/state-channels-in-disguise, Date accessed: 2018-06-15.</p>
+<p>[25] World Payments Report 2017, © 2017 Capgemini and BNP Paribas, https://www.worldpaymentsreport.com/download, Date accessed: 2018-06-20.</p>
+<p>[26] VISA, https://usa.visa.com/visa-everywhere/innovation/contactless-payments-around-the-globe.html, Date accessed: 2018-06-20.</p>
+<p>[27] VisaNet Fact Sheet 2017 Q4, https://usa.visa.com/dam/VCOM/download/corporate/media/visanet-technology/visa-net-fact-sheet.pdf, Date accessed: 2018-06-20.</p>
+<p>[28] With 100% segwit transactions, what would be the max number of transaction confirmation possible on a block?, https://bitcoin.stackexchange.com/questions/59408/with-100-segwit-transactions-what-would-be-the-max-number-of-transaction-confi, Date accessed: 2018-06-21.</p>
+<p>[29] A gentle introduction to Ethereum, https://bitsonblocks.net/2016/10/02/a-gentle-introduction-to-ethereum/, Date accessed: 2018-06-21.</p>
+<p>[30] What is the size (bytes) of a simple Ethereum transaction versus a Bitcoin transaction?, https://ethereum.stackexchange.com/questions/30175/what-is-the-size-bytes-of-a-simple-ethereum-transaction-versus-a-bitcoin-trans?rq=1, Date accessed: 2018-06-21.</p>
+<p>[31] WHAT IS A MASTERNODE?, http://dashmasternode.org/what-is-a-masternode, Date accessed: 2018-06-14.</p>
+<p>[32] Counterfactual: Generalized State Channels on Ethereum, https://medium.com/statechannels/counterfactual-generalized-state-channels-on-ethereum-d38a36d25fc6, Date accessed: 2018-06-26.</p>
+<p>[33] FunFair Technology Roadmap and Discussion, Longley J et. al., https://funfair.io/wp-content/uploads/FunFair-Technical-White-Paper.pdf, Date accessed: 2018-06-27.</p>
+<p>[34] 0x protocol website, https://0xproject.com/, Date accessed: 2018-06-28.</p>
+<p>[35] 0x:  An open protocol for decentralized exchange on the Ethereum block chain, https://0xproject.com/pdfs/0x_white_paper.pdf, Date accessed: 2018-06-28.</p>
+<p>[36] NEX website, https://neonexchange.org/, Date accessed: 2018-06-28.</p>
+<p>[37] Front-running, Griefing and the Perils of Virtual Settlement (Part 1), https://blog.0xproject.com/front-running-griefing-and-the-perils-of-virtual-settlement-part-1-8554ab283e97, Date accessed: 2018-06-29.</p>
+<p>[38] Front-running, Griefing and the Perils of Virtual Settlement (Part 2), https://blog.0xproject.com/front-running-griefing-and-the-perils-of-virtual-settlement-part-2-921b00109e21, Date accessed: 2018-06-29.</p>
+<p>[39] MapReduce: Simplied Data Processing on Large Clusters, https://storage.googleapis.com/pub-tools-public-publication-data/pdf/16cb30b4b92fd4989b8619a61752a2387c6dd474.pdf, Date accessed: 2018-07-02.</p>
+<p>[40] The Golem WhitePaper (Future integrations), https://golem.network/crowdfunding/Golemwhitepaper.pdf, Date accessed: 2018-06-22.</p>
+<p>[41] A scalable verification solution for block chains, Teutsch J. et. al., http://people.cs.uchicago.edu/~teutsch/papers/truebit.pdf, Date accessed: 2018-06-22.</p>
+<p>[42] Livepeer’s Path To Decentralization, https://medium.com/livepeer-blog/livepeers-path-to-decentralization-a9267fd16532, Date accessed: 2018-06-22.</p>
+<p>[43] Golem website, https://golem.network, Date accessed: 2018-06-22.</p>
+<p>[44] TruBit website, https://truebit.io, Date accessed: 2018-06-22.</p>
+<a class="header" href="#contributors" id="contributors"><h2>Contributors</h2></a>
+<ul>
+<li><a href="https://github.com/hansieodendaal">https://github.com/hansieodendaal</a></li>
+<li><a href="https://github.com/Kevoulee">https://github.com/Kevoulee</a></li>
+<li><a href="https://github.com/ksloven">https://github.com/ksloven</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../layer2scaling/layer2scaling.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../layer2scaling/more-landscape/landscape-update.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../layer2scaling/layer2scaling.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../layer2scaling/more-landscape/landscape-update.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

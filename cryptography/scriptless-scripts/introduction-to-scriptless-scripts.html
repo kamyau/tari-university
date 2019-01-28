@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction to Scriptless Scripts - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../preface/introduction.html">Introduction</a></li><li><a href="../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html" class="active"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../layer2scaling/more-landscape/landscape-update.html"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#introduction-to-scriptless-scripts" id="introduction-to-scriptless-scripts"><h1>Introduction to Scriptless Scripts</h1></a>
+<ul>
+<li>Definition of Scriptless Scripts</li>
+<li>The Benefit of Scriptless Scripts</li>
+<li>List of Scriptless Scripts</li>
+<li>The Role of Schnorr Signatures</li>
+<li>Schnorr multi-signatures=Scriptless Scripts</li>
+<li>Adaptor Signatures</li>
+<li>Simultaneous Scriptless Scripts</li>
+<li>Atomic (Cross-chain Swaps) Example with Adaptor Signatures</li>
+<li>Zero Knowledge Contingent Payments</li>
+<li>Mimblewimble's Core Scriptless Script</li>
+</ul>
+<hr />
+<a class="header" href="#definition-of-scriptless-scripts" id="definition-of-scriptless-scripts"><h2>Definition of Scriptless Scripts</h2></a>
+<p>Scriptless Scripts are a means to execute smart contracts off-chain, through the use of Schnorr signatures. <a href="https://medium.com/blockchain-capital/crypto-innovation-spotlight-2-scriptless-scripts-306c4eb6b3a8">[1]</a></p>
+<p>The concept of Scriptless Scripts was borne from Mimblewimble, which is a block chain design that with the exception of kernels and their signatures does not store permanent data. \( \eta=\gamma \) Fundamental properties of Mimblewimble include both privacy and scaling both of which require the implementation of Scriptless Scripts. <a href="https://www.youtube.com/watch?v=ovCBT1gyk9c&amp;t=0s">[2]</a></p>
+<p>A brief introduction is also given in <a href="../../layer2scaling/more-landscape/landscape-update.html#a5-scriptless-scripts">#5 Scriptless scripts, Layer 2 Scaling Survey (part 2)</a></p>
+<hr />
+<a class="header" href="#the-benefit-of-scriptless-scripts" id="the-benefit-of-scriptless-scripts"><h2>The Benefit of Scriptless Scripts</h2></a>
+<p>The benefit of Scriptless Scripts are functionality, privacy and efficiency.</p>
+<p>With regards to functionality, Scriptless Scripts are said to increase the range and complexity of smart contracts. Currently, as within Bitcoin Script limitations stem from the number of <code>OP_CODES</code> that have been enabled by the network. Scriptless scripts move the specification and execution of smart contractions from the network to a discussion that only involves the participants of the smart contract.</p>
+<p>With regards to privacy, moving the specification and execution of smart contracts from on-chain to off-chain increases privacy. When on-chain, many details of the smart contract are shared to the entire network including the number and addresses of participants and the amounts transferred. By moving smart contracts off-chain, the network only knows that the participants agree that the terms of their contract have been satisfied and that the transaction in question is valid.</p>
+<p>With regards to efficiency, Scriptless Scripts minimize the amount of data that requires verification and storage on-chain. By moving smart contracts off-chain, there are less overheads for full nodes and lower transaction fees for users. <a href="https://medium.com/blockchain-capital/crypto-innovation-spotlight-2-scriptless-scripts-306c4eb6b3a8">[1]</a></p>
+<hr />
+<a class="header" href="#a-list-of-scriptless-scripts" id="a-list-of-scriptless-scripts"><h2>A list of Scriptless Scripts</h2></a>
+<p>In this report various forms of Scripts will be covered. These include: <a href="https://www.youtube.com/watch?v=jzoS0tPUAiQ&amp;t=3h36m">[3]</a></p>
+<ul>
+<li>Simultaneous Scriptless Scripts</li>
+<li>Adaptor Signatures</li>
+<li>Zero Knowledge Contingent Payments</li>
+</ul>
+<hr />
+<a class="header" href="#the-role-of-schnorr-signatures" id="the-role-of-schnorr-signatures"><h2>The Role of Schnorr Signatures</h2></a>
+<p>To begin with, the fundamentals of Schnorr signatures must be defined . The signer has a private key <em>x</em>, random nonce <em>r</em>, and <em>G</em> is the generator of a discreet log hard group. <em>P</em> is the public key. <a href="https://www.youtube.com/watch?v=0mVOq1jaR1U&amp;feature=youtu.be&amp;t=39m20">[4]</a></p>
+<p>s, the signature, can then be computed as a simple linear transaction</p>
+<p>$$
+s=r+ex
+$$</p>
+<p>Where:</p>
+<p>$$
+e=H(P||r||message)
+$$</p>
+<p>$$
+P=xG
+$$</p>
+<p>The position on the line chosen is taken as the hash of all the data that one needs to commit to, the digital signature. The verification equation involves the multiplication of each of the terms in the equation by G and takes in account the cryptographic assumption (discrete log) where G can be multiplied in but not divided out, thus preventing deciphering.</p>
+<p>$$
+sG=rG+exG
+$$</p>
+<p>ECDSA signatures (used in Bitcoin) are not linear in <em>x</em> and <em>r</em>, and thus less useful <a href="https://www.youtube.com/watch?v=ovCBT1gyk9c&amp;t=0s">[2]</a></p>
+<hr />
+<a class="header" href="#schnorr-multi-signatures" id="schnorr-multi-signatures"><h2>Schnorr multi-signatures</h2></a>
+<p>First, a mulit-signature (mulitsig) has multiple participants that produce a signature. Every participant might product a separate signature and concatenate them forming a mulitsig.</p>
+<p>With Schnorr Signatures, one can have a single public key, which is the sum of many different people's public keys. the resulting key is one that signatures will be verifiable against. <a href="https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/">[5]</a></p>
+<p>The formulation of a mulitsig involves taking the sum of all components; thus all nonces and <em>s</em> values result in the formulation of a mulitsig. <a href="https://www.youtube.com/watch?v=0mVOq1jaR1U&amp;feature=youtu.be&amp;t=39m20">[4]</a></p>
+<p>$$
+s=Σs(i)
+$$</p>
+<p>It can therefore be seen that these signatures are essentially scriptless scripts. Independent public keys of several participants are joint to form a single key and signature, which when published do not divulge the details as to the number of participants involved or the original public keys.</p>
+<hr />
+<a class="header" href="#adaptor-signatures" id="adaptor-signatures"><h2>Adaptor Signatures</h2></a>
+<p>This mulitsig protocol can be modified to produce an adaptor signature, which serves as the building block for all scriptless script functions. <a href="https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/">[5]</a></p>
+<p>Instead of functioning as full valid signature on a message with a key, an adaptor signature is a promise that a signature agreed to be published, will reveal a secret.</p>
+<p>This concept is similar to that of atomic swaps, however no scrips are implemented. Since this is elliptic curve cryptography, there is only scalar multiplication of elliptic curve points. Fortunately, like a hash function, elliptic curve function in one way, so an elliptic curve point (<em>T</em>), can simply be shared and the secret will be it's corresponding private key.</p>
+<p>If two parties are considered: rather than providing their nonce <em>R</em> in the mulitsig protocol, a blinding factor, taken as an elliptic curve point <em>T</em> is conceived and sent in addition to <em>R</em> (ie. <em>R+T</em>). So it can be seen that <em>R</em> is not blinded, it has instead been offset by the secret value <em>T</em>.</p>
+<p>Here, the Schnorr mulitsig construction is modified such that the first party generates</p>
+<p>$$
+T=tG, R=rG
+$$</p>
+<p>where <em>t</em> is the shared secret, <em>G</em> is the generator of discreet log hard group and <em>r</em> the random nonce</p>
+<p>Using this information the second party generates</p>
+<p>$$
+H(P||R+T||message)x
+$$</p>
+<p>where the coins to be swapped are contained within <em>message</em>. The first party can now calculate the complete signature <em>s</em> such that</p>
+<p>$$
+s=r+t+H(P||R+T||message)x
+$$</p>
+<p>The first party then calculates and publishes the adaptor signature <em>s'</em> to the second party (and any one else listening)</p>
+<p>$$
+s'=s-t
+$$</p>
+<p>The second party can verify the adaptor signature <em>s'</em> by asserting <em>s'G</em></p>
+<p>$$
+s'G =? R+H(P||R+T||message)P
+$$</p>
+<p>However this is not a valid signature as the hashed nonce point is <em>R+T</em> and not <em>R</em></p>
+<p>The second party cannot retrieve a valid signature from this and requires ECDLP solving to recover <em>s'+t</em>, which is virtually impossible.</p>
+<p>After the first party broadcasts <em>s</em> to claim the coins within <em>message</em> the second party can calculate the secret <em>t</em> from</p>
+<p>$$
+t=s-s'
+$$</p>
+<p>The above is very general however, by attaching auxiliary proofs too one can derive an adaptor signature that will let one translate correct movement of the auxiliary protocol into a valid signature.</p>
+<hr />
+<a class="header" href="#simultaneous-scriptless-scripts" id="simultaneous-scriptless-scripts"><h2>Simultaneous Scriptless Scripts</h2></a>
+<p>The execution of separate transactions in an atomic fashion is achieved through preimages. If two transactions require the preimage to the same hash, once one is executed, the preimage is exposed so that the other one can be too. Atomic Swaps and Lightning channels use this construction. <a href="https://www.youtube.com/watch?v=0mVOq1jaR1U&amp;feature=youtu.be&amp;t=39m20">[4]</a></p>
+<a class="header" href="#the-difference" id="the-difference"><h4>The Difference</h4></a>
+<p>If we consider the difference of two Schnorr signatures.</p>
+<p>$$
+d=s-s'=k-k'+ex-e'x'
+$$</p>
+<p>The above equation can be verified in a similar manner to that of a single Schnorr signature, by multiplying each term by G and confirming algebraic correctness.</p>
+<p>$$
+dG=kG-k'G+exG-e'x'G
+$$</p>
+<p>It must be noted that the Schnorr signature itself is not being verified, but instead the difference <em>d</em>. <em>d</em> functions as the translating key between two separate independent Schnorr signatures. Given <em>d</em> and either <em>s</em> or <em>s'</em>, the other can be computed. So possession of <em>d</em> makes these two signatures atomic. This scheme does not link the two signatures or compromise their security.</p>
+<p>For an atomic transaction, during the setup stage, someone provides the opposing party with the value <em>d</em>, and asserts it as the correct value. Once the transaction is signed it can be adjusted to complete the other transaction. Atomicity is achieved; but can only be used by the person who possesses this <em>d</em> value. Generally the party that stands to lose money requires the <em>d</em> value.</p>
+<p>The <em>d</em> value provides an interesting property with regards to atomicity. It is shared before signatures are public, which in turn allows the two transactions to be atomic once the transactions are published. By taking difference of any two Schnorr signatures one is able to construct transcripts, such as an atomic swap multisig contract.</p>
+<p>This is a critical feature for Mimblewimble, which was previously thought to be unable to support atomic swaps or lightning channels. <a href="https://www.youtube.com/watch?v=0mVOq1jaR1U&amp;feature=youtu.be&amp;t=39m20">[4]</a></p>
+<hr />
+<a class="header" href="#atomic-cross-chain-swaps-example-with-adaptor-signatures" id="atomic-cross-chain-swaps-example-with-adaptor-signatures"><h2>Atomic (Cross-chain Swaps) Example with Adaptor Signatures</h2></a>
+<p>Alice has a certain number of coins on a particular block chain; Bob also has a certain number of coins on another block chain. Alice and Bob want to engage in an atomic exchange, however neither of the block chains are aware of each other nor are they able to verify each others transactions.</p>
+<p>The  classical way of achieving this involves the use of the block chain's script system to put a hash preimage challenge and then reveal the same preimage on both sides: Once Alice knows the preimage, she reveals it to take her coins; Bob then copies it of one chain to the other chain to take his coins.</p>
+<p>Using adaptor signatures, the same result can be achieved through simpler means. In this case, both Alice and Bob put up their coins on two of two outputs on each block chain. They sign the mulitsig protocols in parallel, where Bob then gives Alice the adaptor signatures for each side using the same value <em>T</em> ; Meaning that for Bob to take his coins he needs to reveal <em>t</em> and for Alice to take her coins she needs to reveal <em>T</em>. Bob then replaces one of the signatures and publishes <em>t</em>, taking his coins. Alice computes <em>t</em>  from the final signature, visible on the block chain and uses that to reveal another signature, giving her her coins.</p>
+<p>Thus it can be seen that atomicity is achieved. One is still able to exchange information but now there are no explicit hashes or preimages on the block chain: No script properties are necessary and privacy is achieved. <a href="https://www.youtube.com/watch?v=0mVOq1jaR1U&amp;feature=youtu.be&amp;t=39m20">[4]</a></p>
+<hr />
+<a class="header" href="#zero-knowledge-contingent-payments" id="zero-knowledge-contingent-payments"><h2>Zero Knowledge Contingent Payments</h2></a>
+<p>ZKCP is a transaction protocol. This protocol allows a buyer to purchase information from a seller using coins in a manner which is private, scalable, secure, and importantly in a trustless environment. The expected information is transferred only when  payment is made. The buyer and seller do not need to trust each other or depend on arbitration by a third party.<a href="https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/">[6]</a></p>
+<hr />
+<a class="header" href="#mimblewimbles-core-scriptless-script" id="mimblewimbles-core-scriptless-script"><h2>Mimblewimble's Core Scriptless Script</h2></a>
+<p>As previously stated, Mimblewimble is a block chain design. Built similarly to Bitcoin, every transaction has inputs and outputs. Each input and output has a confidential transaction commitment. Confidential commitments have an interesting property where in a valid balanced transaction one can subtract the input from the output commitments, ensuring that all of the values of the Pedersen values balance out. Taking the difference of these inputs and outputs results in the mulitsig key of the owners of every output and every input in the transaction. This is referred to as the kernel.</p>
+<p>Mimblewimble blocks will only have a list of new inputs, a list of new outputs and a list of signatures which are created from the aforementioned excess value. <a href="https://www.cryptocompare.com/coins/guides/what-is-mimblewimble/">[7]</a></p>
+<p>Since the values are homomorphically encrypted, nodes can verify that no coin are being created or destroyed.</p>
+<hr />
+<a class="header" href="#references" id="references"><h2>References</h2></a>
+<p>[1] Crypto Innovation Spotlight 2: Scriptless Scripts, 27 Feb 2018. https://medium.com/blockchain-capital/crypto-innovation-spotlight-2-scriptless-scripts-306c4eb6b3a8</p>
+<p>[2]  Andrew Poelstra: Presentation at <a href="https://www.youtube.com/watch?v=ovCBT1gyk9c&amp;t=0s">Real World Crypto</a></p>
+<p>[3]  Andrew Poelstra: Presentation at <a href="https://www.youtube.com/watch?v=jzoS0tPUAiQ&amp;t=3h36m">Layer 2 Summit Hosted by MIT DCI and Fidelity Labs</a></p>
+<p>[4]  Andrew Poelstra: Presentation at <a href="https://www.youtube.com/watch?v=0mVOq1jaR1U&amp;feature=youtu.be&amp;t=39m20">MIT Bitcoin Expo Day 2017</a></p>
+<p>[5]  Flipping the scriptless script on Schnorr, Nov 2017. (https://joinmarket.me/blog/blog/flipping-the-scriptless-script-on-schnorr/)</p>
+<p>[6]  The first successful Zero-Knowledge Contingent Payment, 26 Feb 2016. (https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/)</p>
+<p>[7]  What is Mimblewimble?, 30 Jun 2018. (https://www.cryptocompare.com/coins/guides/what-is-mimblewimble/)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../cryptography/digital_signatures/schnorr_signatures.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../cryptography/fraud-proofs-1/MainReport.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../cryptography/digital_signatures/schnorr_signatures.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../cryptography/fraud-proofs-1/MainReport.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

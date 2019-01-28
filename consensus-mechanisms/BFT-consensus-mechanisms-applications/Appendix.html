@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Appendix - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../preface/introduction.html">Introduction</a></li><li><a href="../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html" class="active"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../layer2scaling/more-landscape/landscape-update.html"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#appendix" id="appendix"><h1>Appendix</h1></a>
+<ul>
+<li><a href="#terminology">Terminology</a>
+<ul>
+<li><a href="#consensus">Consensus</a></li>
+<li><a href="#binary-consensus">Binary Consensus</a></li>
+<li><a href="#byzantine-fault-tolerance">Byzantine Fault Tolerance</a></li>
+<li><a href="#practical-byzantine-fault-tolerant-variants">Practical Byzantine Fault Tolerant Variants</a></li>
+<li><a href="#deterministic-and-non-deterministic-protocols">Deterministic and Non-Deterministic Protocols</a></li>
+<li><a href="#scalability-performance-trade-off">Scalability-performance trade off</a></li>
+<li><a href="#many-forms-of-timing-assumptions-degrees-of-synchrony">Many Forms of Timing Assumptions (Degrees of Synchrony)</a>
+<ul>
+<li><a href="#synchrony">Synchrony</a></li>
+<li><a href="#partial-synchrony">Partial Synchrony</a>
+<ul>
+<li><a href="#unknown-t-model">Unknown-△T Model</a></li>
+<li><a href="#eventually-synchronous">Eventually Synchronous</a></li>
+</ul>
+</li>
+<li><a href="#weak-synchrony">Weak Synchrony</a></li>
+<li><a href="#random-synchrony">Random Synchrony</a></li>
+<li><a href="#asynchrony">Asynchrony</a>
+<ul>
+<li><a href="#counting-rounds-in-asynchronous-networks">Counting rounds in asynchronous networks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#the-problem-with-timing-assumptions">The Problem with Timing Assumptions</a>
+<ul>
+<li><a href="#denial-of-service-attack">Denial of Service Attack</a></li>
+</ul>
+</li>
+<li><a href="#the-flp-impossibility">The FLP Impossibility</a></li>
+<li><a href="#randomized-agreement">Randomized Agreement</a></li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#terminology" id="terminology"><h2>Terminology</h2></a>
+<p>In order to gain a full understanding of the field of consensus mechanism, specifically BFT consensus mechanisms, certain terms and concepts need to be defined and fleshed out.</p>
+<a class="header" href="#consensus" id="consensus"><h3>Consensus</h3></a>
+<p>Distributed agents (these could be computers, generals co-ordinating an attack, or sensors in a nuclear plant)
+that communicate via a network (be it digital, courier or mechanical) need to agree on facts in order to act
+as a coordinated whole.</p>
+<p>When all non-faulty agents agree on a given fact, then we say that the network is in consensus.</p>
+<p>Consensus is achieved when all non-faulty agents, agree on a prescribed fact.</p>
+<p>There are a host of formal requirements which a consensus protocol may adhere to; these include:</p>
+<ul>
+<li><strong>Agreement:</strong> Where all correct processes agree on the same fact</li>
+<li><strong>Weak Validity:</strong> Where for all correct processes, the output must be the input for some correct process</li>
+<li><strong>Strong Validity:</strong> Where if all correct processes receive the same input value, they must all output that value</li>
+<li><strong>Termination:</strong> All processes must eventually decide on an output value [<a href="https://en.wikipedia.org/wiki/Consensus_(computer_science)" title="Consensus Mechanisms, Wikipedia">21</a>]</li>
+</ul>
+<a class="header" href="#binary-consensus" id="binary-consensus"><h3>Binary Consensus</h3></a>
+<p>There is a unique case of the consensus problem, referred to as the binary consensus restricts the input and hence the output domain to a single binary digit {0,1}.</p>
+<p>When the input domain is large; relative to the number of processes, for instance an input set of all the natural numbers, it can be shown that consensus is impossible in a synchronous message passing model. [<a href="https://en.wikipedia.org/wiki/Consensus_(computer_science)" title="Consensus Mechanisms, Wikipedia">21</a>]</p>
+<a class="header" href="#byzantine-fault-tolerance" id="byzantine-fault-tolerance"><h3>Byzantine Fault Tolerance</h3></a>
+<p>Byzantine failures are considered the most general and most difficult class of failures among the failure modes. The so-called fail-stop failure mode occupies the simplest end of the spectrum. Whereas fail-stop failure mode simply means that the only way to fail is a node crash, detected by other nodes, Byzantine failures imply no restrictions, which means that the failed node can generate arbitrary data, pretending to be a correct one. Thus, Byzantine failures can confuse failure detection systems, which makes fault tolerance difficult. [<a href="https://en.wikipedia.org/wiki/Byzantine_fault_tolerance" title="Byzantine Fault Tolerance, Wikipedia">39</a>]</p>
+<p>Several papers in the literature contextualize the problem using generals at different camps, situated outside the enemy castle, needing to decide whether or not to attack. A consensus algorithm that would fail, would perhaps see one general attack while all the others stay back, resulting in the vulnerability of first general</p>
+<p>One key property of a block chain system is that the nodes do not trust each other, meaning that some may behave in Byzantine manners. The consensus protocol must therefore tolerate Byzantine failures.</p>
+<p>A network is Byzantine Fault Tolerant when it can provide service and reach a consensus despite faults or failures of the system. The processes use a protocol for consensus or atomic broadcast (a broadcast where all correct processes in a system of multiple processes receive the same set of messages in the same order; that is, the same sequence of messages [<a href="https://en.wikipedia.org/wiki/Atomic_broadcast" title="Atomic Broadcast, Wikipedia">46</a>]) to agree on a common sequence of operations to execute. [[20]]</p>
+<p>The literature on distributed consensus is vast, and there are many variants of previously proposed protocols being developed for block chains. They can be largely classified along a spectrum. One extreme consists of purely computation based protocols which use proof of computation to randomly select a node which single-handedly decides the next operation. The other extreme is purely communication based protocols in which nodes have equal votes and go through multiple rounds of communication to reach consensus, Practical Byzantine Fault Tolerance (PBFT) being the prime example, which is a replication algorithm designed to be BFT.  [<a href="https://arxiv.org/pdf/1708.05665.pdf" title="Untangling Blockchain: A Data Processing View of Blockchain Systems">10</a>]</p>
+<p>For systems with <em>n</em> nodes, of which <em>f</em> are Byzantine, it has been shown that <em>no algorithm exists</em> that solves the consensus problem for <em>f &gt; n/3</em>.[<a href="https://en.wikipedia.org/wiki/Consensus_(computer_science)" title="Consensus Mechanisms, Wikipedia">21</a>]</p>
+<p>So how then does the Bitcoin protocol get away with only needing 51% honest nodes to reach consensus?</p>
+<p>Well, strictly speaking, Bitcoin is NOT a BFT-CM because there is never absolute finality in bitcoin ledgers; there is always a
+chance (however small) that someone can 51% attack the network and rewrite the entire history. Bitcoin is a probabilistic consensus, rather than deterministic.</p>
+<a class="header" href="#practical-byzantine-fault-tolerant-variants" id="practical-byzantine-fault-tolerant-variants"><h3>Practical Byzantine Fault Tolerant Variants</h3></a>
+<p>PoW suffers from non-finality, that is a block appended to a block chain is not confirmed until it is extended by many other blocks. Even then, its existence in the block chain is only probabilistic. For example, eclipse attacks on Bitcoin exploit this probabilistic guarantee to allow double spending. In contrast, the original PBFT protocol is deterministic. [<a href="https://arxiv.org/pdf/1708.05665.pdf" title="Untangling Blockchain: A Data Processing View of Blockchain Systems">10</a>]</p>
+<a class="header" href="#deterministic-and-non-deterministic-protocols" id="deterministic-and-non-deterministic-protocols"><h3>Deterministic and Non-Deterministic Protocols</h3></a>
+<p>Deterministic, bounded Byzantine agreement relies on consensus being finalized for each epoch before moving to the next one ensuring that there is some safety about a consensus reference point prior to continuing. If instead you allow an unbounded number of consensus agreements within the same epoch, then there is no overall consensus reference point with which to declare finality and thus safety is compromised. [<a href="https://medium.com/@shelby_78386/i-dont-see-how-it-s-plausible-for-parallel-forks-of-the-hash-chain-to-be-finalized-concurrently-cb57afe9dd0a" title="Comments from Medium: 
+I don't see hope it's plausible
+for parallel forks of the hash chain
+to be finalized concurrently">8</a>]</p>
+<p>For non-deterministic or probabilistic protocols, the probability that an honest node is undecided after <em>r</em> rounds approaches zero as r approaches infinity.</p>
+<p>Non-deterministic protocols which solve consensus under the purely asynchronous case potentially rely on random oracles and generally incur high message complexity overhead, as they depend on reliable broadcasting for all communication.</p>
+<p>Protocols like HoneyBadger BFT fall into this class of nondeterministic protocols under asynchrony. Normally, they require three instances of reliable broadcast for a single round of communication. [<a href="https://blog.cosmos.network/tendermint-explained-bringing-bft-based-pos-to-the-public-blockchain-domain-f22e274a0fdb" title="Tendermint Explained- Bringing BFT-based
+PoS to the Public Blockchain Domain">34</a>]</p>
+<a class="header" href="#scalability-performance-trade-off" id="scalability-performance-trade-off"><h3>Scalability-performance trade off</h3></a>
+<p>As briefly mentioned in the <a href="#introduction">Introduction</a>, the scalability of BFT protocols considering the number of participants is highly limited and the performance of most protocols deteriorates as the number of involved replicas increases. This effect is especially problematic for BFT deployment in permissionless block chains. [<a href="https://cachin.com/cc/talks/20170622-blockchain-ice.pdf" title="Blockchain, cryptography and consensus 2017, Cachin">7</a>]</p>
+<p>The problem of BFT scalability is twofold: a high throughput as well as a large consensus group with good reconfigurability that can tolerate a high number of failures are both desirable properties in BFT protocols, but are often in direct conflict.</p>
+<p>Bitcoin mining, for example supports thousands of participants, offers good reconfigurability, i.e. nodes can join or leave the network at any time, and can tolerate a high number of failures, however they are only able to process a severely limited number of transactions per second. Most BFT protocols achieve a significantly higher throughput, but are limited to small groups of participants of less than 20 nodes and the group reconfiguration is not easily achievable.</p>
+<p>Several approaches have been employed to remedy these problems, e.g. threshold cryptography, creating new consensus groups for every round, or limiting the number of necessary messages to reach consensus. [<a href="http://conferences.inf.ed.ac.uk/EuroDW2018/papers/eurodw18-Rusch.pdf" title="High-Performance Consensus Mechanisms for Blockchains,
+Rusch">9</a>]</p>
+<a class="header" href="#many-forms-of-timing-assumptions-degrees-of-synchrony" id="many-forms-of-timing-assumptions-degrees-of-synchrony"><h3>Many Forms of Timing Assumptions (Degrees of Synchrony)</h3></a>
+<a class="header" href="#synchrony" id="synchrony"><h4>Synchrony</h4></a>
+<p>Here, the time for nodes to wait and receive information is predefined. If a node has not received an input within the redefined time structure,  there is a problem. [<a href="https://medium.com/@flatoutcrypto/project-spotlight-maidsafe-and-parsec-part-1-4830cec8d9e3" title="Project Spotlight: Maidsafe and PARSEC Part 1">5</a>]</p>
+<p>In synchronous systems it is assumed that all communications proceed in rounds. In one round a process may send all the messages it requires while receiving all messages from other processes. In this manner no message from one round may influence any messages sent within the same round [<a href="https://en.wikipedia.org/wiki/Consensus_(computer_science)" title="Consensus Mechanisms, Wikipedia">21</a>]</p>
+<p>A △T-synchronous network guarantees that every message sent is delivered after at most a delay of △T (where △T is a measure of real time) [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>] Synchronous protocols come to a consensus after △T. [<a href="https://medium.com/@flatoutcrypto/project-spotlight-maidsafe-and-parsec-part-1-4830cec8d9e3" title="Project Spotlight: Maidsafe and PARSEC Part 1">5</a>]</p>
+<a class="header" href="#partial-synchrony" id="partial-synchrony"><h4>Partial Synchrony</h4></a>
+<p>Here, the network retains some form of a predefined timing structure, however it can operate without knowing said assumption of how fast nodes can exchange messages over the network. Instead of pushing out a block every x seconds, in a partially synchronous block chain would gauge the limit, with messages always being sent and received within the unknown deadline.</p>
+<p>Partially synchronous protocols come to a consensus in an unknown, but finite period. [<a href="https://medium.com/@flatoutcrypto/project-spotlight-maidsafe-and-parsec-part-1-4830cec8d9e3" title="Project Spotlight: Maidsafe and PARSEC Part 1">5</a>]</p>
+<a class="header" href="#unknown-t-model" id="unknown-t-model"><h5>Unknown-△T Model</h5></a>
+<p>The protocol is unable to use the delay bound as a parameter. [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+<a class="header" href="#eventually-synchronous" id="eventually-synchronous"><h5>Eventually Synchronous</h5></a>
+<p>The message delay bound △ is only guaranteed to hold after some (unknown instant, called the &quot;Global Stabilization Time&quot;. [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+<a class="header" href="#weak-synchrony" id="weak-synchrony"><h4>Weak Synchrony</h4></a>
+<p>Most existing Byzantine fault tolerant systems, even those called 'robust' assume some variation of <em>weak synchrony</em>, where messages are guaranteed to be delivered after a certain bound △T, but △T may be time-varying or unknown to the protocol designer.</p>
+<p>However, the liveness properties of weakly synchronous protocols can fail completely when the expected timing assumptions are violated (e.g., due to a malicious network adversary). In general, liveness refers to a set of properties of concurrent systems, that require a system to make progress despite the fact that its concurrently executing components may have to &quot;take turns&quot; in critical sections, parts of the program that cannot be simultaneously run by multiple components.[<a href="https://en.wikipedia.org/wiki/Liveness" title="Liveness, Wikipedia">47</a>]</p>
+<p>Even when the weak synchrony assumptions are satisfied in practice, weakly synchronous protocols degrade significantly in throughput when the underlying network is unpredictable. Unfortunately, weakly asynchronous protocols require timeout parameters that are difficult to tune, especially in cryptocurrency application settings; and when the chosen timeout values are either too long to too short, throughput can be hampered.</p>
+<p>In terms of feasibility, both weak and partially synchronous protocols are equivalent- a protocol that succeeds in one setting can be systematically adapted for another. In terms of concrete performance, however, adjusting for weak synchrony means gradually increasing the timeout parameter over time (e.g. by an exponential back-off policy). This results in delays when recovering from transient network partition. Protocols typically manifest these assumptions in the form of a timeout event. For example, if parties detect that no progress has been made within a certain interval, then they take a corrective action such as electing a new leader. Asynchronous protocols do not rely on timers, and make progress whenever messages are delivered, regardless of actual clock time. [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+<a class="header" href="#random-synchrony" id="random-synchrony"><h4>Random Synchrony</h4></a>
+<p>Messages are delivered with random delays, such that the average delay is finite. There may be periods of arbitrarily long days (this is a weaker assumption than weak synchrony, and only a bit stronger than full asynchrony, where the only guarantee is that messages are eventually delivered). It is impossible to tell whether an instance has failed by completely stopping or if there is just a delay in message delivery. [<a href="http://docs.maidsafe.net/Whitepapers/pdf/PARSEC.pdf" title="Protocol for Asynchronous, Reliable, 
+Secure and Efficient Consensus (PARSEC) 
+WhitePaper, Chevalier et al.">1</a>]</p>
+<a class="header" href="#asynchrony" id="asynchrony"><h4>Asynchrony</h4></a>
+<p>In an asynchronous network, the adversary can deliver messages in any order and at any time, however the message must eventually be delivered between correct nodes. Nodes in an asynchronous network effectively have no use for real time clocks, and can only take actions based on the ordering of messages they receive. [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]. The speed is determined by the speed at which the network communicates-instead of a fixed limit of x seconds.</p>
+<p>An asynchronous protocol requires a different means to decide when all nodes are able to come to a consensus.</p>
+<p>As will be discussed in <a href="#the-flp-impossibility">The FLP Impossibility</a>, FLP result rules out the possibility of the deterministic asynchronous protocols for atomic broadcast and many other tasks. A deterministic protocol must therefore make some stronger timing assumptions. [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+<a class="header" href="#counting-rounds-in-asynchronous-networks" id="counting-rounds-in-asynchronous-networks"><h5>Counting rounds in asynchronous networks</h5></a>
+<p>Although the guarantee of eventual delivery is decoupled from notions of 'real time', it is nonetheless desirable to characterize the running time of asynchronous protocols. The standard approach is for the adversary to assign each message a virtual round number, subject to the condition that every (<em>r</em>-1) message between correct nodes must be delivered before any (<em>r</em>+1) message is sent.</p>
+<a class="header" href="#the-problem-with-timing-assumptions" id="the-problem-with-timing-assumptions"><h3>The Problem with Timing Assumptions</h3></a>
+<p>The problem with both synchronous and partially synchronous assumptions is that &quot;the protocols based on timing assumptions are unsuitable for decentralized, cryptocurrency settings, where network links can be unreliable, network speeds change rapidly, and network delays may even be adversarially induced.&quot;[<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+<a class="header" href="#denial-of-service-attack" id="denial-of-service-attack"><h4>Denial of Service Attack</h4></a>
+<p>Basing a protocol on timings, exposes the network to Denial of Service (DoS) attacks. A synchronous protocol will be deemed unsafe if a DoS slows down the network sufficiently. Even though a partially synchronous protocol would be safe, it would be unable to operate, as the messages would be exposed to interference.</p>
+<p>An asynchronous protocol would be able to function under a DoS attack, however it is difficult to reach consensus, as it is impossible to know if the network is under attack, or if a particular message is delayed by the protocol itself.</p>
+<a class="header" href="#the-flp-impossibility" id="the-flp-impossibility"><h3>The FLP Impossibility</h3></a>
+<p>The paper, 'Impossibility of Distributed Consensus with One Faulty Process' by Fischer et al. [<a href="https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf" title="Impossibility of Distributed Consensus 
+with One Faulty Process, Fischer et al.">22</a>], mapped out what is possible to achieve with distributed processes in an asynchronous environment.</p>
+<p>The result, referred to as the FLP result, which raised the problem of consensus, that is, getting a distributed network of processors to agree on a common value. This problem was known to be solvable in a synchronous setting, where processes could proceed in simultaneous steps. The synchronous solution was seen as resilient to faults, where processors crash and take no further part in the computation. Synchronous models allow failures to be detected by waiting one entire step length for a reply from a processor, and presuming that it has crashed if no reply is received.</p>
+<p>This kind of failure detection is not possible in an asynchronous setting, as there are no bounds on the amount of time a processor might take to complete its work and then respond. The FLP result shows that in an asynchronous setting, where only one processor might crash, there is no distributed algorithm that solves the consensus problem. [<a href="https://www.the-paper-trail.org/post/2008-08-13-a-brief-tour-of-flp-impossibility/" title="A brief Tour of FLP Impossibility">23</a>]</p>
+<a class="header" href="#randomized-agreement" id="randomized-agreement"><h3>Randomized Agreement</h3></a>
+<p>The consensus problem involves an asynchronous system of processes, some of which may be unreliable. The problem is for the reliable processes to agree on a binary value. Every protocol for this problem has the possibility of nontermination. [<a href="https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf" title="Impossibility of Distributed Consensus 
+with One Faulty Process, Fischer et al.">22</a>] While the vast majority of PBFT protocols steer clear of this impossibility result by making timing assumptions, randomness (and, in particular, cryptography) provides an alternative route. Asynchronous BFT protocols have been used for a variety of tasks such as binary agreement (ABA), reliable broadcast (RBC) and more. [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../layer2scaling/layer2scaling.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../layer2scaling/layer2scaling.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

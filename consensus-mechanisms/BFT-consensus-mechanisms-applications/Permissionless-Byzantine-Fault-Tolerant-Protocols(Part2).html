@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Permissionless Byzantine Fault Tolerant Protocols (Part 2) - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../preface/introduction.html">Introduction</a></li><li><a href="../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html" class="active"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../layer2scaling/more-landscape/landscape-update.html"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#permissionless-byzantine-fault-tolerant-protocols-part-2" id="permissionless-byzantine-fault-tolerant-protocols-part-2"><h1>Permissionless Byzantine Fault Tolerant Protocols (Part 2)</h1></a>
+<ul>
+<li><a href="#honeybadgerbft">HoneyBadgerBFT</a></li>
+<li><a href="#stellar-consensus-protocol">Stellar Consensus Protocol</a></li>
+<li><a href="#linbft">LinBFT</a></li>
+<li><a href="#algorand">Algorand</a></li>
+<li><a href="#thunderella">Thunderella</a></li>
+<li><a href="#snowflake-to-avalanche">Snowflake to Avalanche</a></li>
+<li><a href="#parsec">PARSEC</a></li>
+<li><a href="#democratic-bft">Democratic BFT</a></li>
+</ul>
+<a class="header" href="#honeybadgerbft" id="honeybadgerbft"><h2>HoneyBadgerBFT</h2></a>
+<p>HoneyBadgerBFT was released in November 2016 and is seen as the first practical <strong>asynchronous</strong> BFT consensus algorithm. Designed with cryptocurrencies in mind, where bandwidth is considered scarce, but an abundance of CPU power is available. Thus, the protocol implements public-private key encryption to increase the efficiency of the establishment of consensus. The protocol works with a fixed set of servers to run the consensus; however, this leads to centralization and allows an attacker to specifically target these servers. [<a href="http://conferences.inf.ed.ac.uk/EuroDW2018/papers/eurodw18-Rusch.pdf" title="High-Performance Consensus Mechanisms for Blockchains,
+Rusch">9</a>]</p>
+<p>In its threshold encryption scheme, any one party can encrypt a message using a master public key, and it requires f+1 correct nodes to compute and reveal decryption shares for a ciphertext before the plaintext can be recovered.</p>
+<p>The work of HoneyBadgerBFT is closely related to <a href="./Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html#sintra">SINTRA</a> , which as mentioned before, is a system implementation based on the asynchronous atomic broadcast protocol from Cachin et al. [<a href="https://www.shoup.net/papers/ckps.pdf" title="Secure and Efficent Asynchronous Broadcast Protocols, 
+Cachin et al.">41</a>] This protocol consists of a reduction from Atomic Broadcast Channel (ABC) to Asynchronous Common Subset (ACS), as well as a reduction from ACS to Multi-Value Validated Agreement (MVBA)</p>
+<p>HoneyBadger offers a novel reductions from ABC to ACS that provides better efficiency (by O(N) factor) through batching, while using threshold encryption to preserve censorship resilience. Better efficiency is also obtained by cherry-picking improved instantiations of sub-components. For example, the expensive MVBA is circumvented by using an alternative ACS along with an effect reliable broadcast (RBC). [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+<a class="header" href="#stellar-consensus-protocol" id="stellar-consensus-protocol"><h2>Stellar Consensus Protocol</h2></a>
+<p>Stellar Consensus Protocol (SCP) is an <strong>asynchronous</strong> protocol proposed by David Mazieres. It considered to be a global consensus protocol consisting of nomination protocol and ballot protocol, and is said to be BFT by bringing with it the concept of quorum slices and defeated byzantine fault tolerance. [<a href="https://ieeexplore.ieee.org/document/8014672/" title="Survey of Consensus Protocols of Blockchain Applications,
+4th International Conference on Advanced Computing 
+and Communication Systems, Sankar et al.">11</a>]</p>
+<p>Each participant forms a quorum of other users, thus creating a trust hierarchy, which requires complex trust decisions. [<a href="http://conferences.inf.ed.ac.uk/EuroDW2018/papers/eurodw18-Rusch.pdf" title="High-Performance Consensus Mechanisms for Blockchains,
+Rusch">9</a>]</p>
+<p>Initially the nomination proctor is run. During this, new values called candidate values are proposed for agreement. Each node receiving these values will vote for a single value among these. Eventually it results in unanimously selected values for that slot.</p>
+<p>After successful execution of nomination protocol, the nodes deploy the ballot protocol. This involves the federated voting to either commit or abort the values resulting from nomination protocol. This results in externalizing the ballot for the current slot. The aborted ballots are now declared irrelevant. However, there can be stuck states where nodes cannot reach a conclusion, whether to abort or commit a value. This situation is avoided by moving it to a higher valued ballot, considering it in a new ballot protocol execution. This aids in case a node believes that this stuck ballot was committed. Thus SCP assures avoidance and management of stuck states and thus provides liveliness.</p>
+<p>The concept of quorum slices in case of SCP provides asymptotic security and flexible trust, making it more acceptable than other earlier consensus algorithms utilizing Federated BFT, like the Ripple consensus protocol. [<a href="https://ripple.com/files/ripple_consensus_whitepaper.pdf" title="The Ripple Protocol Consensus 
+Algorithm, Schwartz et al.">14</a>] Here, the user is provided more independence in deciding whom to trust. [<a href="https://tendermint.com/static/docs/tendermint.pdf" title="Tendermint: Consensus without Mining, Kwon">15</a>]</p>
+<p>SCP protocol claims to be free of blocked states, provides decentralized control, asymptotic security, flexible trust and low latency. But it does not guarantee safety all the time. If the user node chooses an inefficient quorum slice security is not guaranteed. In the event of partition or misbehaving nodes, it halts progress of the network until consensus can be reached.</p>
+<a class="header" href="#linbft" id="linbft"><h2>LinBFT</h2></a>
+<p>LinBFT is a Byzantine fault tolerance protocol for block chain systems that allows for the amortized communication volume per block <em>O(n)</em> under reasonable conditions (where <em>n</em> is the number of participants) while satisfying deterministic guarantees on safety and liveness. It satisfies liveness in a <strong>partially synchronous</strong> network.</p>
+<p>LinBFT cuts down its <em>O(n</em><sup>4</sup><em>)</em> complexity by implementing changes each by  <em>O(n)</em>: linear view change, threshold signatures and verifiable random functions.</p>
+<p>This is clearly optimal, in the sense that disseminating a block already takes <em>O(n)</em> transmissions.</p>
+<p>LinBFT is designed to be implemented for permission-less, public block chain systems and takes into account anonymous participants without a public-key infrastructure, PoS, rotating leader and a dynamic participant set. [<a href="https://arxiv.org/pdf/1807.01829.pdf" title="LinBFT: Linear-Communication Byzantine 
+Fault Tolerance for Public Blockchains, Yang">16</a>]</p>
+<p>For instance, participants can be anonymous, without a centralized public key infrastructure (PKI) public key among themselves, and participate in a distributed key generation (DKG) protocol required to create threshold signatures, both of which are communication-heavy processes.</p>
+<p>LinBFT is compatible with proof-of-state, which counters Sybil attacks and deters dishonest behavior through slashing. [<a href="https://arxiv.org/pdf/1807.01829.pdf" title="LinBFT: Linear-Communication Byzantine 
+Fault Tolerance for Public Blockchains, Yang">16</a>]</p>
+<a class="header" href="#algorand" id="algorand"><h2>Algorand</h2></a>
+<p>The Algorand WhitePaper was released in May 2017, and is a <strong>synchronous</strong> BFT consensus mechanism; where the blocks get added at a minimum rate. [<a href="https://arxiv.org/pdf/1607.01341.pdf" title="Algorand WhitePaper 
+Chen and Micali">25</a>]</p>
+<p>Algorand allows participants to privately check whether they are chosen for consensus participation and requires only one message per user, thus limiting possible attacks. [<a href="http://conferences.inf.ed.ac.uk/EuroDW2018/papers/eurodw18-Rusch.pdf" title="High-Performance Consensus Mechanisms for Blockchains,
+Rusch">9</a>]</p>
+<p>Alogrand, scales up to 500 000 users by employing Verifiable Random Functions, which are pseudo-random functions able to provide verifiable proofs that the output of said function is correct. [<a href="http://conferences.inf.ed.ac.uk/EuroDW2018/papers/eurodw18-Rusch.pdf" title="High-Performance Consensus Mechanisms for Blockchains,
+Rusch">9</a>]</p>
+<p>It introduces the concept of a <em>concrete coin</em>. Most of these BFT algorithms require some sort of randomness oracle, but all nodes need to see the same value if the oracle is consulted. This had previously been achieved through a <em>common coin</em> idea; the <em>concrete coin</em> uses a much simpler approach; but only returns a binary value. [<a href="https://arxiv.org/pdf/1607.01341.pdf" title="Algorand WhitePaper 
+Chen and Micali">25</a>]</p>
+<a class="header" href="#thunderella" id="thunderella"><h2>Thunderella</h2></a>
+<p>Thunderella, implements an asynchronous strategy, where a <strong>synchronous</strong> strategy is used as a fall back in the event of a malfunction [<a href="https://eprint.iacr.org/2017/913.pdf" title="Thunderella WhitePaper, Pass and Shi">26</a>], thus it achieves both robustness and speed.</p>
+<p>It can be applied in permissionless networks using proof-of-work. Network robustness and &quot;instant confirmations&quot; requires both 75% of the network to be honest, as well as the presence of a leader node.</p>
+<a class="header" href="#snowflake-to-avalanche" id="snowflake-to-avalanche"><h2>Snowflake to Avalanche</h2></a>
+<p>This consensus protocol was first seen in the WhitePaper entitled &quot;Snowflake to Avalanche&quot;. Outlined in the paper are four protocols which are building blocks forming a protocol family. These leaderless Byzantine fault tolerance protocols are build on a metastable mechanism and are referred to as: Slush; Snowflake; Snowball and Avalanche.</p>
+<p>The protocols published by Team Rocket differ from the traditional consensus protocols and the Nakamoto consensus protocols by not requiring an elected leader, but instead the protocol simply guides all the nodes to consensus.</p>
+<p>These four protocols are described as a new family of protocols due to this concept of metastability: a means to establish consensus by guiding all nodes towards an emerging consensus without requiring leaders, while still maintaining the same level of security and inducing a speed that exceeding current protocols.</p>
+<p>This is achieved through the formation of 'sub-quorums', which are small randomized samples from nodes on the network. This allows for greater throughputs and sees parallel consensuses running before they merge to form the overarching consensus: what can be seen as similar in nature to the gossip protocol.</p>
+<p>With regards to safety, throughput (the number of transactions per second) and scalability (the number of people supported by the network) Slush, Snowflake, Snowball and Avalanche seem to be able to achieve all three. They impart a probabilistic safety guarantee in the presence of Byzantine adversaries and achieve a high throughput and scalability due to their concurrent nature. A <strong>synchronous</strong> network is assumed.</p>
+<p>This is the current problem facing the design of BFT protocols, in that a system can be very fast when a small number of nodes are active, since there are less decisions to make, however, when there are many users and an increase in transactions, the system cannot be maintained.</p>
+<p>Unlike the PoW implementation, which requires constant active participation from the miners, Avalanche can function with the even when nodes are dormant.</p>
+<p>While traditional consensus protocols require <em>O</em>(n<sup>2</sup>) communication, their communication complexity ranges from <em>O(kn log n)</em> to <em>O(kn)</em> for some security parameter <em>k&lt;&lt;n</em>. In a sense, Team Rocket highlight that the communication complexity of their protocols is less intensive than that of <em>O</em>(n<sup>2</sup>) communications, thus making these protocols faster and more scalable.</p>
+<p>To backtrack a bit, Big <em>O</em> notation is used in Computer Science to describe the performance or complexity of an algorithm. It describes the worst-case scenario and can be used to describe the execution time required by an algorithm [<a href="https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/" title="A beginner's guide to Big O notation">49</a>]. In the case of consensus algorithms, <em>O</em> describes a finite expected number of steps or operations [<a href="http://www.cs.yale.edu/homes/aspnes/papers/jalg90.pdf" title="Fast Randomized Consensus using Shared Memory,
+Aspnes et al.">50</a>]. For example, <em>O</em>(1) describes an algorithm that will always execute in the same time regardless of the size of the input data set. <em>O</em>(n)_ describes an algorithm whose performance will grow linearly and in direct proportion to the size of the input data set.<em>O</em>(n<sup>2</sup>)represents an algorithm whose performance is directly proportional to the square of the size of the input data set.</p>
+<p>The reason for this is <em>O(n<sup>2</sup>)</em> suggests that the rate of growth of function is determined by <em>n<sup>2</sup></em> where <em>n</em> is the number of people on the network. Thus, the addition of a person exponentially increases the time taken to disseminate the information on the network while traditional consensus protocols require everyone to communicate with one another- making it a laborious process. [<a href="https://flatoutcrypto.com/home/avalancheprotocol" title="Protocol Spotlight: Avalanche Part 1">18</a>]</p>
+<p>Despite assuming a synchronous network, which is susceptible to the DoS attacks, this new family of protocols &quot;reaches a level of security that is simply good enough while surging forward with other advancements&quot;. [<a href="https://flatoutcrypto.com/home/avalancheprotocol" title="Protocol Spotlight: Avalanche Part 1">18</a>]</p>
+<a class="header" href="#parsec" id="parsec"><h2>PARSEC</h2></a>
+<p>PARSEC is a byzantine fault tolerant consensus algorithm possessing <strong>weak synchrony</strong> assumptions (highly asynchronous, assuming random delays with finite expected value)</p>
+<p>Similar to HashGraph, it has no leaders, no round robin, no proof of work and reaches eventual consensus with probability one. It differs from HashGraph, in that it provides high speed in the absence and presence of faults.  Thus, it avoids the structures of delegated PoS (DPoS), which requires a trusted set of leaders, and does not have a round robin (where a permissioned set of miners sign each block)</p>
+<p>It is fully open, unlike HashGraph, which is patented and closed sourced. The reference implementation of PARSEC, written in Rust, was released a few weeks after the whitepaper. ([<a href="http://docs.maidsafe.net/Whitepapers/pdf/PARSEC.pdf" title="Protocol for Asynchronous, Reliable, 
+Secure and Efficient Consensus (PARSEC) 
+WhitePaper, Chevalier et al.">1</a>], [<a href="https://github.com/maidsafe/parsec" title="GitHub repository: Protocol for Asynchronous,
+Reliable, Secure and Efficient Consensus">37</a>])</p>
+<p>The general problem of reaching Byzantine agreement on any value is reduced to the simple problem of reaching binary Byzantine agreement on the nodes participating in each decision. This has allowed for PARSEC to reuse the binary Byzantine agreement protocol (Signature-Free Asynchronous Byzantine Consensus) after adapting it to the gossip protocol. [<a href="https://medium.com/@flatoutcrypto/project-spotlight-maidsafe-and-parsec-part-1-4830cec8d9e3" title="Project Spotlight: Maidsafe and PARSEC Part 1">5</a>]</p>
+<p>Similar to Honeybadger BFT, this protocol is composed through the additions of interesting ideas presented in literature.</p>
+<p>Like HashGraph and Avalanche, a gossip protocol is used to allow efficient communication between nodes. [<a href="http://docs.maidsafe.net/Whitepapers/pdf/PARSEC.pdf" title="Protocol for Asynchronous, Reliable, 
+Secure and Efficient Consensus (PARSEC) 
+WhitePaper, Chevalier et al.">1</a>]</p>
+<p>Finally, the need for a trusted leader or a trusted setup phase implied in Mostefaoui et al. [<a href="https://hal.inria.fr/hal-00944019v2/document" title="Signature-Free Asynchronous Byzantine Consensus 
+with t&lt;n/3 and O(n2) Messages,
+Mostefaoui et al.">2</a>] is removed by porting the key ideas to an asynchronous setting [<a href="https://people.csail.mit.edu/silvio/Selected%20Scientific%20Papers/Distributed%20Computation/BYZANTYNE%20AGREEMENT%20MADE%20TRIVIAL.pdf" title="Byzantine Agreement Made Trivial
+Micali">3</a>].</p>
+<p>The network is set to <em>N of N</em> instances of the algorithm communicating via randomly synchronous connections.</p>
+<p>Due to random synchrony, all users can reach an agreement on what is going on, there is no guarantee for nodes on the timing that they should be receiving messages and a possibility of up to <em>t</em> Byzantine (arbitrary) failures are allowed, were <em>3t</em>&lt;N. The instances where no failures have occurred are deemed correct or honest, while the failed instances are termed faulty or malicious. Since a Byzantine failure model allows for malicious behavior, any set of instances containing more than 2/3N of them are referred to as the supermajority.</p>
+<p>When a node receives a gossip request, it creates a new event and sends a response back (in HashGraph, the response was optional). Each gossip event contains [<a href="https://flatoutcrypto.com/home/maidsafeparsecexplanationpt2" title="Project Spotlight: Maidsafe and PARSEC Part 2">35</a>]:</p>
+<ol>
+<li>The data being transmitted</li>
+<li>The self-parent (the hash of another gossip event created by the same node)</li>
+<li>The other-parent (a hash of another gossip event created by a different node)</li>
+<li>The <em>Cause</em> for creation which can either be a Request for information, a Response to another node’s request, or an
+<em>Observation</em>. An observation is when a node creates a gossip event to record an observation that the node made themselves.</li>
+<li>Creator ID (public key)</li>
+<li>Signature – signing the above information.</li>
+</ol>
+<p>The self-parent and other-parent prevents tampering because they are signed and related to other gossip events [<a href="https://flatoutcrypto.com/home/maidsafeparsecexplanationpt2" title="Project Spotlight: Maidsafe and PARSEC Part 2">35</a>].</p>
+<p>As with HashGraph, it is difficult for adversaries to interfere with the consensus algorithm because all voting is <em>virtual</em> and done without sharing details of votes cast; each node figures out what other nodes would have voted based on their
+copy of the gossip graph.</p>
+<p>PARSEC also uses the concept of a <em>concrete coin</em>, from Algorand that is used to break ties; particularly in cases where an adversary is carefully managing communication between nodes in order to maintain a deadlock on votes.</p>
+<p>First nodes try and converge on a 'true' result for a set of results. If this is not achieved, they move onto step 2, which is trying to converge on a 'false' result. If consensus still cannot be reached, a coin flip is made and we go back to step 1
+in another voting round.</p>
+<a class="header" href="#democratic-bft" id="democratic-bft"><h2>Democratic BFT</h2></a>
+<p>This is a deterministic Byzantine consensus algorithm that relies on a new weak coordinator. This protocol is implemented in the Red Belly Block chain and is said to achieve 30 000 transactions/second on Amazon Cloud Trials [<a href="https://www.ccn.com/tag/red-belly-blockchain/" title="Red Belly Blockchain">36</a>], Through the coupling with an optimized variant of the reduction of multivalve to binary consensus from Ben-Or et al., the Democratic BFT (DBFT) consensus algorithm was generated which terminates in 4 message delays in the good case, when all non-faulty processes propose the same value. [<a href="http://gramoli.redbellyblockchain.io/web/doc/pubs/DBFT-preprint.pdf" title="DBFT: Efficient Byzantine Consensus 
+with a Weak Coordinator and its Application 
+to Consortium Blockchains, Crain et al.">17</a>]</p>
+<p>The term weak coordinator is used to describe the ability of the algorithm to terminate in the presence of a faulty or slow coordinator unlike previous algorithms that do not have the ability to terminate. The fundamental idea here is to allow processes to complete asynchronous rounds as soon as they receive a threshold of messages, instead of having to wait for a message from a coordinator that may be slow.</p>
+<p>The resulting algorithm assumes partial synchrony, is resilience optimal, time optimal and does not require signatures.</p>
+<p>Moving away from the impossibility of solving consensus in asynchronous message systems, where processes can be faulty or <em>Byzantine</em>, the technique of randomization or additional synchrony is adopted.</p>
+<p>Randomized algorithms can use per-process &quot;local&quot; coins or a shared <em>common coin</em> to solve consensus probabilistically among <em>n</em> processes despite $t&lt;n/3$ Byzantine processes. When based on local coins, the existing algorithms converge <em>O(n</em><sup>2.5</sup><em>)</em> expected time.</p>
+<p>A recent randomized algorithm that does not contain a signature solves consensus in <em>O</em>(1) expected time under a fair scheduler, where <em>O</em> is the binary.</p>
+<p>To solve the consensus problem deterministically and prevent the use of the common coin, researchers have assumed partial or eventual synchrony. Here, these solutions require a unique coordinator process, referred to as the leader, in order to remain non-faulty. There are both advantages and disadvantages to this technique: the advantage is if the coordinator is non-faulty and if the messages are delivered in a timely manner in an asynchronous round, then the coordinator broadcasts its proposal to all processes and this value is decided after a contest number of message delays; however a faulty coordinator can dramatically impact the algorithm performance by leveraging the power it has in a round and imposing its value to all. Non-faulty processes thus have no other choices but to decide nothing in this round.</p>
+<p>This protocol sees the use of a weak coordinator; a weak coordinator allows for the introduction of a new deterministic Byzantine consensus algorithm that is time optimal, resilience optimal and does not require the use of signatures. Unlike the classic, strong coordinator, the weak coordinator does not impose its value. It allows non-faulty processes to decide a value quickly, without the need of the coordinator, while helping the algorithm to terminate if non-faulty processes know that they proposed distinct values that might all be decided. In addition, the presence of a weak coordinator allows rounds to be executed optimistically without waiting for a specific message. This is unlike classic BFT algorithms that have to wait for a particular message from their coordinator and occasionally has to recover from a slow network or faulty coordinator.</p>
+<p>With regards to the problem of a slow of Byzantine coordinator, the weak coordinator helps agreement by contributing a value while still allowing termination in a constant number of message delays and thus is unlike the classic coordinator or the eventual leader which cannot be implemented in the Binary Byzantine Consensus Algorithm, BAMP<sub>n,t</sub>[<em>t&lt;n/3</em>].</p>
+<p>The validation of protocol was conducted similarly to that of the HoneyBadger block chain, where &quot;Coin&quot;, the randomization algorithm from Moustefaoui et al. was used [<a href="https://hal.inria.fr/hal-00944019v2/document" title="Signature-Free Asynchronous Byzantine 
+Consensus with $t&lt;n/3$ and 
+*O*(n&lt;sup&gt;2&lt;/sup&gt;) Messages, 
+Mostefaoui et al.">38</a>]. Using the 100 Amazon Virtual Machines located in 5 data centers on different continents, it was shown that the DBFT algorithm outperforms that of &quot;Coin&quot;; which is known to terminate in <em>O</em>(1) round in expectation. In addition, since Byzantine behaviors have been seen to severely affect the performance of strong coordinator-based consensus, 4 different Byzantine attacks have been tested in the validation.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

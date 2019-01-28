@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Permissionless Byzantine Fault Tolerant Protocols (Part 1) - Tari Labs University</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A collection of learning resources for cryptocurrency">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+            }
+          });
+        </script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <img src="../../theme/images/tlu.png" class="tlu">
+
+            <ol class="chapter"><li class="affix"><a href="../../preface/introduction.html">Introduction</a></li><li><a href="../../cryptography/cryptography.html"><strong aria-hidden="true">1.</strong> Cryptography</a></li><li><ol class="section"><li><a href="../../cryptography/crypto-1/sources/PITCHME.link.html"><strong aria-hidden="true">1.1.</strong> Elliptic Curves 101</a></li><li><a href="../../cryptography/digital_signatures/introduction.html"><strong aria-hidden="true">1.2.</strong> Introduction to Schnorr signatures</a></li><li><ol class="section"><li><a href="../../cryptography/digital_signatures/basics.html"><strong aria-hidden="true">1.2.1.</strong> Basics of Schnorr signatures</a></li><li><a href="../../cryptography/digital_signatures/schnorr_signatures.html"><strong aria-hidden="true">1.2.2.</strong> Signature Aggregation</a></li></ol></li><li><a href="../../cryptography/scriptless-scripts/introduction-to-scriptless-scripts.html"><strong aria-hidden="true">1.3.</strong> Introduction to Scriptless Scripts</a></li><li><a href="../../cryptography/fraud-proofs-1/MainReport.html"><strong aria-hidden="true">1.4.</strong> Fraud Proofs</a></li><li><a href="../../cryptography/bulletproofs-and-mimblewimble/MainReport.html"><strong aria-hidden="true">1.5.</strong> Bulletproofs and Mimblewimble</a></li><li><a href="../../cryptography/bulletproofs-protocols/MainReport.html"><strong aria-hidden="true">1.6.</strong> The Bulletproof Protocols</a></li><li><a href="../../cryptography/pure-rust-ecc/pure-rust-ecc.html"><strong aria-hidden="true">1.7.</strong> Pure-Rust Elliptic Curve Cryptography</a></li></ol></li><li><a href="../../consensus-mechanisms/consensus-mechanisms.html"><strong aria-hidden="true">2.</strong> Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensusmechanisms/sources/PITCHME.link.html"><strong aria-hidden="true">2.1.</strong> BFT Consensus Mechanisms</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Introduction.html"><strong aria-hidden="true">2.2.</strong> Introduction to Applications of Byzantine Consensus Mechanisms</a></li><li><ol class="section"><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html"><strong aria-hidden="true">2.2.1.</strong> Permissioned Byzantine Fault Tolerant Protocols</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part1).html" class="active"><strong aria-hidden="true">2.2.2.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 1)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html"><strong aria-hidden="true">2.2.3.</strong> Permissionless Byzantine Fault Tolerant Protocols (Part 2)</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Summary-of-Findings.html"><strong aria-hidden="true">2.2.4.</strong> Summary of Findings</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/References.html"><strong aria-hidden="true">2.2.5.</strong> References</a></li><li><a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Appendix.html"><strong aria-hidden="true">2.2.6.</strong> Appendix</a></li></ol></li></ol></li><li><a href="../../layer2scaling/layer2scaling.html"><strong aria-hidden="true">3.</strong> Layer 2 Scaling</a></li><li><ol class="section"><li><a href="../../layer2scaling/layer2scaling-landscape/layer2scaling-survey.html"><strong aria-hidden="true">3.1.</strong> Layer 2 Scaling Survey (part 1)</a></li><li><a href="../../layer2scaling/more-landscape/landscape-update.html"><strong aria-hidden="true">3.2.</strong> Layer 2 Scaling Survey (part 2)</a></li><li><a href="../../layer2scaling/executive-summary/sources/PITCHME.link.html"><strong aria-hidden="true">3.3.</strong> Layer 2 Scaling Survey Executive Summary</a></li></ol></li><li><a href="../../merged-mining/merged-mining.html"><strong aria-hidden="true">4.</strong> Merged Mining</a></li><li><ol class="section"><li><a href="../../merged-mining/merged-mining-scene/MergedMiningIntroduction.html"><strong aria-hidden="true">4.1.</strong> Merged Mining Introduction</a></li></ol></li><li><a href="../../digital-assets/digital-assets.html"><strong aria-hidden="true">5.</strong> Digital Assets</a></li><li><ol class="section"><li><a href="../../digital-assets/nft-landscape-1/sources/PITCHME.link.html"><strong aria-hidden="true">5.1.</strong> Non-fungible Tokens Survey</a></li><li><a href="../../digital-assets/confidential-assets/MainReport.html"><strong aria-hidden="true">5.2.</strong> Confidential Assets</a></li></ol></li><li><a href="../../protocols/protocols.html"><strong aria-hidden="true">6.</strong> Protocols</a></li><li><ol class="section"><li><a href="../../protocols/mimblewimble-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.1.</strong> Mimblewimble</a></li><li><a href="../../protocols/grin-protocol-overview/MainReport.html"><strong aria-hidden="true">6.2.</strong> Mimblewimble-Grin Block Chain Protocol Overview</a></li><li><a href="../../protocols/grin-beam-comparison/MainReport.html"><strong aria-hidden="true">6.3.</strong> Grin vs. BEAM; a Comparison</a></li><li><a href="../../protocols/grin-design-choice-criticisms/MainReport.html"><strong aria-hidden="true">6.4.</strong> Grin Design Choice Criticisms - Truth or Fiction</a></li><li><a href="../../protocols/atomic-swaps/AtomicSwaps.html"><strong aria-hidden="true">6.5.</strong> Atomic Swaps</a></li><li><a href="../../protocols/lightning-network-for-dummies/sources/PITCHME.link.html"><strong aria-hidden="true">6.6.</strong> Lightning Network for Dummies</a></li><li><a href="../../protocols/merkle-trees-and-spv-1/sources/PITCHME.link.html"><strong aria-hidden="true">6.7.</strong> Introduction to SPV, Merkle Trees and Bloom Filters</a></li><li><a href="../../protocols/rgb-introduction/sources/PITCHME.link.html"><strong aria-hidden="true">6.8.</strong> The RGB Protocol - An Introduction</a></li></ol></li><li><a href="../../labs/introduction.html"><strong aria-hidden="true">7.</strong> Labs</a></li><li><ol class="section"><li><a href="../../labs/mermaid-demo.html"><strong aria-hidden="true">7.1.</strong> Mermaid Demonstration</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">
+<svg width="23px" height="23px" viewBox="0 0 23 23 version="1.1" class="gem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,6.12859037 L0,12.5315952 L9.50941704,23 L23,12.5722492 L23,6.12859037 L9.56098655,0 L0,6.12859037 Z M8.37488789,18.3349536 L2.3103139,11.6575342 L2.3103139,8.02916483 L8.37488789,9.56385329 L8.37488789,18.3349536 Z M10.6748879,19.2090146 L10.6748879,10.1533363 L19.4932735,12.3893062 L10.6748879,19.2090146 Z M20.7,7.57180734 L20.7,10.3464428 L4.17713004,6.15908087 L9.74663677,2.58152894 L20.7,7.57180734 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+    </g>
+</svg></h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#permissionless-byzantine-fault-tolerant-protocols-part-1" id="permissionless-byzantine-fault-tolerant-protocols-part-1"><h1>Permissionless Byzantine Fault Tolerant Protocols (Part 1)</h1></a>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#paxos">Paxos</a></li>
+<li><a href="#chandra-toueg">Chandra Toueg</a></li>
+<li><a href="#raft">Raft</a></li>
+<li><a href="#hashgraph">HashGraph</a>
+<ul>
+<li><a href="#the-gossip-protocol">The Gossip Protocol</a></li>
+<li><a href="#ancestors">Ancestors</a></li>
+<li><a href="#seeing">Seeing</a></li>
+<li><a href="#strongly-seeing">Strongly seeing</a></li>
+<li><a href="#the-construct-of-gossiping">The Construct of Gossiping</a></li>
+<li><a href="#internal-consensus">Internal consenus</a></li>
+<li><a href="#criticisms">Criticisms</a></li>
+</ul>
+</li>
+<li><a href="#sintra">SINTRA</a></li>
+</ul>
+</li>
+</ul>
+<a class="header" href="#introduction" id="introduction"><h2>Introduction</h2></a>
+<p>BFT protocols face several limitations when utilized in permissionless block chains. They do not scale well with the number of participants, resulting in performance deterioration for the targeted network sizes. In addition, they are not well established in this setting, thus they are prone to security issues, e.g. Sybil attacks. Currently, there are approaches that attempt to circumvent or solve this problem. [<a href="http://conferences.inf.ed.ac.uk/EuroDW2018/papers/eurodw18-Rusch.pdf" title="High-Performance Consensus Mechanisms for Blockchains,
+Rusch">9</a>]</p>
+<a class="header" href="#paxos" id="paxos"><h3>Paxos</h3></a>
+<p>The Paxos family of protocols includes a spectrum of trade-offs between the number of processors, number of message delays before learning the agreed value, the activity level of individual participants, number of messages sent,  and types of failures. Although the FLP theorem states that there is no deterministic fault-tolerant consensus protocol that can guarantee progress in an asynchronous network, Paxos guarantees safety (consistency), and the conditions that could prevent it from making progress are difficult to provoke [<a href="https://en.wikipedia.org/wiki/Paxos_(computer_science)" title="Paxos, Wikipedia">29</a>].</p>
+<p>Paxos achieves consensus as long as there are <em>f</em> failures, where <em>f &lt; (n-1)/2</em>. These failures cannot be Byzantine (otherwise the BFT proof would be violated). Thus it is assumed that messages are never corrupted, and that nodes do not collude to subvert the system.</p>
+<p>Paxos proceeds through a set of negotiation rounds, with one node having 'Leadership' status. Progress will stall if the leader becomes unreliable, until a new leader is elected, or if suddenly an old leader comes back online and a dispute between two leader nodes arises.</p>
+<a class="header" href="#chandra-toueg" id="chandra-toueg"><h3>Chandra-Toueg</h3></a>
+<p>The Chandra–Toueg consensus algorithm was published by Tushar Deepak Chandra and Sam Toueg in 1996. It relies on a special node that acts as a failure detector. In essence, it pings other nodes to make sure they're still responsive.</p>
+<p>This implies that the detector stays online and that the detector must continuously be made aware when new nodes join the network.</p>
+<p>The algorithm itself is similar to the Paxos algorithm, which also relies on failure detectors and as such requires <em>f&lt;n/2</em>, where n is the total number of processes. [<a href="https://en.wikipedia.org/wiki/Chandra%E2%80%93Toueg_consensus_algorithm" title="Chandra-Toueg Consensus Algorithm, Wikipedia">27</a>]</p>
+<a class="header" href="#raft" id="raft"><h3>Raft</h3></a>
+<p>Raft is a consensus algorithm designed as an alternative to Paxos. It was meant to be more understandable than Paxos by means of separation of logic, but it is also formally proven safe and offers some additional features [<a href="https://en.wikipedia.org/wiki/Raft_(computer_science)" title="Raft, Wikipedia">28</a>].</p>
+<p>Raft achieves consensus via an elected leader. Each follower has a timeout in which it expects the heartbeat from the leader. It is thus a synchronous protocol. If the leader fails, an election is held to find a new leader. This entails nodes nominating themselves on a first-come, first-served basis. Hung votes require the election to be scrapped and restarted. This suggests that a high degree of cooperation is required by nodes and that malicious nodes could easily collude to  disrupt a leader and then prevent a new leader from being elected. Raft is a simple algorithm but is clearly unsuitable for consensus in cryptocurrency applications.</p>
+<p>While Paxos and Raft and many other well-known protocols tolerate crash faults, Byzantine fault tolerant protocols beginning with PBFT, tolerate even arbitrary corrupted nodes. Many subsequent protocols offer improved performance, often through optimistic execution that provides excellent performance when there are no faults, clients do not contend much, and the network is well behaved, and at least some progress otherwise.</p>
+<p>In general, BFT systems are evaluated in deployment scenarios where latency and CPU are the bottleneck, thus the most effective protocols reduce the number of rounds and minimize expensive cryptographic operations.</p>
+<p>Clement et al. [<a href="https://www.usenix.org/legacy/event/nsdi09/tech/full_papers/clement/clement.pdf" title="Making Byzantine fault Tolerant Systems Tolerate Byzantine Faults , 
+Clement et al.">40</a>] initiated a recent line of work by advocating improvement of the worst-case performance, providing service quality guarantees even when the system is under attack, even if this comes at the expense of performance in the optimistic case. However, although the &quot;Robust BFT protocols in this vein gracefully tolerate comprised nodes, they still rely on timing assumptions about the underlying network&quot;.  Thus focus shifted to asynchronous networks. [<a href="https://eprint.iacr.org/2016/199.pdf" title="The Honey Badger of BFT Protocols WhitePaper,
+Miller  et al.">6</a>]</p>
+<a class="header" href="#hashgraph" id="hashgraph"><h3>HashGraph</h3></a>
+<p>The Hashgraph consensus algorithm [<a href="https://www.swirlds.com/downloads/SWIRLDS-TR-2016-01.pdf" title="Hashgraph WhitePaper, Baird">30</a>], was released in 2016.  It claims Byzantine fault tolerance under complete <strong>asynchrony</strong> assumptions, no leaders, no round robin, no proof-of-work, eventual consensus with probability one, and high speed in the absence of faults.</p>
+<p>It is based on the gossip protocol, which is a fairly efficient distribution strategy that entails nodes randomly sharing information with each other, similar to how human beings gossip with each other.</p>
+<p>Nodes jointly build a hash graph reflecting all of the gossip events. This allows Byzantine agreement to be achieved through virtual voting. Alice does not send Bob a vote over the Internet. Instead, Bob calculates what vote Alice would have sent, based on his knowledge of what Alice knows.</p>
+<p>HashGraph uses digital signatures to prevent undetectable changes to transmitted messages.</p>
+<p>HashGraph does not violate the FLP theorem, since it is <em>non-deterministic</em>.</p>
+<p>The Hash graph has some similarities to a block chain. To quote the white paper: &quot;The HashGraph consensus algorithm is equivalent to a block chain in which the 'chain' is constantly branching, without any pruning, where no blocks are ever stale, and where each miner is allowed to mine many new blocks per second, without proof-of-work&quot; [<a href="https://www.swirlds.com/downloads/SWIRLDS-TR-2016-01.pdf" title="Hashgraph WhitePaper, Baird">30</a>].</p>
+<p>Because each node keeps track of the hash graph, there is no need to have voting rounds in HashGraph; each node already knows what all of its peers will vote for and thus consensus is reached purely by analyzing the graph.</p>
+<a class="header" href="#the-gossip-protocol" id="the-gossip-protocol"><h4>The Gossip Protocol</h4></a>
+<p>The gossip protocol works like this:</p>
+<ul>
+<li>
+<p>Alice selects a random peer node, say Bob, and sends him <em>everything she knows</em>. She then selects another random node and repeats the process indefinitely.</p>
+</li>
+<li>
+<p>Bob, on receiving Alice's information, marks this as a gossip event and fills in any gaps in his knowledge from Alice's information. Once done, he continues gossiping with his updated information.</p>
+</li>
+</ul>
+<p>The basic idea behind the Gossip Protocol is the following: A node wants to share some information to the other nodes in the network. Then periodically it randomly selects a node from the set of nodes and exchanges the information. The node that receives the information performs the randomly selects a node from the set of nodes and exchanges the information, and so on. The information is periodically sent to <em>N</em> targets, where <em>N</em> is the fanout. [<a href="https://managementfromscratch.wordpress.com/2016/04/01/introduction-to-gossip/" title="Introduction to Gossip">45</a>]</p>
+<p>The <em>cycle</em> is the number of rounds to spread the information. The <em>fanout</em> is the number of nodes a node gossips with in each cycle.</p>
+<p>With a fanout=1, $O(LogN)$ cycles are necessary for the update to reach all the nodes.</p>
+<p>In this way, information spreads throughout the network in an exponential fashion. [<a href="https://www.swirlds.com/downloads/SWIRLDS-TR-2016-01.pdf" title="Hashgraph WhitePaper, Baird">30</a>]</p>
+<p align="center"><img src="../assets/gossip.png" width="400" /></p>
+<p align="center"><b>Figure 1: Gossip Protocol Directed Graph</b></p>
+<p>The gossip history can be represented as a directed graph, as in Figure 1.</p>
+<p>HashGraph introduces a few important concepts that are used repeatedly in later BFT consensus algorithms: famous witnesses, and strongly seeing.</p>
+<a class="header" href="#ancestors" id="ancestors"><h4>Ancestors</h4></a>
+<p>If an event (<em>x1</em>) comes before another event (<em>x2</em>), and they are connected by a line; the older event is an <em>ancestor</em> of that event.</p>
+<p>If both events were created by the <em>same node</em>, then <em>x1</em> is a <em>self-ancestor</em> of <em>x2</em>.</p>
+<p><strong>Note</strong>: The gossip protocol defines an event as being a (self-)ancestor of itself!</p>
+<a class="header" href="#seeing" id="seeing"><h4>Seeing</h4></a>
+<p>If an event <em>x1</em> is an ancestor of <em>x2</em>, then we say that <em>x1</em> <strong>sees</strong> <em>x2</em> as long as the node is not aware of any forks from <em>x2</em>.</p>
+<p>So in the absence of forks, all events will <em>see</em> all of their ancestors.</p>
+<pre><code class="language-text">     +-----&gt; y
+     |
+x +--+
+     |
+     +-----&gt; z
+</code></pre>
+<p>In the example above, <em>x</em> is an ancestor to both y and z. However, because there is no ancestor relationship between <em>y</em> and <em>z</em>, the <em>seeing</em> condition fails, and so <em>y</em> cannot see <em>x</em>, and <em>z</em> cannot see <em>x</em>.</p>
+<p>It may be the case that it takes time before nodes in the protocol detect the fork. For instance Bob may create <em>z</em> and <em>y</em>; but share <em>z</em> with Alice and <em>y</em> with Charlie. Both Alice and Charlie will eventually learn about the deception, but until that point, Alice will believe that <em>y</em> sees <em>x</em>, and Charlie will believe that <em>z</em> sees <em>x</em>.</p>
+<p>This is where the concept of <em>strongly seeing</em> comes in.</p>
+<a class="header" href="#strongly-seeing" id="strongly-seeing"><h4>Strongly seeing</h4></a>
+<p>If a node examines its hash graph and notices that an event <em>z</em> <em>sees</em> an event <em>x</em>, and not only that, but it can draw an ancestor relationship (usually via multiple routes) through a super-majority of peer nodes, and that a different event from each node also sees <em>x</em>; then it is said that according to this node, that <em>z</em> <em>strongly sees</em> <em>x</em>.</p>
+<p>The following example comes from [<a href="https://www.swirlds.com/downloads/SWIRLDS-TR-2016-01.pdf" title="Hashgraph WhitePaper, Baird">30</a>]:</p>
+<p align="center"><img src="../assets/strongly-seeing.png" width="600" /></p>
+<p align="center"><b>Figure 2: Illustration of Strongly-Seeing </b></p>
+<a class="header" href="#the-construct-of-gossiping" id="the-construct-of-gossiping"><h4>The Construct of Gossiping</h4></a>
+<p>The main consensus algorithm loop consists of every node (Alice), selecting a random peer node (Bob) and sharing their graph history. Now Alice and Bob have the same graph history.</p>
+<p>Alice and Bob both create a new event with the new knowledge they have just learnt from their peer.</p>
+<p>Alice repeats this process continuously.</p>
+<a class="header" href="#internal-consensus" id="internal-consensus"><h4>Internal consensus</h4></a>
+<p>After a sync, a node will determine the order for as many events as possible, using three procedures.
+The algorithm uses constant <em>n</em> (the number of nodes) and a small constant value <em>c</em>&gt;2.</p>
+<pre><code class="language-text">in parallel:
+    loop
+      sync all known events to a random member
+    end loop
+
+    loop
+      receive a sync
+      create a new event
+      call divideRounds
+      call decideFame
+      call findOrder
+    end loop
+</code></pre>
+<p>Here we have the Swirlds HashGraph consensus algorithm. Each member runs this in parallel. Each sync brings in new events, which are then added to the hash graph. All known events are then divided into rounds. Then the first events in each round are decided as being famous or not (through purely local Byzantine agreement with virtual voting). Then the total order is found on those events for which enough information is available. If two members independently assign a position in history to an event, they are guaranteed to assign the same position, and guaranteed to never change it, even as more information comes in. Furthermore, each event is eventually assigned such a position, with probability one. [<a href="https://www.swirlds.com/downloads/SWIRLDS-TR-2016-01.pdf" title="Hashgraph WhitePaper, Baird">30</a>]</p>
+<pre><code class="language-proceduredivideRounds">   for each event x
+     r ← max round of parents of x ( or 1 if none exist )
+     if x can strongly see more than 2/3*n round r witnesses
+       x.round ← r + 1
+     else
+       x.round ← r
+     x.witness ← ( x has no self parent ) || ( x.round &gt; x.selfParent.round )
+</code></pre>
+<p>The above is deemed the divideRounds procedure. As soon as an event x is known, it is assigned a round number x.round, and the boolean value x.witness is calculated, indicating whether it is the first event that a member created in that round. [<a href="https://www.swirlds.com/downloads/SWIRLDS-TR-2016-01.pdf" title="Hashgraph WhitePaper, Baird">30</a>]
+​</p>
+<pre><code class="language-proceduredecideFame">   for each event x in order from earlier rounds to later
+     x.famous ← UNDECIDED
+     for each event y in order from earlier rounds to later
+       if x.witness and y.witness and y.round &gt; x.round
+         d ← y.round - x.round
+         s ← the set of witness events in round y.round-1 that y can strongly see
+         v ← majority vote in s ( is TRUE for a tie )
+         t ← number of events in s with a vote of v
+         if d = 1 // first round of the election
+           y.vote ← can y see x ?
+         else if d mod c &gt; 0 // this is a normal round
+             if t &gt; 2* n /3 // if supermajority, then decide
+               x.famous ← v
+               y.vote ← v
+               break // y loop
+             else // else, just vote
+               y.vote ← v
+         else if t &gt; 2* n /3 // this is a coin round
+           y.vote ← v
+         else // else flip a coin
+           y.vote ← middle bit of y.signature
+</code></pre>
+<p>This is the decideFame procedure. For each witness event (i.e., an event x where x.witness is true), decide whether it is famous (i.e., assign a boolean to x.famous). This decision is done by a Byzantine agreement protocol based on virtual voting. Each member runs it locally, on their own copy of the hashgraph, with no additional communication. It treats the events in the hashgraph as if they were sending votes to each other, though the calculation is purely local to a member’s computer. The member assigns votes to the witnesses of each round, for several rounds, until more than 2/3 of the population agrees. [<a href="https://www.swirlds.com/downloads/SWIRLDS-TR-2016-01.pdf" title="Hashgraph WhitePaper, Baird">30</a>]</p>
+<a class="header" href="#criticisms" id="criticisms"><h4>Criticisms</h4></a>
+<p>An attempt to address some of these criticisms has been presented. [<a href="http://www.swirlds.com/downloads/Swirlds-and-Sybil-Attacks.pdf" title="Swirlds and Sybil Attacks, Baird">31</a>],</p>
+<ul>
+<li>The HashGraph protocol is patented and is not open source.</li>
+<li>In addition, the HashGraph white paper assumes that <em>n</em>, the number of nodes in the network, is constant. In practice, <em>n</em> can increase, but performance likely degrades badly as <em>n</em> becomes large. [<a href="https://hackernoon.com/demystifying-hashgraph-benefits-and-challenges-d605e5c0cee5" title="Demystifying HashGraph">32</a>]</li>
+<li>HashGraph is not as &quot;fair&quot; as claimed in their paper, with at least one attack being proposed. [<a href="https://medium.com/opentoken/hashgraph-a-whitepaper-review-f7dfe2b24647" title="HashGraph: A WhitePaper Review">33</a>]</li>
+</ul>
+<a class="header" href="#sintra" id="sintra"><h3>SINTRA</h3></a>
+<p>SINTRA is a Secure Intrusion-Tolerant Replication Architecture used for the coordination in asynchronous networks subject to Byzantine faults. It consists of a collection of protocols and are implemented in Java, providing secure replication and coordination among a group of servers connected by a wide-area network, such as the Internet. For a group consisting of <em>n</em> servers, it tolerates up to $t&lt;n/3$ servers failing in arbitrary, malicious ways, which is optimal for the given model. The servers are connected only by asynchronous point-to-point communication links. Thus, SINTRA automatically tolerates timing failures as well as attacks that exploit timing. The SINTRA group model is static, which means that failed servers must be recovered by mechanisms outside of SINTRA, and the group must be initialized by a trusted process.</p>
+<p>The protocols exploit randomization, which is needed to solve Byzantine agreement in such asynchronous distributed systems. Randomization is provided by a threshold-cryptographic pseudorandom generator, a coin-tossing protocol based on the Diffie-Hellman problem. Threshold cryptography is a fundamental concept in SINTRA as it allows the group to perform a common cryptographic operation for which the secret key is shared among the servers in such a way that no single server or small coalition of corrupted servers can obtain useful information about it. SINTRA provides threshold-cryptographic schemes for digital signatures, public-key encryption, and unpredictable pseudo-random number generation (coin-tossing). It contains broadcast primitives for reliable and consistent broadcasts, which provide agreement on individual messages sent by distinguished senders. However, these primitives cannot guarantee a total order for a stream of multiple messages delivered by the system, which is needed to build fault-tolerant services using the state machine replication paradigm. This is the problem of atomic broadcast and requires more expensive protocols based on Byzantine agreement. SINTRA provides multiple randomized Byzantine agreement protocols, for binary and multi-valued agreement, and implements an atomic broadcast channel on top of agreement. An atomic broadcast that also maintains a causal order in the presence of Byzantine faults is provided by the secure causal atomic broadcast channel. [<a href="https://cachin.com/cc/papers/sintra.pdf" title="Secure Intrusion-tolerant Replication 
+on the Internet, Cachin et al.">51</a>]</p>
+<p>SINTRA is designed in a modular way as shown in Figure 3. Modularity greatly simplifies the construction
+and analysis of the complex protocols needed to tolerate Byzantine faults.</p>
+<p align="center"><img src="../assets/design-of-sintra.png" width="300" /></p>
+<p align="center"><b>Figure 3: The Design of SINTRA </b></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissioned-Byzantine-Fault-Tolerant-Protocols.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../consensus-mechanisms/BFT-consensus-mechanisms-applications/Permissionless-Byzantine-Fault-Tolerant-Protocols(Part2).html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Initialize mermaid -->
+        <script src="../../theme/js/mermaid.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
